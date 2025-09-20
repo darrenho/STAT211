@@ -8,7 +8,7 @@ format:
     chalkboard: 
       buttons: false
     preview-links: auto
-    logo: /images/tamu.png
+    logo: /_images/tamu.png
     css: styles.css
     highlight-style: a11y
     footer: "[https://darrenho.github.io/](https://darrenho.github.io/)"
