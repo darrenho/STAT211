@@ -4,6 +4,7 @@ project:
 format:
   html:
     html-math-method: webtex
+    embed-resources: false
   revealjs:
     theme:
       - default
