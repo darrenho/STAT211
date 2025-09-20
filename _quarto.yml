@@ -1,10 +1,8 @@
----
 project:
   output-dir: _slides
 format:
   html:
     html-math-method: webtex
-    embed-resources: false
   revealjs:
     theme:
       - default
@@ -19,4 +17,3 @@ format:
     css: styles.css
     highlight-style: a11y
     footer: "[https://darrenho.github.io/](https://darrenho.github.io/)"
----
