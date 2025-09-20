@@ -1,0 +1,423 @@
+---
+title: "Normal Distribution"
+subtitle: "testing"
+---
+
+## The Normal Distribution
+
+```{=tex}
+\begin{align}
+a_{11}& =b_{11}&
+  a_{12}& =b_{12}\\
+a_{21}& =b_{21}&
+  a_{22}& =b_{22}+c_{22}
+\end{align}
+```
+
+The [normal]{.definition} (also known as 'Gaussian') is $X\sim N(\mu,\sigma^2)$:
+
+-   $\mu$ is the expected value ($E[X]$)
+-   $\sigma^2$ is the variance of (Var$[X]$)
+
+Its pdf: 
+$$ 
+f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} 
+$$
+[Just like the binomial, you don't need to know this formula for this class..]{.subscript}
+
+
+```{=html}
+<!--
+::: {.fragment .fade-in-then-semi-out}
+Just like the binomial, you don't need to know this formula for this class..
+:::
+-->
+```
+
+```{=html}
+<!--    
+(Just like the binomial is $X \sim$ Binomial(n,p))
+-->
+```
+
+## The Normal Distribution{.scrollable}
+
+Computing probabilities with the normal **requires** computers
+
+Luckily, we already know the general idea...
+
+![](figures/normalTable.png){fig-align="left" width=60% fig-alt="Standard Normal Table for getting probabilities from Z-scores"} 
+<!--![](figures/normalR.png){.absolute top="170" right="30" width="400" fig-alt='Output from R'}-->
+```{r}
+#| echo: true
+pnorm(1.8,0,1)
+pnorm(1.89,0,1)
+```
+
+## Computing probabilities
+
+We will always write $X\sim N(\mu,\sigma^2)$ for the normal distribution
+
+R syntax will be specified with the mean and standard deviation
+
+#### Example
+
+If $X \sim N(5,9)$, then the probability $X$ is less than 4 is:
+
+``` {.r code-line-numbers="1|2-3|4"}
+x       = 4
+mu      = 5
+sigmaSq = 9
+pnorm(x, mu, sqrt(sigmaSq))
+```
+
+```{r}
+#| echo: false
+x       = 4
+mu      = 5
+sigmaSq = 9
+pnorm(x, mu, sqrt(sigmaSq))
+```
+
+## Computing probabilities
+
+#### Example
+
+Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600.
+
+We can write this succinctly as
+
+$$
+X \sim N(520, 3600)
+$$
+
+What is the probability someone scores less than 600?
+
+![](figures/normalSAT){.absolute top="170" left="30" width="400"} 50,clip\]
+
+. . .
+
+```{r}
+#| echo: true
+x       = 600
+mu      = 520
+sigmaSq = 3600
+pnorm(x, mu, sqrt(sigmaSq))
+```
+
+## Computing values {.scrollable}
+
+Writing $X\sim N(\mu,\sigma^2)$ for the normal distribution, if $X \sim N(5,9)$:
+
+### Probability
+
+[Probability:]{.smallcaps} then the probability $X$ is less than 4 ($P(X < 4)$) is:
+
+```{r}
+#| echo: true
+pnorm(4,5,3)
+```
+
+. . .
+
+### Values
+
+[Values:]{.smallcaps} at what value $x$ does $P(X\leq x) = .7$? . . .
+
+```{r}
+#| echo: true
+qnorm(.7,5,3)
+```
+
+
+```{=html}
+<!-- 
+
+. . .
+
+
+\smallCapGreen{Concept Check:} What would this code resolve to:
+
+\alr{qnorm(pnorm(3,5,3), 5, 3)}
+
+
+\alr{pnorm(qnorm(.2,5,3), 5, 3)}
+
+
+
+
+
+
+## Computing values}
+
+#### Example
+Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600.  
+
+
+The statistics department identifies students 
+scoring in the top 4\% on the exam for recruitment
+
+
+What is the cutoff score  for recruitment by the statistics dept.?
+
+
+
+
+$P(X \leq cutoff) = 0.96$
+. . .
+%$$
+%\alb{\textrm{cutoff} = Q_X(0.96)} \leftrightarrow  \alo{F_X(\textrm{cutoff}) = 0.96 =
+%P\left( X \leq \textrm{ cutoff }\right) }
+%$$
+
+
+
+
+\alr{qnorm(.96, 520, sqrt(3600))}
+
+
+
+\alr{[1]  625.0412}
+
+
+
+%
+%## Properties of Normal Distribution}
+%
+%## Key Property of the Normal Distribution}
+%Any linear combination of Normal rvs is Normal
+%. . .
+%
+%
+%
+%Some examples (suppose $X$ and $Y$ are independent):
+%
+%
+%
+%
+%- If $X \sim N(300, 1600)$ and $Y \sim N(150,100)$  then 
+%
+%$$
+%X + Y \sim . . . N(450, 1700)
+%$$
+%
+%
+%- If  $Y \sim N(150,100)$  then 
+%$$
+%3Y + 30 \sim . . . N(480, 900)
+%$$
+%
+%
+%- If $X \sim N(300, 1600)$ and $Y \sim N(150,100)$  then 
+%$$
+%2X + Y + 300 \sim . . . N(1050, 6500)
+%$$
+%
+%
+%
+%
+
+
+## Properties of Normal Distribution}
+
+
+
+## Key Property of the Normal Distribution}
+Any linear combination of Normal rvs is Normal
+
+
+
+
+
+- If  $Y \sim N(150,100)$  then 
+$$
+3Y + 30 \sim . . . N(480, 900)
+$$
+
+. . .
+
+
+
+- We are measuring a standard inch using a ruler with a fine scale. If several people measure, they will get some random amount of measurement error:  $X \sim N(1, .000001)$. What is the distribution for measuring a centimeter?
+
+(An inch is 2.54 cm)
+
+
+
+. . .
+
+$Y = 2.54X$, then $Y \sim N(2.54,  6.4516 * .000001)$
+
+
+
+
+## The Standard Normal Distribution}
+When $\mu=0$ and $\sigma=1$, we call it the \alg{
+            standard normal distribution}: 
+
+$$
+        f(x)=\frac1{\sqrt{2\pi}}e^{-x^2/2},\,\,-\infty<x<\infty.
+$$
+
+The standard normal is usually notated as: $Z \sim N(0,1)$
+
+
+
+\begin{figure}
+\includegraphics[width=2in,trim = 0 0 0 50,clip]{./figures/normalStandard} 
+\includegraphics[width=2in]{./figures/normalR} 
+\end{figure}
+
+
+
+%
+%
+%## The Standard Normal Distribution}
+%
+%
+%We can actually analytically compute the expected value of the standard normal:
+%
+%$$
+%E[Z] = \int_{-\infty}^{\infty}x \frac1{\sqrt{2\pi}}e^{-\frac{x^2}{2}} dx = 0
+%$$
+%
+%\script{To see this, use the fact that: $\frac{d}{dx} e^{-x^2/2} =  - e^{-x^2/2} x$}
+%
+%
+%However, let's use the key property of normals instead...
+%
+%
+
+## The Standard Normal Distribution}
+%\smallCapGreen{Reminder:}  
+
+Starting from the general normal, how can we generate a 
+standard normal?
+
+\script{That is, go from $X \sim N(\mu, \sigma^2)$ to $Z \sim N(0,1)$}
+
+
+
+. . .
+Suppose I wrote $Y = X - \mu$, what would be its expected value?
+
+. . .
+$$
+E[Y] = E[X] - \mu = \mu - \mu = 0
+$$
+
+. . .
+Likewise, if I wrote $Y = \frac{X}{\sigma} - \frac{\mu}{\sigma}$, what would be its variance?
+
+. . .
+$$
+Var[Y] = \frac{Var[X]}{\sigma^2} = \frac{\sigma^2}{\sigma^2} = 1
+$$
+
+%
+So, $Z = (X-\mu)/\sigma \sim N(0,1)$
+
+
+
+
+## The Standard Normal Distribution}
+
+\smallCapGreen{Conclusion:} We can standardize the general normal ($X \sim N(\mu,\sigma^2)$) via
+$$
+Z = \frac{X - \mu}{\sigma}  \sim N(0,1)
+$$
+. . . 
+
+We can go the opposite direction as well..
+$$
+X = \sigma Z + \mu \sim N(\mu,\sigma^2)
+$$
+
+
+
+## Back to the Example}
+
+\begin{figure}
+\includegraphics[width=3cm,trim = 0 0 0 50,clip]{./figures/normalSAT} 
+\includegraphics[width=3cm,trim = 0 0 0 50,clip]{./figures/normalStandard} 
+\end{figure}
+         
+We wrote that $X\sim N(520,3600)$ to be the SAT score
+
+
+We wanted  $P(X \leq 600)$
+
+
+This is the same as  $P(Z \leq (600 - 520)/60)$
+
+\script{(600 - 520)/60 = 1.3333}
+
+
+$P(Z \leq 1.3333)$ is ..
+
+
+
+\alr{pnorm((600 - 520)/60)}
+
+
+
+\alr{[1] 0.9087888}
+
+
+
+
+
+
+## Empirical rule}
+Values from normal distributions contain predictable amounts of probability
+
+\script{This is sometimes known as the \alg{empirical rule}}
+
+
+\begin{columns}
+
+\begin{column}{.5\textwidth}
+\begin{figure}
+\includegraphics[width=1.65in,trim = 0 0 0 50,clip]{./figures/normalEmpRule} 
+\end{figure}
+
+. . .
+
+
+- $P( |X - \mu| \leq \sigma) = 0.683$
+- $P( |X - \mu| \leq 2\sigma) = 0.954$
+- $P( |X - \mu| \leq 3\sigma) = 0.997$
+
+
+\end{column}
+
+
+\begin{column}{.5\textwidth}
+. . .
+\begin{figure}
+\includegraphics[width=1.65in,trim = 0 0 0 50,clip]{./figures/normalEmpRuleStandard} 
+\end{figure}
+
+
+- $P( |Z| \leq 1) = 0.683$
+- $P( |Z| \leq 2) = 0.954$
+- $P( |Z| \leq 3) = 0.997$
+
+
+\end{column}
+
+\end{columns}
+
+
+
+## We'll be back...}
+
+The normal plays a \smallCapGreen{central} role in probability and statistics
+
+
+
+We will return to it in Chapter 5..
+
+\end{document}
+-->
+```
