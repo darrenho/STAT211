@@ -1,13 +1,8 @@
-project:
-  output-dir: _slides
 format:
   html:
     html-math-method: webtex
   revealjs:
-    theme:
-      - default
-      - dark
-      - custom
+    theme: [default, custom]
     toc: true
     slide-number: c/t
     chalkboard: 
