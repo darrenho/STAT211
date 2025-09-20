@@ -1,6 +1,6 @@
 ---
-title: "Normal Distribution"
-subtitle: "testing"
+title: "STAT 211"
+subtitle: "Normal Distribution"
 ---
 
 ## The Normal Distribution
