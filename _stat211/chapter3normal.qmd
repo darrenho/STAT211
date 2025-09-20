@@ -79,7 +79,7 @@ sigmaSq = 9
 pnorm(x, mu, sqrt(sigmaSq))
 ```
 
-## Computing probabilities
+## Computing probabilities {.scrollable}
 
 #### Example
 
