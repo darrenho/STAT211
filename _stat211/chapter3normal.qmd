@@ -87,9 +87,8 @@ Suppose that the scores on the SAT math section are normally distributed with an
 
 What is the probability someone scores less than 600?
 
-::: {.fragment}
+::: fragment
 :::
-
 
 ```{r}
 #| label: SATquationNoEcho
@@ -115,7 +114,7 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
     scale_x_continuous(name = "Score") + scale_y_continuous(name = "f(x)")
 ```
 
-::: {.fragment}
+::: fragment
 :::
 
 ```{r SATquationEcho}
@@ -125,7 +124,6 @@ mu      = 520
 sigmaSq = 3600
 pnorm(x, mu, sqrt(sigmaSq))
 ```
-
 
 ## Computing values {.scrollable}
 
@@ -169,7 +167,7 @@ qnorm(.7,5,3)
 
 
 
-## Computing values}
+## Computing values
 
 #### Example
 Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600.  
