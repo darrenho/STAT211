@@ -93,8 +93,7 @@ What is the probability someone scores less than 600?
 ```{r}
 #| label: SATquationNoEcho
 #| echo: false
-#| fig-width: 10
-#| fig-height: 4.5
+#| fig-width: 200
 x       = 600
 mu      = 520
 sigmaSq = 3600
