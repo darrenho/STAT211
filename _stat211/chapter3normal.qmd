@@ -81,17 +81,20 @@ pnorm(x, mu, sqrt(sigmaSq))
 
 ## Computing probabilities {.scrollable}
 
-#### Example
+Example
 
-Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 ($X \sim N(520,3600)$)
+Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 (that is, $X \sim N(520,3600)$)
 
-::: {.fragment}
+
 What is the probability someone scores less than 600?
-:::
+
+. . .
 
 ```{r}
 #| label: SATquationNoEcho
 #| echo: false
+#| fig-asp: .7
+#| out-width: "70%" 
 x       = 600
 mu      = 520
 sigmaSq = 3600
@@ -111,8 +114,7 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
     scale_x_continuous(name = "Score") + scale_y_continuous(name = "f(x)")
 ```
 
-::: fragment
-:::
+. . .
 
 ```{r SATquationEcho}
 #| echo: true

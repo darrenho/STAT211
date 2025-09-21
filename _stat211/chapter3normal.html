@@ -286,15 +286,21 @@ Just like the binomial, you don't need to know this formula for this class..
 </section>
 <section id="computing-probabilities-1" class="slide level2 scrollable">
 <h2>Computing probabilities</h2>
-<h4 id="example-1">Example</h4>
-<p>Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 (<span class="math inline">\(X \sim N(520,3600)\)</span>)</p>
-<div class="fragment">
+<p>Example</p>
+<p>Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 (that is, <span class="math inline">\(X \sim N(520,3600)\)</span>)</p>
 <p>What is the probability someone scores less than 600?</p>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img data-src="chapter3normal_files/figure-revealjs/SATquationNoEcho-1.png" style="width:70.0%" class="figure-img"></p>
+</figure>
 </div>
-
-<img data-src="chapter3normal_files/figure-revealjs/SATquationNoEcho-1.png" width="960" class="r-stretch"><div class="fragment">
-
 </div>
+</div>
+</div>
+<div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
 <span id="cb7-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
@@ -302,6 +308,7 @@ Just like the binomial, you don't need to know this formula for this class..
 <span id="cb7-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9087888</code></pre>
+</div>
 </div>
 </div>
 </section>
