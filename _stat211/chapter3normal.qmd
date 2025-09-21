@@ -87,6 +87,8 @@ Suppose that the scores on the SAT math section are normally distributed with an
 
 What is the probability someone scores less than 600?
 
+. . .
+
 ```{r SATquationNoEcho}
 #| echo: false
 #| fig-cap: "Shaded region corresponding to P(X < 600)"
