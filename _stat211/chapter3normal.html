@@ -289,37 +289,42 @@ Just like the binomial, you don't need to know this formula for this class..
 <h4 id="example-1">Example</h4>
 <p>Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 (<span class="math inline">\(X \sim N(520,3600)\)</span>)</p>
 <p>What is the probability someone scores less than 600?</p>
-<p>. . .</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
-<span id="cb7-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
-<span id="cb7-3"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
-<span id="cb7-4"><a href=""></a></span>
-<span id="cb7-5"><a href=""></a>funcShaded <span class="ot">&lt;-</span> <span class="cf">function</span>(x, lower_bound) {</span>
-<span id="cb7-6"><a href=""></a>    y <span class="ot">=</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> mu, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigmaSq))</span>
-<span id="cb7-7"><a href=""></a>    y[x <span class="sc">&gt;=</span> lower_bound] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb7-8"><a href=""></a>    <span class="fu">return</span>(y)</span>
-<span id="cb7-9"><a href=""></a>}</span>
-<span id="cb7-10"><a href=""></a></span>
-<span id="cb7-11"><a href=""></a>xMin <span class="ot">=</span> <span class="dv">350</span></span>
-<span id="cb7-12"><a href=""></a>xMax <span class="ot">=</span> <span class="dv">700</span></span>
-<span id="cb7-13"><a href=""></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(xMin, xMax)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span> </span>
-<span id="cb7-14"><a href=""></a>    <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> mu, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigmaSq))) <span class="sc">+</span> </span>
-<span id="cb7-15"><a href=""></a>    <span class="fu">stat_function</span>(<span class="at">fun =</span> funcShaded, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">lower_bound =</span> x), </span>
-<span id="cb7-16"><a href=""></a>                  <span class="at">geom =</span> <span class="st">"area"</span>, <span class="at">fill =</span> <span class="st">'lightblue'</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb7-17"><a href=""></a>    <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Score"</span>) <span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"f(x)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>::: {.fragment}
 
-</div>
-<img data-src="chapter3normal_files/figure-revealjs/SATquationNoEcho-1.png" width="960" class="r-stretch"><p>. . .</p>
+:::</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
 <span id="cb8-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
 <span id="cb8-3"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
-<span id="cb8-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href=""></a></span>
+<span id="cb8-5"><a href=""></a>funcShaded <span class="ot">&lt;-</span> <span class="cf">function</span>(x, lower_bound) {</span>
+<span id="cb8-6"><a href=""></a>    y <span class="ot">=</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> mu, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigmaSq))</span>
+<span id="cb8-7"><a href=""></a>    y[x <span class="sc">&gt;=</span> lower_bound] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb8-8"><a href=""></a>    <span class="fu">return</span>(y)</span>
+<span id="cb8-9"><a href=""></a>}</span>
+<span id="cb8-10"><a href=""></a></span>
+<span id="cb8-11"><a href=""></a>xMin <span class="ot">=</span> <span class="dv">350</span></span>
+<span id="cb8-12"><a href=""></a>xMax <span class="ot">=</span> <span class="dv">700</span></span>
+<span id="cb8-13"><a href=""></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(xMin, xMax)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span> </span>
+<span id="cb8-14"><a href=""></a>    <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> mu, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigmaSq))) <span class="sc">+</span> </span>
+<span id="cb8-15"><a href=""></a>    <span class="fu">stat_function</span>(<span class="at">fun =</span> funcShaded, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">lower_bound =</span> x), </span>
+<span id="cb8-16"><a href=""></a>                  <span class="at">geom =</span> <span class="st">"area"</span>, <span class="at">fill =</span> <span class="st">'lightblue'</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb8-17"><a href=""></a>    <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Score"</span>) <span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"f(x)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="chapter3normal_files/figure-revealjs/SATquationNoEcho-1.png" width="960" class="r-stretch"><pre><code>::: {.fragment}
+
+:::</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
+<span id="cb10-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
+<span id="cb10-3"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
+<span id="cb10-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9087888</code></pre>
 </div>
 </div>
+<p>:::</p>
 </section>
 <section id="computing-values" class="slide level2 scrollable">
 <h2>Computing values</h2>
@@ -327,7 +332,7 @@ Just like the binomial, you don't need to know this formula for this class..
 <h3 id="probability">Probability</h3>
 <p><span class="smallcaps">Probability:</span> then the probability <span class="math inline">\(X\)</span> is less than 4 (<span class="math inline">\(P(X &lt; 4)\)</span>) is:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3694413</code></pre>
 </div>
@@ -336,7 +341,7 @@ Just like the binomial, you don't need to know this formula for this class..
 <h3 id="values">Values</h3>
 <p><span class="smallcaps">Values:</span> at what value <span class="math inline">\(x\)</span> does <span class="math inline">\(P(X\leq x) = .7\)</span>? . . .</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 6.573202</code></pre>
 </div>
