@@ -3,28 +3,28 @@ title: "STAT 211"
 subtitle: "Normal Distribution"
 ---
 
+```{r loadPacks}
+#| echo: false
+suppressMessages(require(ggplot2))
+```
+
 ## The Normal Distribution
 
-```{=tex}
 \begin{align}
 a_{11}& =b_{11}&
   a_{12}& =b_{12}\\
 a_{21}& =b_{21}&
   a_{22}& =b_{22}+c_{22}
 \end{align}
-```
 
 The [normal]{.definition} (also known as 'Gaussian') is $X\sim N(\mu,\sigma^2)$:
 
 -   $\mu$ is the expected value ($E[X]$)
 -   $\sigma^2$ is the variance of (Var$[X]$)
 
-Its pdf: 
-$$ 
+Its pdf: $$ 
 f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} 
-$$
-[Just like the binomial, you don't need to know this formula for this class..]{.subscript}
-
+$$ [Just like the binomial, you don't need to know this formula for this class..]{.subscript}
 
 ```{=html}
 <!--
@@ -40,14 +40,14 @@ Just like the binomial, you don't need to know this formula for this class..
 -->
 ```
 
-## The Normal Distribution{.scrollable}
+## The Normal Distribution {.scrollable}
 
 Computing probabilities with the normal **requires** computers
 
 Luckily, we already know the general idea...
 
-![](figures/normalTable.png){fig-align="left" width=60% fig-alt="Standard Normal Table for getting probabilities from Z-scores"} 
-<!--![](figures/normalR.png){.absolute top="170" right="30" width="400" fig-alt='Output from R'}-->
+![](figures/normalTable.png){fig-align="left" width="60%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
+
 ```{r}
 #| echo: true
 pnorm(1.8,0,1)
@@ -71,7 +71,7 @@ sigmaSq = 9
 pnorm(x, mu, sqrt(sigmaSq))
 ```
 
-```{r}
+```{r introNormalProb}
 #| echo: false
 x       = 4
 mu      = 5
@@ -83,21 +83,36 @@ pnorm(x, mu, sqrt(sigmaSq))
 
 #### Example
 
-Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600.
-
-We can write this succinctly as
-
-$$
-X \sim N(520, 3600)
-$$
+Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 ($X \sim N(520,3600)$)
 
 What is the probability someone scores less than 600?
 
-![](figures/normalSAT){.absolute top="170" left="30" width="400"} 50,clip\]
+```{r SATquationNoEcho}
+#| echo: false
+#| fig-cap: "Shaded region corresponding to P(X < 600)"
+#| fig-alt: "plot of the normal density with the probability of X being less than 600 shaded"
+x       = 600
+mu      = 520
+sigmaSq = 3600
+
+funcShaded <- function(x, lower_bound) {
+    y = dnorm(x, mean = mu, sd = sqrt(sigmaSq))
+    y[x >= lower_bound] <- NA
+    return(y)
+}
+
+xMin = 350
+xMax = 700
+ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
+    stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
+    stat_function(fun = funcShaded, args = list(lower_bound = x), 
+                  geom = "area", fill = 'lightblue', alpha = .5) +
+    scale_x_continuous(name = "Score") + scale_y_continuous(name = "f(x)")
+```
 
 . . .
 
-```{r}
+```{r SATquationEcho}
 #| echo: true
 x       = 600
 mu      = 520
@@ -128,7 +143,6 @@ pnorm(4,5,3)
 #| echo: true
 qnorm(.7,5,3)
 ```
-
 
 ```{=html}
 <!-- 

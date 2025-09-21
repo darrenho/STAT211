@@ -215,20 +215,20 @@
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of contents</h2>
 <ul>
-<li><a href="#/the-normal-distribution" id="/toc-the-normal-distribution">The Normal Distribution</a></li>
-<li><a href="#/the-normal-distribution-1" id="/toc-the-normal-distribution-1">The Normal Distribution</a></li>
-<li><a href="#/computing-probabilities" id="/toc-computing-probabilities">Computing probabilities</a></li>
-<li><a href="#/computing-probabilities-1" id="/toc-computing-probabilities-1">Computing probabilities</a></li>
-<li><a href="#/computing-values" id="/toc-computing-values">Computing values</a>
+<li><a href="#/the-normal-distribution" id="/toc-the-normal-distribution"><span class="header-section-number">1</span> The Normal Distribution</a></li>
+<li><a href="#/the-normal-distribution-1" id="/toc-the-normal-distribution-1"><span class="header-section-number">2</span> The Normal Distribution</a></li>
+<li><a href="#/computing-probabilities" id="/toc-computing-probabilities"><span class="header-section-number">3</span> Computing probabilities</a></li>
+<li><a href="#/computing-probabilities-1" id="/toc-computing-probabilities-1"><span class="header-section-number">4</span> Computing probabilities</a></li>
+<li><a href="#/computing-values" id="/toc-computing-values"><span class="header-section-number">5</span> Computing values</a>
 <ul>
-<li><a href="#/probability" id="/toc-probability">Probability</a></li>
-<li><a href="#/values" id="/toc-values">Values</a></li>
+<li><a href="#/probability" id="/toc-probability"><span class="header-section-number">5.1</span> Probability</a></li>
+<li><a href="#/values" id="/toc-values"><span class="header-section-number">5.2</span> Values</a></li>
 </ul></li>
 </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="chapter3normalDeleteMe.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </section>
-<section id="the-normal-distribution" class="slide level2">
-<h2>The Normal Distribution</h2>
+<section id="the-normal-distribution" class="slide level2" data-number="1">
+<h2><span class="header-section-number">1</span> The Normal Distribution</h2>
 <span class="math display">\[\begin{align}
 a_{11}&amp; =b_{11}&amp;
   a_{12}&amp; =b_{12}\\
@@ -252,8 +252,8 @@ Just like the binomial, you don't need to know this formula for this class..
 (Just like the binomial is $X \sim$ Binomial(n,p))
 -->
 </section>
-<section id="the-normal-distribution-1" class="slide level2 scrollable">
-<h2>The Normal Distribution</h2>
+<section id="the-normal-distribution-1" class="slide level2 scrollable" data-number="2">
+<h2><span class="header-section-number">2</span> The Normal Distribution</h2>
 <p>Computing probabilities with the normal <strong>requires</strong> computers</p>
 <p>Luckily, we already know the general idea…</p>
 <p><img data-src="figures/normalTable.png" class="quarto-figure quarto-figure-left" style="width:60.0%" alt="Standard Normal Table for getting probabilities from Z-scores"> <!--![](figures/normalR.png){.absolute top="170" right="30" width="400" fig-alt='Output from R'}--></p>
@@ -268,11 +268,11 @@ Just like the binomial, you don't need to know this formula for this class..
 </div>
 </div>
 </section>
-<section id="computing-probabilities" class="slide level2">
-<h2>Computing probabilities</h2>
+<section id="computing-probabilities" class="slide level2" data-number="3">
+<h2><span class="header-section-number">3</span> Computing probabilities</h2>
 <p>We will always write <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span> for the normal distribution</p>
 <p>R syntax will be specified with the mean and standard deviation</p>
-<h4 id="example">Example</h4>
+<h4 data-number="3.0.1" id="example"><span class="header-section-number">3.0.1</span> Example</h4>
 <p>If <span class="math inline">\(X \sim N(5,9)\)</span>, then the probability <span class="math inline">\(X\)</span> is less than 4 is:</p>
 <div class="sourceCode" id="cb5" data-code-line-numbers="1|2-3|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">4</span></span>
 <span id="cb5-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">5</span></span>
@@ -284,9 +284,9 @@ Just like the binomial, you don't need to know this formula for this class..
 </div>
 </div>
 </section>
-<section id="computing-probabilities-1" class="slide level2 scrollable">
-<h2>Computing probabilities</h2>
-<h4 id="example-1">Example</h4>
+<section id="computing-probabilities-1" class="slide level2 scrollable" data-number="4">
+<h2><span class="header-section-number">4</span> Computing probabilities</h2>
+<h4 data-number="4.0.1" id="example-1"><span class="header-section-number">4.0.1</span> Example</h4>
 <p>Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600.</p>
 <p>We can write this succinctly as</p>
 <p><span class="math display">\[
@@ -305,10 +305,10 @@ X \sim N(520, 3600)
 </div>
 </div>
 </section>
-<section id="computing-values" class="slide level2 scrollable">
-<h2>Computing values</h2>
+<section id="computing-values" class="slide level2 scrollable" data-number="5">
+<h2><span class="header-section-number">5</span> Computing values</h2>
 <p>Writing <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span> for the normal distribution, if <span class="math inline">\(X \sim N(5,9)\)</span>:</p>
-<h3 id="probability">Probability</h3>
+<h3 data-number="5.1" id="probability"><span class="header-section-number">5.1</span> Probability</h3>
 <p><span class="smallcaps">Probability:</span> then the probability <span class="math inline">\(X\)</span> is less than 4 (<span class="math inline">\(P(X &lt; 4)\)</span>) is:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -317,7 +317,7 @@ X \sim N(520, 3600)
 </div>
 </div>
 <p>. . .</p>
-<h3 id="values">Values</h3>
+<h3 data-number="5.2" id="values"><span class="header-section-number">5.2</span> Values</h3>
 <p><span class="smallcaps">Values:</span> at what value <span class="math inline">\(x\)</span> does <span class="math inline">\(P(X\leq x) = .7\)</span>? . . .</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

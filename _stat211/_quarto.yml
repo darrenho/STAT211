@@ -4,6 +4,7 @@ format:
   revealjs:
     theme: [default, custom]
     toc: true
+    number-sections: true
     slide-number: c/t
     chalkboard: 
       buttons: false
