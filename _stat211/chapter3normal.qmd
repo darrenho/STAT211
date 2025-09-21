@@ -90,7 +90,6 @@ What is the probability someone scores less than 600?
 . . .
 
 ```{r SATquationNoEcho}
-#| echo: false
 #| fig-cap: "Shaded region corresponding to P(X < 600)"
 #| fig-alt: "plot of the normal density with the probability of X being less than 600 shaded"
 x       = 600
