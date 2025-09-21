@@ -85,15 +85,13 @@ pnorm(x, mu, sqrt(sigmaSq))
 
 Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 ($X \sim N(520,3600)$)
 
+::: {.fragment}
 What is the probability someone scores less than 600?
-
-::: fragment
 :::
 
 ```{r}
 #| label: SATquationNoEcho
 #| echo: false
-#| fig-width: 200
 x       = 600
 mu      = 520
 sigmaSq = 3600
