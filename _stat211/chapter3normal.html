@@ -250,7 +250,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <p>Computing probabilities with the normal <strong>requires</strong> computers</p>
 <p>Luckily, we already know the general idea…</p>
 
-<img data-src="figures/normalTable.png" class="quarto-figure quarto-figure-left r-stretch" style="width:80.0%" alt="Standard Normal Table for getting probabilities from Z-scores"><div class="cell">
+<img data-src="figures/normalTable.png" class="quarto-figure quarto-figure-left r-stretch" style="width:100.0%" alt="Standard Normal Table for getting probabilities from Z-scores"><div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">pnorm</span>(<span class="fl">1.8</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9640697</code></pre>
@@ -279,11 +279,20 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </section>
 <section id="computing-values-for-the-normal" class="slide level2 scrollable">
 <h2>Computing values for the normal</h2>
-<p>Continuing with <span class="math inline">\(X \sim N(5,9)\)</span>, we found that <span class="math inline">\(P(X &lt; 4)\)</span>) is:</p>
+<p>Continuing with <span class="math inline">\(X \sim N(5,9)\)</span>, we found that <span class="math inline">\(P(X &lt; 4)\)</span> is:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3694413</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img data-src="chapter3normal_files/figure-revealjs/normalProbPlot-1.png" style="width:50.0%" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="fragment">
@@ -295,6 +304,15 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 <p>This is called a <span class="definition">quantile</span> of the normal</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img data-src="chapter3normal_files/figure-revealjs/normalQuantilePlot-1.png" style="width:50.0%" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 <p><span class="example">Concept Check:</span> What would this code resolve to:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">qnorm</span>( <span class="fu">pnorm</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
