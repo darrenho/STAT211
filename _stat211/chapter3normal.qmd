@@ -10,13 +10,6 @@ require(ggplot2)
 
 ## The Normal Distribution
 
-\begin{align}
-a_{11}& =b_{11}&
-  a_{12}& =b_{12}\\
-a_{21}& =b_{21}&
-  a_{22}& =b_{22}+c_{22}
-\end{align}
-
 The [normal]{.definition} (also known as 'Gaussian') is $X\sim N(\mu,\sigma^2)$:
 
 -   $\mu$ is the expected value ($E[X]$)
@@ -24,21 +17,13 @@ The [normal]{.definition} (also known as 'Gaussian') is $X\sim N(\mu,\sigma^2)$:
 
 Its pdf: $$ 
 f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} 
-$$ [Just like the binomial, you don't need to know this formula for this class..]{.subscript}
+$$ 
+[Just like the binomial, you don't need to know this formula for this class..]{.subscript}
 
-```{=html}
-<!--
 ::: {.fragment .fade-in-then-semi-out}
 Just like the binomial, you don't need to know this formula for this class..
 :::
--->
-```
 
-```{=html}
-<!--    
-(Just like the binomial is $X \sim$ Binomial(n,p))
--->
-```
 
 ## The Normal Distribution {.scrollable}
 
@@ -92,8 +77,8 @@ What is the probability someone scores less than 600?
 ```{r}
 #| label: SATquationNoEcho
 #| echo: false
-#| fig-asp: .7
-#| out-width: "70%" 
+#| fig-asp: 1
+#| out-width: "50%" 
 x       = 600
 mu      = 520
 sigmaSq = 3600
