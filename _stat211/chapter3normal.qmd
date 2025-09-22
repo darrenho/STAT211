@@ -15,15 +15,12 @@ The [normal]{.definition} (also known as 'Gaussian') is $X\sim N(\mu,\sigma^2)$:
 -   $\mu$ is the expected value ($E[X]$)
 -   $\sigma^2$ is the variance of (Var$[X]$)
 
-Its pdf: $$ 
+Its pdf:
+$$ 
 f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} 
 $$ 
-[Just like the binomial, you don't need to know this formula for this class..]{.subscript}
 
-::: {.fragment .fade-in-then-semi-out}
-Just like the binomial, you don't need to know this formula for this class..
-:::
-
+[(Just like the binomial, you don't need to know this formula for this class)]{.subscript}
 
 ## The Normal Distribution {.scrollable}
 
@@ -31,7 +28,7 @@ Computing probabilities with the normal **requires** computers
 
 Luckily, we already know the general idea...
 
-![](figures/normalTable.png){fig-align="left" width="60%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
+![](figures/normalTable.png){fig-align="left" width="80%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
 
 ```{r}
 #| echo: true
@@ -39,13 +36,13 @@ pnorm(1.8,0,1)
 pnorm(1.89,0,1)
 ```
 
-## Computing probabilities
+## Computing probabilities for the normal
 
-We will always write $X\sim N(\mu,\sigma^2)$ for the normal distribution
+We will always write $X\sim N(\mu,\sigma^2)$ for the normal
 
-R syntax will be specified with the mean and standard deviation
+R syntax will be specified with $\mu$ and $\sigma = \sqrt{\sigma^2}$ instead
 
-#### Example
+[Example]{.example}
 
 If $X \sim N(5,9)$, then the probability $X$ is less than 4 is:
 
@@ -64,11 +61,88 @@ sigmaSq = 9
 pnorm(x, mu, sqrt(sigmaSq))
 ```
 
-## Computing probabilities {.scrollable}
+
+## Computing values for the normal {.scrollable}
+
+Continuing with $X \sim N(5,9)$, we found that $P(X < 4)$) is:
+
+```{r}
+#| echo: true
+pnorm(4,5,3)
+```
+
+. . .
+
+Now, let's ask the **opposite** question: at what value $x$ does $P(X\leq x) = .7$? . . .
+
+```{r}
+#| echo: true
+qnorm(.7,5,3)
+```
+
+This is called a [quantile]{.definition} of the normal
+
+[Concept Check:]{.example} What would this code resolve to:
+
+```{r}
+#| echo: true
+#| eval: false
+qnorm( pnorm(3,5,3), 5,3)
+```
+
+. . .
+
+```{r}
+#| echo: false
+#| eval: true
+qnorm( pnorm(3,5,3), 5,3)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
+pnorm(qnorm(.2,5,3), 5, 3)
+```
+
+. . .
+
+```{r}
+#| echo: false
+#| eval: true
+pnorm(qnorm(.2,5,3), 5, 3)
+```
+
+## Computing probabilities and values {.scrollable}
+
+Suppose $X \sim N(-3.2, 100)$
+
+[Probability:]{.smallcaps} What is the probability $X$ is less than 0?
+
+. . .
+
+```{r}
+#| echo: true
+pnorm(0,3.2,sqrt(100))
+```
+
+. . .
+
+[Values:]{.smallcaps} at what value $x$ does $P(X\leq x) = .05$? . . .
+
+```{r}
+#| echo: true
+qnorm(.05,-3.2,sqrt(100))
+```
+
+## Computing probabilities: SATs {.scrollable}
 
 [Example]{.example}
 
-Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 (that is, $X \sim N(520,3600)$)
+Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 
+
+(that is, $X \sim N(520,3600)$)
 
 What is the probability someone scores less than 600?
 
@@ -100,7 +174,7 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 
 . . .
 
-```{r SATquationEcho}
+```{r SATprobEcho}
 #| echo: true
 x       = 600
 mu      = 520
@@ -108,143 +182,82 @@ sigmaSq = 3600
 pnorm(x, mu, sqrt(sigmaSq))
 ```
 
-## Computing values {.scrollable}
 
-Writing $X\sim N(\mu,\sigma^2)$ for the normal distribution, if $X \sim N(5,9)$:
+## Computing probabilities: SATs {.scrollable}
 
-### Probability
+[Example]{.example}
 
-[Probability:]{.smallcaps} then the probability $X$ is less than 4 ($P(X < 4)$) is:
+Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 
 
-```{r}
-#| echo: true
-pnorm(4,5,3)
-```
-
-. . .
-
-### Values
-
-[Values:]{.smallcaps} at what value $x$ does $P(X\leq x) = .7$? . . .
-
-```{r}
-#| echo: true
-qnorm(.7,5,3)
-```
-
-```{=html}
-<!-- 
-
-. . .
-
-
-\smallCapGreen{Concept Check:} What would this code resolve to:
-
-\alr{qnorm(pnorm(3,5,3), 5, 3)}
-
-
-\alr{pnorm(qnorm(.2,5,3), 5, 3)}
-
-
-
-
-
-
-## Computing values
-
-#### Example
-Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600.  
-
+(that is, $X \sim N(520,3600)$)
 
 The statistics department identifies students 
-scoring in the top 4\% on the exam for recruitment
+scoring at or above the 96\% for recruitment
 
 
 What is the cutoff score  for recruitment by the statistics dept.?
 
 
+$P(X \leq x) = 0.96$
 
-
-$P(X \leq cutoff) = 0.96$
 . . .
-%$$
-%\alb{\textrm{cutoff} = Q_X(0.96)} \leftrightarrow  \alo{F_X(\textrm{cutoff}) = 0.96 =
-%P\left( X \leq \textrm{ cutoff }\right) }
-%$$
 
+```{r SATvalueEcho}
+#| echo: true
+prob    = .96
+mu      = 520
+sigmaSq = 3600
+qnorm(prob, 520, sqrt(3600))
+```
 
+<!--
+## Properties of Normal Distribution
 
+A [linear combination]{.definition} comes from 'summing' 'products', like:
 
-\alr{qnorm(.96, 520, sqrt(3600))}
-
-
-
-\alr{[1]  625.0412}
-
-
-
-%
-%## Properties of Normal Distribution}
-%
-%## Key Property of the Normal Distribution}
-%Any linear combination of Normal rvs is Normal
-%. . .
-%
-%
-%
-%Some examples (suppose $X$ and $Y$ are independent):
-%
-%
-%
-%
-%- If $X \sim N(300, 1600)$ and $Y \sim N(150,100)$  then 
-%
-%$$
-%X + Y \sim . . . N(450, 1700)
-%$$
-%
-%
-%- If  $Y \sim N(150,100)$  then 
-%$$
-%3Y + 30 \sim . . . N(480, 900)
-%$$
-%
-%
-%- If $X \sim N(300, 1600)$ and $Y \sim N(150,100)$  then 
-%$$
-%2X + Y + 300 \sim . . . N(1050, 6500)
-%$$
-%
-%
-%
-%
-
-
-## Properties of Normal Distribution}
-
-
-
-## Key Property of the Normal Distribution}
-Any linear combination of Normal rvs is Normal
-
-
-
-
-
-- If  $Y \sim N(150,100)$  then 
 $$
-3Y + 30 \sim . . . N(480, 900)
+3x + 4y + 5z
+$$
+
+We can form [linear combinations]{.definition} of rvs too
+
+In particular, any linear combination of Normal rvs is again a Normal:
+-->
+
+## Transforming Normals
+
+Suppose again $X \sim N(\mu, \sigma^2)$
+
+If we multiply/add any constants $a,b$ to $X$ to form a new rv $Y$:
+
+$$
+Y  = aX + b 
+$$
+then $Y \sim(a\mu + b, a^2 \sigma^2)$
+
+[Example:]{.example}
+
+If  $X \sim N(150,100)$  then 
+
+$$
+Y = 3X + 30 \sim N(480, 900)
 $$
 
 . . .
 
+## Transforming Normals: Temperatures
 
+We are measuring a standard inch using a ruler with a fine scale
 
-- We are measuring a standard inch using a ruler with a fine scale. If several people measure, they will get some random amount of measurement error:  $X \sim N(1, .000001)$. What is the distribution for measuring a centimeter?
+If several people measure, they will get some random amount of measurement error:  
+
+$$
+X \sim N(1, .000001)
+$$ 
+
+What is the distribution for measuring a centimeter?
 
 (An inch is 2.54 cm)
-
-
 
 . . .
 
