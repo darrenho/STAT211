@@ -354,7 +354,7 @@ $$
 
 @transformingNormals
 
-[(this is using the results @transformingNormals "Transforming Normals")]{.subscript}
+[(this is using the results in [Transforming Normals](#transformingNormals)]{.subscript}
 
 <!--
 \begin{figure}
