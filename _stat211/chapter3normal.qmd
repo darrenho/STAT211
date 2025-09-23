@@ -15,7 +15,9 @@ The [normal]{.definition} (also known as 'Gaussian') is $X\sim N(\mu,\sigma^2)$:
 -   $\mu$ is the expected value ($E[X]$)
 -   $\sigma^2$ is the variance of (Var$[X]$)
 
-Its pdf: $$ 
+Its pdf: 
+
+$$ 
 f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} 
 $$
 
@@ -177,7 +179,9 @@ pnorm(0,3.2,sqrt(100))
 
 . . .
 
-[Values:]{.smallCap} at what value $x$ does $P(X\leq x) = .05$? . . .
+[Values:]{.smallCap} at what value $x$ does $P(X\leq x) = .05$? 
+
+. . .
 
 ```{r}
 #| echo: true
@@ -193,6 +197,7 @@ Suppose that the scores on the SAT math section are normally distributed with an
 What is the probability someone scores less than 600?
 
 . . .
+
 
 ```{r}
 #| label: SATquationNoEcho
@@ -279,7 +284,9 @@ If we multiply/add constants $a,b$ to $X$ to form a new rv $Y$:
 
 $$
 Y  = aX + b 
-$$ then $Y \sim(a\mu + b, a^2 \sigma^2)$
+$$ 
+
+then $Y \sim(a\mu + b, a^2 \sigma^2)$
 
 [(This should remind you of our $E[X]$ and $Var[X]$ results)]{.subscript}
 
@@ -333,7 +340,7 @@ pnorm(1.001, mu, sqrt(sigmaSq)) -
 When $\mu=0$ and $\sigma=1$, we call it the [standard normal]{.definition}
 
 $$
-        f(x)=\frac1{\sqrt{2\pi}}e^{-x^2/2},\,\,-\infty<x<\infty.
+f(x)=\frac1{\sqrt{2\pi}}e^{-x^2/2},\,\,-\infty<x<\infty.
 $$
 
 [(Once again, you don't need to know this formula for this class)]{.subscript}
@@ -346,7 +353,9 @@ Going from a general normal to a standard normal is known as [standardization]{.
 
 $$
 X \sim N(\mu, \sigma^2) \longrightarrow Z = \frac{X - \mu}{\sigma} \sim N(0,1)
-$$ The opposite (actually, the [inverse]{.definition}) is true 
+$$ 
+
+The opposite (actually, the [inverse]{.definition}) is true 
 
 $$
 Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
@@ -360,16 +369,20 @@ $$
 If we are given a value $x$ from a distribution with mean $\mu$ and variance $\sigma^2$, we can compute its [z-score]{.definition} via
 
 $$
-\pre{z-score} = \frac{x - \mu}{\sigma}
+\text{z-score} = \frac{x - \mu}{\sigma}
 $$
 
 The main use case is comparing values from two different distributions
 
 [Question:]{.smallCap} Which of the two values is more [extreme]{.emphasis}?
 
-[Answer:]{.smallCap} Whichever has large [magnitude]{.emphasis} z-score (that is, |z-score|)
+[Answer:]{.smallCap} Whichever has larger [magnitude]{.emphasis} z-score 
 
-[Example:]{.example} We want to compare olympic records in men's sprinting (9.63 seconds) and women's sprinting (10.61 seconds)
+[(that is, largest |z-score|)]{.subscript}
+
+. . .
+
+[Example:]{.example} We want to compare olympic records in men's sprinting  and women's sprinting
 
 Which is more extreme?  Let's look at a table:
 
@@ -377,6 +390,7 @@ Which is more extreme?  Let's look at a table:
 |---------|-----:|------:|
 | average | 9.84   | 10.81 |
 | variance | .0046  |   .0049 |
+| record | 9.63  |   10.61 |
 : Table of Average and Standard Deviation of Olympic Sprinting times.
 
 . . .
@@ -389,7 +403,9 @@ zScoreMen   =  (9.63 - 9.85)/sqrt(.0057)
 zScoreWomen =  (10.61 - 10.83)/sqrt(.0049)
 ```
 
-The z-score for men is `r zScoreMen` while for women it is `zScoreWomen`.  Hence, the women's result is more extreme as:
+The z-score for men is `r round(zScoreMen,3)` while for women it is `r round(zScoreWomen,3)`
+
+Hence, the women's result is more extreme as:
 
 ```{r zScoreExampleConclusion}
 #| echo: true
@@ -428,19 +444,25 @@ outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
     stat_function(fun = funcShaded, args = list(lower_bound = 3), 
                   geom = "area", fill = 'lightcoral', alpha = .5) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
+outPlot
 ```
+
+. . .
 
 ```{r}
 outPlot = outPlot +   stat_function(fun = funcShaded, args = list(lower_bound = 2), 
                   geom = "area", fill = 'lightgreen', alpha = .5) 
+outPlot
 ```
+
+. . .
 
 ```{r}
 outPlot = outPlot +
     stat_function(fun = funcShaded, args = list(lower_bound = 1), 
                   geom = "area", fill = 'lightblue', alpha = .5) 
+outPlot
 ```
-
 -   [$P( |X - \mu| \leq \sigma) = 0.683$]{.lightbluetext}
 -   [$P( |X - \mu| \leq 2\sigma) = 0.954$]{.lightgreentext}
 -   [$P( |X - \mu| \leq 3\sigma) = 0.997$]{.lightredtext}
