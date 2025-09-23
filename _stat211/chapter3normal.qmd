@@ -348,7 +348,11 @@ $$
 X \sim N(\mu, \sigma^2) \longrightarrow Z = \frac{X - \mu}{\sigma} \sim N(0,1)
 $$ The opposite (actually, the [inverse]{.definition}) is true $$
 Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
-$$ [(this is using the results @transformingNormals "Transforming Normals")] <!--
+$$ 
+
+[(this is using the results @transformingNormals "Transforming Normals")]{.subscript}
+
+<!--
 \begin{figure}
 \includegraphics[width=2in,trim = 0 0 0 50,clip]{./figures/normalStandard} 
 \includegraphics[width=2in]{./figures/normalR} 
