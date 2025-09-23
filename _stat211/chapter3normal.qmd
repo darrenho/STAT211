@@ -483,11 +483,15 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
     stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
     stat_function(fun = funcShaded, args = list(lower_bound = 1), 
                   geom = "area", fill = 'lightblue', alpha = .5) +
+    stat_function(fun = funcShaded, args = list(lower_bound = 2), 
+                  geom = "area", fill = 'lightgreen', alpha = .5) +
+    stat_function(fun = funcShaded, args = list(lower_bound = 3), 
+                  geom = "area", fill = 'red', alpha = .5) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
 
 
-- $P( |X - \mu| \leq \sigma) = 0.683$
+- [$P( |X - \mu| \leq \sigma) = 0.683$]{.lightbluetext}
 - $P( |X - \mu| \leq 2\sigma) = 0.954$
 - $P( |X - \mu| \leq 3\sigma) = 0.997$
 
