@@ -346,9 +346,13 @@ Going from a general normal to a standard normal is known as [standardization]{.
 
 $$
 X \sim N(\mu, \sigma^2) \longrightarrow Z = \frac{X - \mu}{\sigma} \sim N(0,1)
-$$ The opposite (actually, the [inverse]{.definition}) is true $$
+$$ The opposite (actually, the [inverse]{.definition}) is true 
+
+$$
 Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 $$ 
+
+@transformingNormals
 
 [(this is using the results @transformingNormals "Transforming Normals")]{.subscript}
 
