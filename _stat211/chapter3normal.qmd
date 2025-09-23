@@ -79,6 +79,7 @@ pnorm(4,5,3)
 x       = 4
 mu      = 5
 sigmaSq = 9
+lab     = 'x'
 
 funcShaded <- function(x, lower_bound) {
     y = dnorm(x, mean = mu, sd = sqrt(sigmaSq))
@@ -92,12 +93,12 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
     stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
     stat_function(fun = funcShaded, args = list(lower_bound = x), 
                   geom = "area", fill = 'lightblue', alpha = .5) +
-    scale_x_continuous(name = "Score") + scale_y_continuous(name = "f(x)")
+    scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
 
 . . .
 
-Now, let's ask the **opposite** question: at what value $x$ does $P(X\leq x) = .7$? . . .
+Now, let's ask the **opposite** question: at what value $x$ does $P(X\leq x) = .7$? . 
 
 ```{r}
 #| echo: true
@@ -112,7 +113,8 @@ This is called a [quantile]{.definition} of the normal
 #| echo: false
 #| fig-asp: 1
 #| out-width: "50%" 
-x = qnorm(.7,mu,sqrt(sigmaSq))
+x   = qnorm(.7,mu,sqrt(sigmaSq))
+lab = 'x' 
 
 funcShaded <- function(x, lower_bound) {
     y = dnorm(x, mean = mu, sd = sqrt(sigmaSq))
@@ -126,8 +128,10 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
     stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
     stat_function(fun = funcShaded, args = list(lower_bound = x), 
                   geom = "area", fill = 'lightblue', alpha = .5) +
-    scale_x_continuous(name = "Score") + scale_y_continuous(name = "f(x)")
+    scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
+
+. . . 
 
 [Concept Check:]{.example} What would this code resolve to:
 
@@ -230,7 +234,7 @@ pnorm(x, mu, sqrt(sigmaSq))
 ```
 
 
-## Computing probabilities: SATs {.scrollable}
+## Computing values: SATs {.scrollable}
 
 [Example]{.example}
 
@@ -238,12 +242,13 @@ Suppose that the scores on the SAT math section are normally distributed with an
 
 (that is, $X \sim N(520,3600)$)
 
-The statistics department identifies students 
-scoring at or above the 96\% for recruitment
+The statistics dept. identifies students 
+scoring at or above 96\% for recruitment
 
 
-What is the cutoff score  for recruitment by the statistics dept.?
+What is the cutoff score ($x$) for recruitment by the statistics dept.?
 
+. . .
 
 $P(X \leq x) = 0.96$
 
@@ -254,10 +259,11 @@ $P(X \leq x) = 0.96$
 prob    = .96
 mu      = 520
 sigmaSq = 3600
-qnorm(prob, 520, sqrt(3600))
+qnorm(prob, mu, sqrt(sigmaSq))
 ```
 
 <!--
+To Future Darren: Put this after we introduce correlation
 ## Properties of Normal Distribution
 
 A [linear combination]{.definition} comes from 'summing' 'products', like:
@@ -271,7 +277,7 @@ We can form [linear combinations]{.definition} of rvs too
 In particular, any linear combination of Normal rvs is again a Normal:
 -->
 
-## Transforming Normals
+## Transforming Normals {.scrollable}
 
 Suppose again $X \sim N(\mu, \sigma^2)$
 
@@ -282,6 +288,8 @@ Y  = aX + b
 $$
 then $Y \sim(a\mu + b, a^2 \sigma^2)$
 
+[(This should remind you of our $E[X]$ and $Var[X]$ results)]{.subscript}
+
 [Example:]{.example}
 
 If  $X \sim N(150,100)$  then 
@@ -290,10 +298,10 @@ $$
 Y = 3X + 30 \sim N(480, 900)
 $$
 
-. . .
 
-## Transforming Normals: Temperatures
+## Transforming Normals: inches to cm
 
+<!-- add a picture of measuring a gauge block using a ruler -->
 We are measuring a standard inch using a ruler with a fine scale
 
 If several people measure, they will get some random amount of measurement error:  
@@ -302,16 +310,27 @@ $$
 X \sim N(1, .000001)
 $$ 
 
-What is the distribution for measuring a centimeter?
+What is the probability that that a measurement will be within $\pm$.001 centimeters?
 
-(An inch is 2.54 cm)
+[(An inch is 2.54 cm)]{.subscript}
 
 . . .
 
-$Y = 2.54X$, then $Y \sim N(2.54,  6.4516 * .000001)$
+$Y = 2.54X$, then $Y \sim N(2.54,  2.54^2*.000001)$
 
+. . .
 
+$$
+P(1 - .001 \leq Y \leq 1 + .001) = P(.999 \leq Y \leq 1.001) = F(1.001) - F(.999)
+$$
+. . . 
 
+```{r transformNormalInchCM}
+#| echo: true
+mu      = 1
+sigmaSq = 2.54^2*.000001
+pnorm(1.001, mu, sqrt(sigmaSq)) - pnorm(.999, mu, sqrt(sigmaSq))
+```
 
 ## The Standard Normal Distribution}
 When $\mu=0$ and $\sigma=1$, we call it the \alg{
