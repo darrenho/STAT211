@@ -169,7 +169,7 @@ pnorm(qnorm(.2,5,3), 5, 3)
 
 Suppose $X \sim N(-3.2, 100)$
 
-[Probability:]{.emphasis} What is the probability $X$ is less than 0?
+[Probability:]{.smallCap} What is the probability $X$ is less than 0?
 
 . . .
 
@@ -180,7 +180,7 @@ pnorm(0,3.2,sqrt(100))
 
 . . .
 
-[Values:]{.smallcaps} at what value $x$ does $P(X\leq x) = .05$? . . .
+[Values:]{.smallCap} at what value $x$ does $P(X\leq x) = .05$? . . .
 
 ```{r}
 #| echo: true
@@ -445,7 +445,13 @@ $P(Z \leq 1.3333)$ is ..
 
 -->
 
- 
+## Z-scores: Comparing values {.scrollable}
+
+Sometimes we will be tasked with comparing values from two different distributions
+
+[Goal:]{.smallCap} Which value is more [extreme]{.emphasis}?
+
+[Example:]{.example} 
 ## Empirical rule {.scrollable}
 
 Values from normal distributions contain predictable amounts of probability

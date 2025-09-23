@@ -104,7 +104,7 @@
     code span.vs { color: #008000; } /* VerbatimString */
     code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="chapter3normal_files/libs/revealjs/dist/theme/quarto-1af3f3813d9e1a0ab0f013d41ac2984d.css">
+  <link rel="stylesheet" href="chapter3normal_files/libs/revealjs/dist/theme/quarto-da1568c5128e46e1bd33e93ef329128e.css">
   <link rel="stylesheet" href="styles.css">
   <link href="chapter3normal_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="chapter3normal_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -225,6 +225,7 @@
 <li><a href="#/transformingNormals" id="/toc-transformingNormals">Transforming Normals: <span class="math inline">\(aX + b\)</span></a></li>
 <li><a href="#/transforming-normals-inches-to-cm" id="/toc-transforming-normals-inches-to-cm">Transforming Normals: inches to cm</a></li>
 <li><a href="#/the-standard-normal-distribution" id="/toc-the-standard-normal-distribution">The Standard Normal Distribution</a></li>
+<li><a href="#/z-scores-comparing-values" id="/toc-z-scores-comparing-values">Z-scores: Comparing values</a></li>
 <li><a href="#/empirical-rule" id="/toc-empirical-rule">Empirical rule</a></li>
 <li><a href="#/well-be-back" id="/toc-well-be-back">We’ll be back…</a></li>
 </ul>
@@ -340,7 +341,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <section id="computing-probabilities-and-values" class="slide level2 scrollable">
 <h2>Computing probabilities and values</h2>
 <p>Suppose <span class="math inline">\(X \sim N(-3.2, 100)\)</span></p>
-<p><span class="emphasis">Probability:</span> What is the probability <span class="math inline">\(X\)</span> is less than 0?</p>
+<p><span class="smallCap">Probability:</span> What is the probability <span class="math inline">\(X\)</span> is less than 0?</p>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">0</span>,<span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -350,7 +351,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 <div class="fragment">
-<p><span class="smallcaps">Values:</span> at what value <span class="math inline">\(x\)</span> does <span class="math inline">\(P(X\leq x) = .05\)</span>? . . .</p>
+<p><span class="smallCap">Values:</span> at what value <span class="math inline">\(x\)</span> does <span class="math inline">\(P(X\leq x) = .05\)</span>? . . .</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">05</span>,<span class="sc">-</span><span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -567,6 +568,11 @@ $P(Z \leq 1.3333)$ is ..
 
 --></p>
 </div>
+</section>
+<section id="z-scores-comparing-values" class="slide level2 scrollable">
+<h2>Z-scores: Comparing values</h2>
+<p>Sometimes we will be tasked with comparing values from two different distributions</p>
+<p><span class="smallCap">Goal:</span> Which value is more <span class="emphasis">extreme</span></p>
 </section>
 <section id="empirical-rule" class="slide level2 scrollable">
 <h2>Empirical rule</h2>
