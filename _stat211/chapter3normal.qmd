@@ -169,7 +169,7 @@ pnorm(qnorm(.2,5,3), 5, 3)
 
 Suppose $X \sim N(-3.2, 100)$
 
-[Probability:]{.smallcaps} What is the probability $X$ is less than 0?
+[Probability:]{.emphasis} What is the probability $X$ is less than 0?
 
 . . .
 
@@ -191,9 +191,7 @@ qnorm(.05,-3.2,sqrt(100))
 
 [Example]{.example}
 
-Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 
-
-(that is, $X \sim N(520,3600)$)
+Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 (that is, $X \sim N(520,3600)$)
 
 What is the probability someone scores less than 600?
 
@@ -242,11 +240,11 @@ Suppose that the scores on the SAT math section are normally distributed with an
 
 [(that is, $X \sim N(520,3600)$)]{.subscript}
 
-The statistics dept. identifies students 
+The stats dept. identifies students 
 scoring at or above 96\% for recruitment
 
 
-What is the cutoff score ($x$) for recruitment by the statistics dept.?
+What is the cutoff score ($x$) for recruitment by the stats dept.?
 
 . . .
 
@@ -316,12 +314,15 @@ What is the probability that that a measurement will be within $\pm$.001 centime
 
 . . .
 
-$Y = 2.54X$, then $Y \sim N(2.54,  2.54^2*.000001)$
+$Y = 2.54X$, therefore $Y \sim$ . . .  $N(2.54,  2.54^2*.000001)$
 
 . . .
 
 $$
-P(1 - .001 \leq Y \leq 1 + .001) = P(.999 \leq Y \leq 1.001) = F(1.001) - F(.999)
+\begin{align}
+P(1 - .001 \leq Y \leq 1 + .001) & = P(.999 \leq Y \leq 1.001) \\
+& = F(1.001) - F(.999)
+\end{align}
 $$
 . . . 
 
@@ -329,16 +330,20 @@ $$
 #| echo: true
 mu      = 1
 sigmaSq = 2.54^2*.000001
-pnorm(1.001, mu, sqrt(sigmaSq)) - pnorm(.999, mu, sqrt(sigmaSq))
+pnorm(1.001, mu, sqrt(sigmaSq)) - 
+    pnorm(.999, mu, sqrt(sigmaSq))
 ```
 
-## The Standard Normal Distribution
+## The Standard Normal Distribution {.scrollable}
 When $\mu=0$ and $\sigma=1$, we call it the 
-            [standard normal distribution]{.definition}
+            [standard normal]{.definition}
 
 $$
         f(x)=\frac1{\sqrt{2\pi}}e^{-x^2/2},\,\,-\infty<x<\infty.
 $$
+
+[(Once again, you don't need to know this formula for this class)]{.subscript}
+
 
 The standard normal will be notated as: $Z \sim N(0,1)$
 
@@ -360,26 +365,7 @@ $$
 \includegraphics[width=2in]{./figures/normalR} 
 \end{figure}
 -->
-
-
-%
-%
-%## The Standard Normal Distribution}
-%
-%
-%We can actually analytically compute the expected value of the standard normal:
-%
-%$$
-%E[Z] = \int_{-\infty}^{\infty}x \frac1{\sqrt{2\pi}}e^{-\frac{x^2}{2}} dx = 0
-%$$
-%
-%\script{To see this, use the fact that: $\frac{d}{dx} e^{-x^2/2} =  - e^{-x^2/2} x$}
-%
-%
-%However, let's use the key property of normals instead...
-%
-%
-
+<!--
 ## The Standard Normal Distribution}
 %\smallCapGreen{Reminder:}  
 
@@ -457,21 +443,41 @@ $P(Z \leq 1.3333)$ is ..
 
 
 
+-->
 
 
-
-## Empirical rule}
+## Empirical rule
 Values from normal distributions contain predictable amounts of probability
 
-\script{This is sometimes known as the \alg{empirical rule}}
+[(This is sometimes known as the \alg{empirical rule)]{.subscript}
 
+:::: {.columns}
 
-\begin{columns}
+::: {.column width="50%"}
 
-\begin{column}{.5\textwidth}
-\begin{figure}
-\includegraphics[width=1.65in,trim = 0 0 0 50,clip]{./figures/normalEmpRule} 
-\end{figure}
+```{r}
+#| label: normalEmpRuleGeneral
+#| echo: false
+#| fig-asp: 1
+#| out-width: "50%" 
+mu      = 0
+sigmaSq = 1
+lab     = 'x' 
+
+funcShaded <- function(x, lower_bound) {
+    y = dnorm(x, mean = mu, sd = sqrt(sigmaSq))
+    y[x >= lower_bound | x <= -lower_bound] <- NA
+    return(y)
+}
+
+xMin = mu - sqrt(sigmaSq)*4
+xMax = mu + sqrt(sigmaSq)*4
+ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
+    stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
+    stat_function(fun = funcShaded, args = list(lower_bound = 1), 
+                  geom = "area", fill = 'lightblue', alpha = .5) +
+    scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
+```
 
 . . .
 
@@ -480,15 +486,14 @@ Values from normal distributions contain predictable amounts of probability
 - $P( |X - \mu| \leq 2\sigma) = 0.954$
 - $P( |X - \mu| \leq 3\sigma) = 0.997$
 
+:::
 
-\end{column}
+::: {.column width="10%"}
+<!-- empty column to create gap -->
+:::
 
 
-\begin{column}{.5\textwidth}
-. . .
-\begin{figure}
-\includegraphics[width=1.65in,trim = 0 0 0 50,clip]{./figures/normalEmpRuleStandard} 
-\end{figure}
+::: {.column width="50%"}
 
 
 - $P( |Z| \leq 1) = 0.683$
@@ -496,20 +501,15 @@ Values from normal distributions contain predictable amounts of probability
 - $P( |Z| \leq 3) = 0.997$
 
 
-\end{column}
+:::
 
-\end{columns}
+::::  
 
 
+## We'll be back...
 
-## We'll be back...}
-
-The normal plays a \smallCapGreen{central} role in probability and statistics
+The normal plays a [central]{.emphasis} role in probability and statistics
 
 
 
 We will return to it in Chapter 5..
-
-\end{document}
--->
-```

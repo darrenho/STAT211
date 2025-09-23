@@ -225,11 +225,8 @@
 <li><a href="#/transformingNormals" id="/toc-transformingNormals">Transforming Normals: <span class="math inline">\(aX + b\)</span></a></li>
 <li><a href="#/transforming-normals-inches-to-cm" id="/toc-transforming-normals-inches-to-cm">Transforming Normals: inches to cm</a></li>
 <li><a href="#/the-standard-normal-distribution" id="/toc-the-standard-normal-distribution">The Standard Normal Distribution</a></li>
-<li><a href="#/the-standard-normal-distribution-1" id="/toc-the-standard-normal-distribution-1">The Standard Normal Distribution}</a></li>
-<li><a href="#/the-standard-normal-distribution-2" id="/toc-the-standard-normal-distribution-2">The Standard Normal Distribution}</a></li>
-<li><a href="#/back-to-the-example" id="/toc-back-to-the-example">Back to the Example}</a></li>
-<li><a href="#/empirical-rule" id="/toc-empirical-rule">Empirical rule}</a></li>
-<li><a href="#/well-be-back" id="/toc-well-be-back">We’ll be back…}</a></li>
+<li><a href="#/empirical-rule" id="/toc-empirical-rule">Empirical rule</a></li>
+<li><a href="#/well-be-back" id="/toc-well-be-back">We’ll be back…</a></li>
 </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="chapter3normal.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </section>
@@ -343,7 +340,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <section id="computing-probabilities-and-values" class="slide level2 scrollable">
 <h2>Computing probabilities and values</h2>
 <p>Suppose <span class="math inline">\(X \sim N(-3.2, 100)\)</span></p>
-<p><span class="smallcaps">Probability:</span> What is the probability <span class="math inline">\(X\)</span> is less than 0?</p>
+<p><span class="emphasis">Probability:</span> What is the probability <span class="math inline">\(X\)</span> is less than 0?</p>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">0</span>,<span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -365,8 +362,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <section id="computing-probabilities-sats" class="slide level2 scrollable">
 <h2>Computing probabilities: SATs</h2>
 <p><span class="example">Example</span></p>
-<p>Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600</p>
-<p>(that is, <span class="math inline">\(X \sim N(520,3600)\)</span>)</p>
+<p>Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 (that is, <span class="math inline">\(X \sim N(520,3600)\)</span>)</p>
 <p>What is the probability someone scores less than 600?</p>
 <div class="fragment">
 <div class="cell">
@@ -396,8 +392,8 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <p><span class="example">Example</span></p>
 <p>Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600</p>
 <p><span class="subscript">(that is, <span class="math inline">\(X \sim N(520,3600)\)</span>)</span></p>
-<p>The statistics dept. identifies students scoring at or above 96% for recruitment</p>
-<p>What is the cutoff score (<span class="math inline">\(x\)</span>) for recruitment by the statistics dept.?</p>
+<p>The stats dept. identifies students scoring at or above 96% for recruitment</p>
+<p>What is the cutoff score (<span class="math inline">\(x\)</span>) for recruitment by the stats dept.?</p>
 <div class="fragment">
 <p><span class="math inline">\(P(X \leq x) = 0.96\)</span></p>
 </div>
@@ -452,28 +448,33 @@ X \sim N(1, .000001)
 <p>What is the probability that that a measurement will be within <span class="math inline">\(\pm\)</span>.001 centimeters?</p>
 <p><span class="subscript">(An inch is 2.54 cm)</span></p>
 <div class="fragment">
-<p><span class="math inline">\(Y = 2.54X\)</span>, then <span class="math inline">\(Y \sim N(2.54,  2.54^2*.000001)\)</span></p>
+<p><span class="math inline">\(Y = 2.54X\)</span>, therefore <span class="math inline">\(Y \sim\)</span> . . . <span class="math inline">\(N(2.54,  2.54^2*.000001)\)</span></p>
 </div>
 <div class="fragment">
 <p><span class="math display">\[
-P(1 - .001 \leq Y \leq 1 + .001) = P(.999 \leq Y \leq 1.001) = F(1.001) - F(.999)
+\begin{align}
+P(1 - .001 \leq Y \leq 1 + .001) &amp; = P(.999 \leq Y \leq 1.001) \\
+&amp; = F(1.001) - F(.999)
+\end{align}
 \]</span> . . .</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">1</span></span>
 <span id="cb23-2"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>.<span class="dv">000001</span></span>
-<span id="cb23-3"><a href=""></a><span class="fu">pnorm</span>(<span class="fl">1.001</span>, mu, <span class="fu">sqrt</span>(sigmaSq)) <span class="sc">-</span> <span class="fu">pnorm</span>(.<span class="dv">999</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-3"><a href=""></a><span class="fu">pnorm</span>(<span class="fl">1.001</span>, mu, <span class="fu">sqrt</span>(sigmaSq)) <span class="sc">-</span> </span>
+<span id="cb23-4"><a href=""></a>    <span class="fu">pnorm</span>(.<span class="dv">999</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.306198</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="the-standard-normal-distribution" class="slide level2">
+<section id="the-standard-normal-distribution" class="slide level2 scrollable">
 <h2>The Standard Normal Distribution</h2>
-<p>When <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma=1\)</span>, we call it the <span class="definition">standard normal distribution</span></p>
+<p>When <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma=1\)</span>, we call it the <span class="definition">standard normal</span></p>
 <p><span class="math display">\[
         f(x)=\frac1{\sqrt{2\pi}}e^{-x^2/2},\,\,-\infty&lt;x&lt;\infty.
 \]</span></p>
+<p><span class="subscript">(Once again, you don’t need to know this formula for this class)</span></p>
 <p>The standard normal will be notated as: <span class="math inline">\(Z \sim N(0,1)\)</span></p>
 <div class="fragment">
 <p>Going from a general normal to a standard normal is known as <span class="definition">standardization</span></p>
@@ -486,51 +487,122 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 \includegraphics[width=2in,trim = 0 0 0 50,clip]{./figures/normalStandard} 
 \includegraphics[width=2in]{./figures/normalR} 
 \end{figure}
+--> <!--
+## The Standard Normal Distribution}
+%\smallCapGreen{Reminder:}  
+
+Starting from the general normal, how can we generate a 
+standard normal?
+
+\script{That is, go from $X \sim N(\mu, \sigma^2)$ to $Z \sim N(0,1)$}
+
+
+
+. . .
+Suppose I wrote $Y = X - \mu$, what would be its expected value?
+
+. . .
+$$
+E[Y] = E[X] - \mu = \mu - \mu = 0
+$$
+
+. . .
+Likewise, if I wrote $Y = \frac{X}{\sigma} - \frac{\mu}{\sigma}$, what would be its variance?
+
+. . .
+$$
+Var[Y] = \frac{Var[X]}{\sigma^2} = \frac{\sigma^2}{\sigma^2} = 1
+$$
+
+%
+So, $Z = (X-\mu)/\sigma \sim N(0,1)$
+
+
+
+
+## The Standard Normal Distribution}
+
+\smallCapGreen{Conclusion:} We can standardize the general normal ($X \sim N(\mu,\sigma^2)$) via
+$$
+Z = \frac{X - \mu}{\sigma}  \sim N(0,1)
+$$
+. . . 
+
+We can go the opposite direction as well..
+$$
+X = \sigma Z + \mu \sim N(\mu,\sigma^2)
+$$
+
+
+
+## Back to the Example}
+
+\begin{figure}
+\includegraphics[width=3cm,trim = 0 0 0 50,clip]{./figures/normalSAT} 
+\includegraphics[width=3cm,trim = 0 0 0 50,clip]{./figures/normalStandard} 
+\end{figure}
+         
+We wrote that $X\sim N(520,3600)$ to be the SAT score
+
+
+We wanted  $P(X \leq 600)$
+
+
+This is the same as  $P(Z \leq (600 - 520)/60)$
+
+\script{(600 - 520)/60 = 1.3333}
+
+
+$P(Z \leq 1.3333)$ is ..
+
+
+
+\alr{pnorm((600 - 520)/60)}
+
+
+
+\alr{[1] 0.9087888}
+
+
+
 --></p>
-<p>% % %## The Standard Normal Distribution} % % %We can actually analytically compute the expected value of the standard normal: % %<span class="math display">\[
-%E[Z] = \int_{-\infty}^{\infty}x \frac1{\sqrt{2\pi}}e^{-\frac{x^2}{2}} dx = 0
-%\]</span> % % % % %However, let’s use the key property of normals instead… % %</p>
 </div>
 </section>
-<section id="the-standard-normal-distribution-1" class="slide level2">
-<h2>The Standard Normal Distribution}</h2>
-<p>%</p>
-<p>Starting from the general normal, how can we generate a standard normal?</p>
-<p>. . . Suppose I wrote <span class="math inline">\(Y = X - \mu\)</span>, what would be its expected value?</p>
-<p>. . . <span class="math display">\[
-E[Y] = E[X] - \mu = \mu - \mu = 0
-\]</span></p>
-<p>. . . Likewise, if I wrote <span class="math inline">\(Y = \frac{X}{\sigma} - \frac{\mu}{\sigma}\)</span>, what would be its variance?</p>
-<p>. . . <span class="math display">\[
-Var[Y] = \frac{Var[X]}{\sigma^2} = \frac{\sigma^2}{\sigma^2} = 1
-\]</span></p>
-<p>% So, <span class="math inline">\(Z = (X-\mu)/\sigma \sim N(0,1)\)</span></p>
-</section>
-<section id="the-standard-normal-distribution-2" class="slide level2">
-<h2>The Standard Normal Distribution}</h2>
-<p> We can standardize the general normal (<span class="math inline">\(X \sim N(\mu,\sigma^2)\)</span>) via <span class="math display">\[
-Z = \frac{X - \mu}{\sigma}  \sim N(0,1)
-\]</span> . . .</p>
-<p>We can go the opposite direction as well.. <span class="math display">\[
-X = \sigma Z + \mu \sim N(\mu,\sigma^2)
-\]</span></p>
-</section>
-<section id="back-to-the-example" class="slide level2">
-<h2>Back to the Example}</h2>
-<p>We wrote that <span class="math inline">\(X\sim N(520,3600)\)</span> to be the SAT score</p>
-<p>We wanted <span class="math inline">\(P(X \leq 600)\)</span></p>
-<p>This is the same as <span class="math inline">\(P(Z \leq (600 - 520)/60)\)</span></p>
-<p><span class="math inline">\(P(Z \leq 1.3333)\)</span> is ..</p>
-</section>
 <section id="empirical-rule" class="slide level2">
-<h2>Empirical rule}</h2>
+<h2>Empirical rule</h2>
 <p>Values from normal distributions contain predictable amounts of probability</p>
+<p><span class="subscript">(This is sometimes known as the \alg{empirical rule)</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img data-src="chapter3normal_files/figure-revealjs/normalEmpRuleGeneral-1.png" style="width:50.0%" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>. . .</p>
+<ul>
+<li><span class="math inline">\(P( |X - \mu| \leq \sigma) = 0.683\)</span></li>
+<li><span class="math inline">\(P( |X - \mu| \leq 2\sigma) = 0.954\)</span></li>
+<li><span class="math inline">\(P( |X - \mu| \leq 3\sigma) = 0.997\)</span></li>
+</ul>
+</div><div class="column" style="width:10%;">
+<!-- empty column to create gap -->
+</div><div class="column" style="width:50%;">
+<ul>
+<li><span class="math inline">\(P( |Z| \leq 1) = 0.683\)</span></li>
+<li><span class="math inline">\(P( |Z| \leq 2) = 0.954\)</span></li>
+<li><span class="math inline">\(P( |Z| \leq 3) = 0.997\)</span></li>
+</ul>
+</div></div>
 </section>
 <section id="well-be-back" class="slide level2">
-<h2>We’ll be back…}</h2>
-<p>The normal plays a role in probability and statistics</p>
+<h2>We’ll be back…</h2>
+<p>The normal plays a <span class="emphasis">central</span> role in probability and statistics</p>
 <p>We will return to it in Chapter 5..</p>
-<p>\end{document} –&gt; ```</p>
 
 </section>
     </div>
