@@ -271,7 +271,7 @@ In particular, any linear combination of Normal rvs is again a Normal:
 -->
 ```
 
-## Transforming Normals: $aX + b$ {#transformingNormals .scrollable}
+## Transforming Normals: $aX + b$ {#transformingNormals}
 
 Suppose again $X \sim N(\mu, \sigma^2)$
 
@@ -453,7 +453,8 @@ Values from normal distributions contain predictable amounts of probability
 #| label: normalEmpRuleGeneral
 #| echo: false
 #| fig-asp: 1
-#| out-width: "50%" 
+#| out-width: "50%"
+
 mu      = 0
 sigmaSq = 1
 lab     = 'x' 
