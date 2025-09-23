@@ -222,9 +222,9 @@
 <li><a href="#/computing-probabilities-and-values" id="/toc-computing-probabilities-and-values">Computing probabilities and values</a></li>
 <li><a href="#/computing-probabilities-sats" id="/toc-computing-probabilities-sats">Computing probabilities: SATs</a></li>
 <li><a href="#/computing-values-sats" id="/toc-computing-values-sats">Computing values: SATs</a></li>
-<li><a href="#/transforming-normals" id="/toc-transforming-normals">Transforming Normals</a></li>
+<li><a href="#/transformingNormals" id="/toc-transformingNormals">Transforming Normals: <span class="math inline">\(aX + b\)</span></a></li>
 <li><a href="#/transforming-normals-inches-to-cm" id="/toc-transforming-normals-inches-to-cm">Transforming Normals: inches to cm</a></li>
-<li><a href="#/the-standard-normal-distribution" id="/toc-the-standard-normal-distribution">The Standard Normal Distribution}</a></li>
+<li><a href="#/the-standard-normal-distribution" id="/toc-the-standard-normal-distribution">The Standard Normal Distribution</a></li>
 <li><a href="#/the-standard-normal-distribution-1" id="/toc-the-standard-normal-distribution-1">The Standard Normal Distribution}</a></li>
 <li><a href="#/the-standard-normal-distribution-2" id="/toc-the-standard-normal-distribution-2">The Standard Normal Distribution}</a></li>
 <li><a href="#/back-to-the-example" id="/toc-back-to-the-example">Back to the Example}</a></li>
@@ -395,7 +395,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <h2>Computing values: SATs</h2>
 <p><span class="example">Example</span></p>
 <p>Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600</p>
-<p>(that is, <span class="math inline">\(X \sim N(520,3600)\)</span>)</p>
+<p><span class="subscript">(that is, <span class="math inline">\(X \sim N(520,3600)\)</span>)</span></p>
 <p>The statistics dept. identifies students scoring at or above 96% for recruitment</p>
 <p>What is the cutoff score (<span class="math inline">\(x\)</span>) for recruitment by the statistics dept.?</p>
 <div class="fragment">
@@ -427,10 +427,10 @@ In particular, any linear combination of Normal rvs is again a Normal:
 -->
 </div>
 </section>
-<section id="transforming-normals" class="slide level2 scrollable">
-<h2>Transforming Normals</h2>
+<section id="transformingNormals" class="slide level2 scrollable">
+<h2>Transforming Normals: <span class="math inline">\(aX + b\)</span></h2>
 <p>Suppose again <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span></p>
-<p>If we multiply/add any constants <span class="math inline">\(a,b\)</span> to <span class="math inline">\(X\)</span> to form a new rv <span class="math inline">\(Y\)</span>:</p>
+<p>If we multiply/add constants <span class="math inline">\(a,b\)</span> to <span class="math inline">\(X\)</span> to form a new rv <span class="math inline">\(Y\)</span>:</p>
 <p><span class="math display">\[
 Y  = aX + b
 \]</span> then <span class="math inline">\(Y \sim(a\mu + b, a^2 \sigma^2)\)</span></p>
@@ -441,7 +441,7 @@ Y  = aX + b
 Y = 3X + 30 \sim N(480, 900)
 \]</span></p>
 </section>
-<section id="transforming-normals-inches-to-cm" class="slide level2">
+<section id="transforming-normals-inches-to-cm" class="slide level2 scrollable">
 <h2>Transforming Normals: inches to cm</h2>
 <!-- add a picture of measuring a gauge block using a ruler -->
 <p>We are measuring a standard inch using a ruler with a fine scale</p>
@@ -469,15 +469,28 @@ P(1 - .001 \leq Y \leq 1 + .001) = P(.999 \leq Y \leq 1.001) = F(1.001) - F(.999
 </div>
 </section>
 <section id="the-standard-normal-distribution" class="slide level2">
-<h2>The Standard Normal Distribution}</h2>
-<p>When <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma=1\)</span>, we call it the :</p>
+<h2>The Standard Normal Distribution</h2>
+<p>When <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma=1\)</span>, we call it the <span class="definition">standard normal distribution</span></p>
 <p><span class="math display">\[
         f(x)=\frac1{\sqrt{2\pi}}e^{-x^2/2},\,\,-\infty&lt;x&lt;\infty.
 \]</span></p>
-<p>The standard normal is usually notated as: <span class="math inline">\(Z \sim N(0,1)\)</span></p>
+<p>The standard normal will be notated as: <span class="math inline">\(Z \sim N(0,1)\)</span></p>
+<div class="fragment">
+<p>Going from a general normal to a standard normal is known as <span class="definition">standardization</span></p>
+<p><span class="math display">\[
+X \sim N(\mu, \sigma^2) \longrightarrow Z = \frac{X - \mu}{\sigma} \sim N(0,1)
+\]</span> The opposite (actually, the <span class="definition">inverse</span>) is true <span class="math display">\[
+Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
+\]</span> <span class="citation" data-cites="transformingNormals">[(this is using the results @transformingNormals "Transforming Normals")]</span> <!--
+\begin{figure}
+\includegraphics[width=2in,trim = 0 0 0 50,clip]{./figures/normalStandard} 
+\includegraphics[width=2in]{./figures/normalR} 
+\end{figure}
+--></p>
 <p>% % %## The Standard Normal Distribution} % % %We can actually analytically compute the expected value of the standard normal: % %<span class="math display">\[
 %E[Z] = \int_{-\infty}^{\infty}x \frac1{\sqrt{2\pi}}e^{-\frac{x^2}{2}} dx = 0
 %\]</span> % % % % %However, let’s use the key property of normals instead… % %</p>
+</div>
 </section>
 <section id="the-standard-normal-distribution-1" class="slide level2">
 <h2>The Standard Normal Distribution}</h2>
