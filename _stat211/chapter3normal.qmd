@@ -445,11 +445,12 @@ $P(Z \leq 1.3333)$ is ..
 
 -->
 
+ 
+## Empirical rule {.scrollable}
 
-## Empirical rule
 Values from normal distributions contain predictable amounts of probability
 
-[(This is sometimes known as the \alg{empirical rule)]{.subscript}
+[(This is sometimes known as the [empirical rule]{.definition})]{.subscript}
 
 :::: {.columns}
 
@@ -478,8 +479,6 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
                   geom = "area", fill = 'lightblue', alpha = .5) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
-
-. . .
 
 
 - $P( |X - \mu| \leq \sigma) = 0.683$
