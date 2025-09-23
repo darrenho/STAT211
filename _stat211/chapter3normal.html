@@ -485,15 +485,56 @@ X \sim N(\mu, \sigma^2) \longrightarrow Z = \frac{X - \mu}{\sigma} \sim N(0,1)
 <p><span class="math display">\[
 Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 \]</span></p>
-<p><span class="citation" data-cites="transformingNormals">@transformingNormals</span></p>
 <p><span class="subscript">(this is using the results in <a href="#/transformingNormals">Transforming Normals</a>)</span></p>
 </div>
 </section>
 <section id="z-scores-comparing-values" class="slide level2 scrollable">
 <h2>Z-scores: Comparing values</h2>
-<p>Sometimes we will be tasked with comparing values from two different distributions</p>
-<p><span class="smallCap">Goal:</span> Which value is more <span class="emphasis">extreme</span>?</p>
-<p><span class="example">Example:</span> We want to compare</p>
+<p>If we are given a value <span class="math inline">\(x\)</span> from a distribution with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, we can compute its <span class="definition">z-score</span> via</p>
+<p><span class="math display">\[
+\pre{z-score} = \frac{x - \mu}{\sigma}
+\]</span></p>
+<p>The main use case is comparing values from two different distributions</p>
+<p><span class="smallCap">Question:</span> Which of the two values is more <span class="emphasis">extreme</span>?</p>
+<p><span class="smallCap">Answer:</span> Whichever has large <span class="emphasis">magnitude</span> z-score (that is, |z-score|)</p>
+<p><span class="example">Example:</span> We want to compare olympic records in men’s sprinting (9.63 seconds) and women’s sprinting (10.61 seconds)</p>
+<p>Which is more extreme? Let’s look at a table:</p>
+<table class="caption-top table">
+<caption>Table of Average and Standard Deviation of Olympic Sprinting times.</caption>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th style="text-align: right;">Mens</th>
+<th style="text-align: right;">Womens</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>average</td>
+<td style="text-align: right;">9.84</td>
+<td style="text-align: right;">10.81</td>
+</tr>
+<tr class="even">
+<td>variance</td>
+<td style="text-align: right;">.0046</td>
+<td style="text-align: right;">.0049</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>Let’s compute the two <span class="definition">z-scores</span>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>zScoreMen   <span class="ot">=</span>  (<span class="fl">9.63</span> <span class="sc">-</span> <span class="fl">9.85</span>)<span class="sc">/</span><span class="fu">sqrt</span>(.<span class="dv">0057</span>)</span>
+<span id="cb25-2"><a href=""></a>zScoreWomen <span class="ot">=</span>  (<span class="fl">10.61</span> <span class="sc">-</span> <span class="fl">10.83</span>)<span class="sc">/</span><span class="fu">sqrt</span>(.<span class="dv">0049</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The z-score for men is -2.9139712 while for women it is <code>zScoreWomen</code>. Hence, the women’s result is more extreme as:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="fu">abs</span>(zScoreMen) <span class="sc">&lt;</span> <span class="fu">abs</span>(zScoreWomen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+</div>
 </section>
 <section id="empirical-rule" class="slide level2 scrollable">
 <h2>Empirical rule</h2>

@@ -357,11 +357,45 @@ $$
 
 ## Z-scores: Comparing values {.scrollable}
 
-Sometimes we will be tasked with comparing values from two different distributions
+If we are given a value $x$ from a distribution with mean $\mu$ and variance $\sigma^2$, we can compute its [z-score]{.definition} via
 
-[Goal:]{.smallCap} Which value is more [extreme]{.emphasis}?
+$$
+\pre{z-score} = \frac{x - \mu}{\sigma}
+$$
+
+The main use case is comparing values from two different distributions
+
+[Question:]{.smallCap} Which of the two values is more [extreme]{.emphasis}?
+
+[Answer:]{.smallCap} Whichever has large [magnitude]{.emphasis} z-score (that is, |z-score|)
 
 [Example:]{.example} We want to compare olympic records in men's sprinting (9.63 seconds) and women's sprinting (10.61 seconds)
+
+Which is more extreme?  Let's look at a table:
+
+| Category | Mens | Womens |
+|---------|-----:|------:|
+| average | 9.84   | 10.81 |
+| variance | .0046  |   .0049 |
+: Table of Average and Standard Deviation of Olympic Sprinting times.
+
+. . .
+
+Let's compute the two [z-scores]{.definition}:
+
+```{r zScoreExample}
+#| echo: true
+zScoreMen   =  (9.63 - 9.85)/sqrt(.0057)
+zScoreWomen =  (10.61 - 10.83)/sqrt(.0049)
+```
+
+The z-score for men is `r zScoreMen` while for women it is `zScoreWomen`.  Hence, the women's result is more extreme as:
+
+```{r zScoreExampleConclusion}
+#| echo: true
+abs(zScoreMen) < abs(zScoreWomen)
+```
+
 
 ## Empirical rule {.scrollable}
 
