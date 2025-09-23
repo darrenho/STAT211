@@ -15,10 +15,9 @@ The [normal]{.definition} (also known as 'Gaussian') is $X\sim N(\mu,\sigma^2)$:
 -   $\mu$ is the expected value ($E[X]$)
 -   $\sigma^2$ is the variance of (Var$[X]$)
 
-Its pdf:
-$$ 
+Its pdf: $$ 
 f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} 
-$$ 
+$$
 
 [(Just like the binomial, you don't need to know this formula for this class)]{.subscript}
 
@@ -61,7 +60,6 @@ sigmaSq = 9
 pnorm(x, mu, sqrt(sigmaSq))
 ```
 
-
 ## Computing values for the normal {.scrollable}
 
 Continuing with $X \sim N(5,9)$, we found that $P(X < 4)$ is:
@@ -98,7 +96,7 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 
 . . .
 
-Now, let's ask the **opposite** question: at what value $x$ does $P(X\leq x) = .7$? . 
+Now, let's ask the **opposite** question: at what value $x$ does $P(X\leq x) = .7$? .
 
 ```{r}
 #| echo: true
@@ -106,7 +104,6 @@ qnorm(.7,5,3)
 ```
 
 This is called a [quantile]{.definition} of the normal
-
 
 ```{r}
 #| label: normalQuantilePlot
@@ -131,7 +128,7 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
 
-. . . 
+. . .
 
 [Concept Check:]{.example} What would this code resolve to:
 
@@ -231,18 +228,15 @@ sigmaSq = 3600
 pnorm(x, mu, sqrt(sigmaSq))
 ```
 
-
 ## Computing values: SATs {.scrollable}
 
 [Example]{.example}
 
-Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 
+Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600
 
 [(that is, $X \sim N(520,3600)$)]{.subscript}
 
-The stats dept. identifies students 
-scoring at or above 96\% for recruitment
-
+The stats dept. identifies students scoring at or above 96% for recruitment
 
 What is the cutoff score ($x$) for recruitment by the stats dept.?
 
@@ -260,6 +254,7 @@ sigmaSq = 3600
 qnorm(prob, mu, sqrt(sigmaSq))
 ```
 
+```{=html}
 <!--
 To Future Darren: Put this after we introduce correlation
 ## Properties of Normal Distribution
@@ -274,8 +269,9 @@ We can form [linear combinations]{.definition} of rvs too
 
 In particular, any linear combination of Normal rvs is again a Normal:
 -->
+```
 
-## Transforming Normals: $aX + b$ {.scrollable #transformingNormals}
+## Transforming Normals: $aX + b$ {#transformingNormals .scrollable}
 
 Suppose again $X \sim N(\mu, \sigma^2)$
 
@@ -283,30 +279,29 @@ If we multiply/add constants $a,b$ to $X$ to form a new rv $Y$:
 
 $$
 Y  = aX + b 
-$$
-then $Y \sim(a\mu + b, a^2 \sigma^2)$
+$$ then $Y \sim(a\mu + b, a^2 \sigma^2)$
 
 [(This should remind you of our $E[X]$ and $Var[X]$ results)]{.subscript}
 
 [Example:]{.example}
 
-If  $X \sim N(150,100)$  then 
+If $X \sim N(150,100)$ then
 
 $$
 Y = 3X + 30 \sim N(480, 900)
 $$
 
-
 ## Transforming Normals: inches to cm {.scrollable}
 
 <!-- add a picture of measuring a gauge block using a ruler -->
+
 We are measuring a standard inch using a ruler with a fine scale
 
-If several people measure, they will get some random amount of measurement error:  
+If several people measure, they will get some random amount of measurement error:
 
 $$
 X \sim N(1, .000001)
-$$ 
+$$
 
 What is the probability that that a measurement will be within $\pm$.001 centimeters?
 
@@ -314,7 +309,7 @@ What is the probability that that a measurement will be within $\pm$.001 centime
 
 . . .
 
-$Y = 2.54X$, therefore $Y \sim$ . . .  $N(2.54,  2.54^2*.000001)$
+$Y = 2.54X$, therefore $Y \sim$ . . . $N(2.54,  2.54^2*.000001)$
 
 . . .
 
@@ -323,8 +318,7 @@ $$
 P(1 - .001 \leq Y \leq 1 + .001) & = P(.999 \leq Y \leq 1.001) \\
 & = F(1.001) - F(.999)
 \end{align}
-$$
-. . . 
+$$ . . .
 
 ```{r transformNormalInchCM}
 #| echo: true
@@ -335,15 +329,14 @@ pnorm(1.001, mu, sqrt(sigmaSq)) -
 ```
 
 ## The Standard Normal Distribution {.scrollable}
-When $\mu=0$ and $\sigma=1$, we call it the 
-            [standard normal]{.definition}
+
+When $\mu=0$ and $\sigma=1$, we call it the [standard normal]{.definition}
 
 $$
         f(x)=\frac1{\sqrt{2\pi}}e^{-x^2/2},\,\,-\infty<x<\infty.
 $$
 
 [(Once again, you don't need to know this formula for this class)]{.subscript}
-
 
 The standard normal will be notated as: $Z \sim N(0,1)$
 
@@ -353,19 +346,14 @@ Going from a general normal to a standard normal is known as [standardization]{.
 
 $$
 X \sim N(\mu, \sigma^2) \longrightarrow Z = \frac{X - \mu}{\sigma} \sim N(0,1)
-$$
-The opposite (actually, the [inverse]{.definition}) is true
-$$
+$$ The opposite (actually, the [inverse]{.definition}) is true $$
 Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
-$$
-[(this is using the results @transformingNormals "Transforming Normals")]
-<!--
+$$ [(this is using the results @transformingNormals "Transforming Normals")] <!--
 \begin{figure}
 \includegraphics[width=2in,trim = 0 0 0 50,clip]{./figures/normalStandard} 
 \includegraphics[width=2in]{./figures/normalR} 
 \end{figure}
--->
-<!--
+--> <!--
 ## The Standard Normal Distribution}
 %\smallCapGreen{Reminder:}  
 
@@ -452,16 +440,15 @@ Sometimes we will be tasked with comparing values from two different distributio
 [Goal:]{.smallCap} Which value is more [extreme]{.emphasis}?
 
 [Example:]{.example} 
+
 ## Empirical rule {.scrollable}
 
 Values from normal distributions contain predictable amounts of probability
 
-[(This is sometimes known as the [empirical rule]{.definition})]{.subscript}
+[(This is sometimes known as the ]{.subscript}[empirical rule]{.definition})
 
-:::: {.columns}
-
+:::::: columns
 ::: {.column width="50%"}
-
 ```{r}
 #| label: normalEmpRuleGeneral
 #| echo: false
@@ -481,44 +468,33 @@ xMin = mu - sqrt(sigmaSq)*4
 xMax = mu + sqrt(sigmaSq)*4
 ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
     stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
-    stat_function(fun = funcShaded, args = list(lower_bound = 1), 
-                  geom = "area", fill = 'lightblue', alpha = .5) +
+    stat_function(fun = funcShaded, args = list(lower_bound = 3), 
+                  geom = "area", fill = 'lightcoral', alpha = .5) +
     stat_function(fun = funcShaded, args = list(lower_bound = 2), 
                   geom = "area", fill = 'lightgreen', alpha = .5) +
-    stat_function(fun = funcShaded, args = list(lower_bound = 3), 
-                  geom = "area", fill = 'red', alpha = .5) +
+    stat_function(fun = funcShaded, args = list(lower_bound = 1), 
+                  geom = "area", fill = 'lightblue', alpha = .5) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
 
-
-- [$P( |X - \mu| \leq \sigma) = 0.683$]{.lightbluetext}
-- $P( |X - \mu| \leq 2\sigma) = 0.954$
-- $P( |X - \mu| \leq 3\sigma) = 0.997$
-
+-   [$P( |X - \mu| \leq \sigma) = 0.683$]{.lightbluetext}
+-   [$P( |X - \mu| \leq 2\sigma) = 0.954$]{.lightgreentext}
+-   [$P( |X - \mu| \leq 3\sigma) = 0.997$]{.lightredtext}
 :::
 
 ::: {.column width="10%"}
 <!-- empty column to create gap -->
 :::
 
-
 ::: {.column width="50%"}
-
-
-- $P( |Z| \leq 1) = 0.683$
-- $P( |Z| \leq 2) = 0.954$
-- $P( |Z| \leq 3) = 0.997$
-
-
+-   $P( |Z| \leq 1) = 0.683$
+-   $P( |Z| \leq 2) = 0.954$
+-   $P( |Z| \leq 3) = 0.997$
 :::
-
-::::  
-
+::::::
 
 ## We'll be back...
 
 The normal plays a [central]{.emphasis} role in probability and statistics
-
-
 
 We will return to it in Chapter 5..
