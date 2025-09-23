@@ -352,94 +352,8 @@ $$
 Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 $$ 
 
-@transformingNormals
+[(this is using the results in [Transforming Normals](#transformingNormals))]{.subscript}
 
-[(this is using the results in [Transforming Normals](#transformingNormals)]{.subscript}
-
-<!--
-\begin{figure}
-\includegraphics[width=2in,trim = 0 0 0 50,clip]{./figures/normalStandard} 
-\includegraphics[width=2in]{./figures/normalR} 
-\end{figure}
---> <!--
-## The Standard Normal Distribution}
-%\smallCapGreen{Reminder:}  
-
-Starting from the general normal, how can we generate a 
-standard normal?
-
-\script{That is, go from $X \sim N(\mu, \sigma^2)$ to $Z \sim N(0,1)$}
-
-
-
-. . .
-Suppose I wrote $Y = X - \mu$, what would be its expected value?
-
-. . .
-$$
-E[Y] = E[X] - \mu = \mu - \mu = 0
-$$
-
-. . .
-Likewise, if I wrote $Y = \frac{X}{\sigma} - \frac{\mu}{\sigma}$, what would be its variance?
-
-. . .
-$$
-Var[Y] = \frac{Var[X]}{\sigma^2} = \frac{\sigma^2}{\sigma^2} = 1
-$$
-
-%
-So, $Z = (X-\mu)/\sigma \sim N(0,1)$
-
-
-
-
-## The Standard Normal Distribution}
-
-\smallCapGreen{Conclusion:} We can standardize the general normal ($X \sim N(\mu,\sigma^2)$) via
-$$
-Z = \frac{X - \mu}{\sigma}  \sim N(0,1)
-$$
-. . . 
-
-We can go the opposite direction as well..
-$$
-X = \sigma Z + \mu \sim N(\mu,\sigma^2)
-$$
-
-
-
-## Back to the Example}
-
-\begin{figure}
-\includegraphics[width=3cm,trim = 0 0 0 50,clip]{./figures/normalSAT} 
-\includegraphics[width=3cm,trim = 0 0 0 50,clip]{./figures/normalStandard} 
-\end{figure}
-         
-We wrote that $X\sim N(520,3600)$ to be the SAT score
-
-
-We wanted  $P(X \leq 600)$
-
-
-This is the same as  $P(Z \leq (600 - 520)/60)$
-
-\script{(600 - 520)/60 = 1.3333}
-
-
-$P(Z \leq 1.3333)$ is ..
-
-
-
-\alr{pnorm((600 - 520)/60)}
-
-
-
-\alr{[1] 0.9087888}
-
-
-
--->
 
 ## Z-scores: Comparing values {.scrollable}
 
@@ -447,13 +361,13 @@ Sometimes we will be tasked with comparing values from two different distributio
 
 [Goal:]{.smallCap} Which value is more [extreme]{.emphasis}?
 
-[Example:]{.example} 
+[Example:]{.example} We want to compare olympic records in men's sprinting (9.63 seconds) and women's sprinting (10.61 seconds)
 
 ## Empirical rule {.scrollable}
 
 Values from normal distributions contain predictable amounts of probability
 
-[(This is sometimes known as the ]{.subscript}[empirical rule]{.definition})
+[(This is sometimes known as the [empirical rule]{.definition})]{.subscript}
 
 :::::: columns
 ::: {.column width="50%"}
@@ -461,7 +375,7 @@ Values from normal distributions contain predictable amounts of probability
 #| label: normalEmpRuleGeneral
 #| echo: false
 #| fig-asp: 1
-#| out-width: "50%"
+#| out-width: "100%"
 
 mu      = 0
 sigmaSq = 1
@@ -475,15 +389,22 @@ funcShaded <- function(x, lower_bound) {
 
 xMin = mu - sqrt(sigmaSq)*4
 xMax = mu + sqrt(sigmaSq)*4
-ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
+outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
     stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
     stat_function(fun = funcShaded, args = list(lower_bound = 3), 
                   geom = "area", fill = 'lightcoral', alpha = .5) +
-    stat_function(fun = funcShaded, args = list(lower_bound = 2), 
-                  geom = "area", fill = 'lightgreen', alpha = .5) +
-    stat_function(fun = funcShaded, args = list(lower_bound = 1), 
-                  geom = "area", fill = 'lightblue', alpha = .5) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
+```
+
+```{r}
+outPlot = outPlot +   stat_function(fun = funcShaded, args = list(lower_bound = 2), 
+                  geom = "area", fill = 'lightgreen', alpha = .5) 
+```
+
+```{r}
+outPlot = outPlot +
+    stat_function(fun = funcShaded, args = list(lower_bound = 1), 
+                  geom = "area", fill = 'lightblue', alpha = .5) 
 ```
 
 -   [$P( |X - \mu| \leq \sigma) = 0.683$]{.lightbluetext}
