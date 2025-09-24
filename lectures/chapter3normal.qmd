@@ -66,7 +66,7 @@ sigmaSq = 9
 pnorm(x, mu, sqrt(sigmaSq))
 ```
 
-## Computing values {.scrollable}
+## Computing values (quantiles) {.scrollable}
 
 Continuing with $X \sim N(5,9)$, we found that $P(X < 4)$ is:
 
@@ -79,7 +79,7 @@ pnorm(4,5,3)
 #| label: normalProbPlot
 #| echo: false
 #| fig-asp: 1
-#| out-width: "50%" 
+#| out-width: "20%" 
 x       = 4
 mu      = 5
 sigmaSq = 9
