@@ -543,7 +543,7 @@ outPlot
 ::::::
 -->
 
-## A (potentially) helpful applet
+## A (potentially) helpful applet {.scrollable}
 
 ```{=html}
 <iframe width="780" height="500" src="https://people.tamu.edu/~scottcrawford/ftable.html" title="Probability applet"></iframe>
@@ -561,7 +561,18 @@ sigmaSq = 3600
 pnorm(x, mu, sqrt(sigmaSq))
 ```
 
-To use the applet, we need the z-score = `r (600 - 520)/sqrt(sigmaSq)`
+To use the applet
+
+- [Probability:]{.smallCap} we need the z-score = `r (600 - 520)/sqrt(sigmaSq)`
+- [Value:]{.smallCap} We need to unstandardize to get value.
+
+```{r SATvalueRevisit}
+#| echo: true
+1.751*sqrt(sigmaSq) + mu
+qnorm(.96, mu, sqrt(sigmaSq))
+```
+
+
 
 ## We'll be back...
 
