@@ -372,9 +372,7 @@ $$
 \text{z-score} = \frac{x - \mu}{\sigma}
 $$
 
-The main use case: compare values from two different distributions
-
-[Question:]{.smallCap} Which of the two values is more [unusual]{.emphasis}?
+[Question:]{.smallCap} Which of the two values from two different distributions is more [unusual]{.emphasis}?
 
 . . .
 
@@ -413,6 +411,41 @@ Hence, the women's result is more unusual:
 #| echo: true
 abs(zScoreMen) < abs(zScoreWomen)
 ```
+
+## Z-scores: Another application {.scrollable}
+
+Another usage of [z-scores]{.definition}: what value $x$ would be equally as unusual?
+
+[Answer:]{.smallCap} Choose the $x$ so that the z-scores are [equal]{.emphasis} 
+
+. . .
+
+[Example:]{.example} What time would a men's sprinter need to get to be as unusal as the female record?
+
+| Category | Mens | Womens |
+|---------|-----:|------:|
+| average | 9.84   | 10.81 |
+| variance | .0057  |   .0049 |
+| record | 9.63  |   10.61 |
+: Table of Average and Standard Deviation of Olympic Sprinting times.
+
+We found the female z-score = `r round(zScoreWomen,3)`
+
+$$
+\text{z-score}*\sigma  + \mu = x
+$$
+
+Here, use
+
+- z-score from the female sprinters
+- the $\mu$ and $\sigma$ from the male sprinters
+
+```{r zScoreExampleConclusion}
+#| echo: true
+x = zScoreWomen * sqrt(.0057) + 9.85
+```
+
+The male record would need to be `r round(x,3)` seconds to be as as unusual as the female record.
 
 
 ## Empirical rule {.scrollable}
