@@ -419,9 +419,9 @@ Values from normal distributions contain predictable amounts of probability
 
 This is the [empirical rule:]{.definition})]{.subscript}
 
--   [$P( |Z| \leq 1) = 0.683$]{.lightbluetext}. ($\sim \frac{2}{3}$ prob. within 1 $\sigma$)
--   [$P( |Z| \leq 2) = 0.954$]{.lightgreentext} ($\sim \frac{19}{20}$ prob. within 2 $\sigma$)
--   [$P( |Z| \leq 3) = 0.997$]{.lightredtext} ($\sim \frac{99}{100}$ prob. within 3 $\sigma$)
+-   [$P( |Z| \leq 1) = 0.683$]{.lightbluetext} ($\sim \frac{2}{3}$ obs. within 1 $\sigma$)
+-   [$P( |Z| \leq 2) = 0.954$]{.lightgreentext} ($\sim \frac{19}{20}$ obs. within 2 $\sigma$)
+-   [$P( |Z| \leq 3) = 0.997$]{.lightredtext} ($\sim \frac{99}{100}$ obs. within 3 $\sigma$)
 
 :::::: columns
 ::: {.column width="33%"}
@@ -445,8 +445,8 @@ xMin = mu - sqrt(sigmaSq)*4
 xMax = mu + sqrt(sigmaSq)*4
 outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
     stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
-    stat_function(fun = funcShaded, args = list(lower_bound = 3), 
-                  geom = "area", fill = 'lightcoral', alpha = .5) +
+    stat_function(fun = funcShaded, args = list(lower_bound = 1), 
+                  geom = "area", fill = 'lightblue', alpha = .5) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 outPlot
 ```
@@ -480,8 +480,8 @@ outPlot
 
 outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
     stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
-stat_function(fun = funcShaded, args = list(lower_bound = 1), 
-                  geom = "area", fill = 'lightblue', alpha = .5)   +
+stat_function(fun = funcShaded, args = list(lower_bound = 3), 
+                  geom = "area", fill = 'lightcoral', alpha = .5)   +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 outPlot
 ```
