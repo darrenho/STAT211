@@ -442,7 +442,7 @@ Here, use
 
 ```{r zScoreExampleValue}
 #| echo: true
-x = zScoreWomen * sqrt(.0057) + 9.85
+x = zScoreWomen * sqrt(.0057) + 9.84
 ```
 
 The male record would need to be `r round(x,3)` seconds to be as as unusual as the female record.
@@ -546,7 +546,7 @@ outPlot
 ## A (potentially) helpful applet {.scrollable}
 
 ```{=html}
-<iframe width="780" height="500" src="https://people.tamu.edu/~scottcrawford/ftable.html" title="Probability applet"></iframe>
+<iframe width="780" height="500" src="https://darrenho.github.io" title="Probability applet"></iframe>
 ```
 
 [Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
@@ -578,4 +578,4 @@ qnorm(.96, mu, sqrt(sigmaSq))
 
 The normal plays a [central]{.emphasis} role in probability and statistics
 
-We will return to it in when we discuss [sampling distributions]{.smallCap}...
+We will return to it later during [sampling distributions]{.smallCap}...
