@@ -31,7 +31,8 @@ Computing probabilities with the normal **requires** computers
 
 Luckily, we already know the general idea...
 
-![](figures/normalTable.png){width="200%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
+moo
+![](figures/normalTable.png){width="300%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
 
 ```{r}
 #| echo: true
