@@ -556,9 +556,10 @@ outPlot
 ## A (potentially) helpful applet {.scrollable}
 
 ![](figures/appletScott.png){width="75%" fig-alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution"}
-Here is a link:
 
-[Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
+
+
+Here is a link: [Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
 
 Returning to SAT example:
 
