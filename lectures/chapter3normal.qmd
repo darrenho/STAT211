@@ -321,7 +321,7 @@ What is the probability that that a measurement will be within $\pm$.001 centime
 
 . . .
 
-$Y = 2.54X$, therefore $Y \sim$ . . . $N(2.54,  2.54^2*.000001)$
+$Y = 2.54X$, therefore $Y \sim N(2.54,  2.54^2*.000001)$
 
 . . .
 
@@ -330,7 +330,9 @@ $$
 P(1 - .001 \leq Y \leq 1 + .001) & = P(.999 \leq Y \leq 1.001) \\
 & = F(1.001) - F(.999)
 \end{align}
-$$ . . .
+$$ 
+
+. . .
 
 ```{r transformNormalInchCM}
 #| echo: true
