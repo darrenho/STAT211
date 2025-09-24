@@ -233,8 +233,8 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <h2>Computing probabilities: old vs.&nbsp;new</h2>
 <p>Computing probabilities with the normal <strong>requires</strong> computers</p>
 <p>Luckily, we already know the general idea…</p>
-<p>moo <img data-src="figures/normalTable.png" style="width:300.0%" alt="Standard Normal Table for getting probabilities from Z-scores"></p>
-<div class="cell">
+
+<img data-src="figures/normalTable.png" style="width:200.0%" alt="Standard Normal Table for getting probabilities from Z-scores" class="r-stretch"><div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">pnorm</span>(<span class="fl">1.8</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9640697</code></pre>
@@ -663,8 +663,9 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 ```
 -->
 <p><a href="https://people.tamu.edu/~scottcrawford/ftable.html" class="external" target="_blank">Probability applet</a></p>
-
-<img data-src="figures/appletScott.png" class="quarto-figure quarto-figure-left r-stretch" style="width:100.0%" alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution"><p>Returning to SAT example:</p>
+<p><img data-src="figures/normalTable.png" style="width:200.0%" alt="Standard Normal Table for getting probabilities from Z-scores"></p>
+<p><img data-src="figures/appletScott.png" style="width:100.0%" alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution"></p>
+<p>Returning to SAT example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
 <span id="cb29-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
