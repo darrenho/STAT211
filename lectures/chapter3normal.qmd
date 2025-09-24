@@ -31,7 +31,7 @@ Computing probabilities with the normal **requires** computers
 
 Luckily, we already know the general idea...
 
-![](figures/normalTable.png){fig-align="left" width="100%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
+![](figures/normalTable.png){width="100%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
 
 ```{r}
 #| echo: true
@@ -559,7 +559,7 @@ outPlot
 
 
 
-![moo](figures/appletScott.png){fig-align="left" width="100%" fig-alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution"}
+![](figures/appletScott.png){fig-align="left" width="100%" fig-alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution"}
 
 [Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
 
@@ -571,6 +571,7 @@ x       = 600
 mu      = 520
 sigmaSq = 3600
 pnorm(x, mu, sqrt(sigmaSq))
+qnorm(.96, mu, sqrt(sigmaSq))
 ```
 
 To use the applet
@@ -581,7 +582,6 @@ To use the applet
 ```{r SATvalueRevisit}
 #| echo: true
 1.751*sqrt(sigmaSq) + mu
-qnorm(.96, mu, sqrt(sigmaSq))
 ```
 
 
