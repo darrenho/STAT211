@@ -557,8 +557,8 @@ outPlot
 
 moo
 
-![](figures/normalTable.png){fig-alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution" width="100%"}
-moo
+![](figures/appletScott.png){fig-alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution" width="100%"}
+Here is a link:
 
 [Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
 
