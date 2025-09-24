@@ -440,7 +440,7 @@ Here, use
 - z-score from the female sprinters
 - the $\mu$ and $\sigma$ from the male sprinters
 
-```{r zScoreExampleConclusion}
+```{r zScoreExampleValue}
 #| echo: true
 x = zScoreWomen * sqrt(.0057) + 9.85
 ```
