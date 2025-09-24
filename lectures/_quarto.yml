@@ -1,6 +1,10 @@
+author:
+  name: Darren Homrighausen
+  institute: Texas A&M University
+
 format:
   revealjs:
-    theme: [default, custom]
+    theme: [default, custom.scss]
     toc: true
     toc-depth: 1
     slide-number: c/t
