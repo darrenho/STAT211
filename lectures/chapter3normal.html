@@ -216,25 +216,18 @@
 <h2 id="toc-title">Table of contents</h2>
 <ul>
 <li><a href="#/the-normal-distribution" id="/toc-the-normal-distribution">The Normal Distribution</a></li>
-<li><a href="#/the-normal-distribution-1" id="/toc-the-normal-distribution-1">The Normal Distribution</a></li>
-<li><a href="#/computing-probabilities-for-the-normal" id="/toc-computing-probabilities-for-the-normal">Computing probabilities for the normal</a></li>
-<li><a href="#/computing-values-for-the-normal" id="/toc-computing-values-for-the-normal">Computing values for the normal</a></li>
-<li><a href="#/computing-probabilities-and-values" id="/toc-computing-probabilities-and-values">Computing probabilities and values</a></li>
-<li><a href="#/computing-probabilities-sats" id="/toc-computing-probabilities-sats">Computing probabilities: SATs</a></li>
-<li><a href="#/computing-values-sats" id="/toc-computing-values-sats">Computing values: SATs</a></li>
-<li><a href="#/transformingNormals" id="/toc-transformingNormals">Transforming Normals: <span class="math inline">\(aX + b\)</span></a></li>
-<li><a href="#/transforming-normals-inches-to-cm" id="/toc-transforming-normals-inches-to-cm">Transforming Normals: inches to cm</a></li>
-<li><a href="#/the-standard-normal-distribution" id="/toc-the-standard-normal-distribution">The Standard Normal Distribution</a></li>
-<li><a href="#/z-scores-comparing-values" id="/toc-z-scores-comparing-values">Z-scores: Comparing values</a></li>
-<li><a href="#/z-scores-another-application" id="/toc-z-scores-another-application">Z-scores: Another application</a></li>
-<li><a href="#/empirical-rule" id="/toc-empirical-rule">Empirical rule</a></li>
-<li><a href="#/a-potentially-helpful-applet" id="/toc-a-potentially-helpful-applet">A (potentially) helpful applet</a></li>
-<li><a href="#/well-be-back" id="/toc-well-be-back">We’ll be back…</a></li>
+<li><a href="#/computing-probabilities-and-values" id="/toc-computing-probabilities-and-values">Computing Probabilities and Values</a></li>
+<li><a href="#/transformations-and-z-scores" id="/toc-transformations-and-z-scores">Transformations and Z-scores</a></li>
 </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="chapter3normal.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </section>
-<section id="the-normal-distribution" class="slide level2">
-<h2>The Normal Distribution</h2>
+<section>
+<section id="the-normal-distribution" class="title-slide slide level1 center">
+<h1>The Normal Distribution</h1>
+
+</section>
+<section id="defining-the-normal-distribution" class="slide level2">
+<h2>Defining the normal distribution</h2>
 <p>The <span class="definition">normal</span> (also known as ‘Gaussian’) is <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span>:</p>
 <ul>
 <li><span class="math inline">\(\mu\)</span> is the expected value (<span class="math inline">\(E[X]\)</span>)</li>
@@ -246,8 +239,8 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 \]</span></p>
 <p><span class="subscript">(Just like the binomial, you don’t need to know this formula for this class)</span></p>
 </section>
-<section id="the-normal-distribution-1" class="slide level2 scrollable">
-<h2>The Normal Distribution</h2>
+<section id="computing-probabilities-old-vs.-new-school" class="slide level2 scrollable">
+<h2>Computing probabilities: old vs.&nbsp;new school</h2>
 <p>Computing probabilities with the normal <strong>requires</strong> computers</p>
 <p>Luckily, we already know the general idea…</p>
 
@@ -261,6 +254,11 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <pre><code>[1] 0.970621</code></pre>
 </div>
 </div>
+</section></section>
+<section>
+<section id="computing-probabilities-and-values" class="title-slide slide level1 center">
+<h1>Computing Probabilities and Values</h1>
+
 </section>
 <section id="computing-probabilities-for-the-normal" class="slide level2">
 <h2>Computing probabilities for the normal</h2>
@@ -341,7 +339,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 </section>
-<section id="computing-probabilities-and-values" class="slide level2 scrollable">
+<section id="computing-probabilities-and-values-1" class="slide level2 scrollable">
 <h2>Computing probabilities and values</h2>
 <p>Suppose <span class="math inline">\(X \sim N(-3.2, 100)\)</span></p>
 <p><span class="smallCap">Probability:</span> What is the probability <span class="math inline">\(X\)</span> is less than 0?</p>
@@ -428,6 +426,11 @@ We can form [linear combinations]{.definition} of rvs too
 In particular, any linear combination of Normal rvs is again a Normal:
 -->
 </div>
+</section></section>
+<section>
+<section id="transformations-and-z-scores" class="title-slide slide level1 center">
+<h1>Transformations and Z-scores</h1>
+
 </section>
 <section id="transformingNormals" class="slide level2">
 <h2>Transforming Normals: <span class="math inline">\(aX + b\)</span></h2>
@@ -697,7 +700,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <p>The normal plays a <span class="emphasis">central</span> role in probability and statistics</p>
 <p>We will return to it later during <span class="smallCap">sampling distributions</span>…</p>
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="_images/tamu.png" class="slide-logo"></p>

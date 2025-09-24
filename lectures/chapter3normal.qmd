@@ -8,7 +8,9 @@ subtitle: "Computing probabilities and quantiles from this important distributio
 require(ggplot2)
 ```
 
-## The Normal Distribution
+# The Normal Distribution
+
+## Defining the normal distribution
 
 The [normal]{.definition} (also known as 'Gaussian') is $X\sim N(\mu,\sigma^2)$:
 
@@ -23,7 +25,7 @@ $$
 
 [(Just like the binomial, you don't need to know this formula for this class)]{.subscript}
 
-## The Normal Distribution {.scrollable}
+## Computing probabilities: old vs. new school {.scrollable}
 
 Computing probabilities with the normal **requires** computers
 
@@ -36,6 +38,8 @@ Luckily, we already know the general idea...
 pnorm(1.8,0,1)
 pnorm(1.89,0,1)
 ```
+
+# Computing Probabilities and Values
 
 ## Computing probabilities for the normal
 
@@ -275,6 +279,8 @@ We can form [linear combinations]{.definition} of rvs too
 In particular, any linear combination of Normal rvs is again a Normal:
 -->
 ```
+
+# Transformations and Z-scores
 
 ## Transforming Normals: $aX + b$ {#transformingNormals}
 
