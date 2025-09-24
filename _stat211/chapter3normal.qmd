@@ -546,7 +546,7 @@ outPlot
 ## A (potentially) helpful applet {.scrollable}
 
 ```{=html}
-<iframe width="780" height="500" src="https://darrenho.github.io" title="Probability applet"></iframe>
+<iframe width="780" height="500" src="https://people.tamu.edu/~scottcrawford/ftable.html"></iframe>
 ```
 
 [Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
