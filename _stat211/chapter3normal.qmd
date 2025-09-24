@@ -417,10 +417,14 @@ abs(zScoreMen) < abs(zScoreWomen)
 
 Values from normal distributions contain predictable amounts of probability
 
-[(This is sometimes known as the [empirical rule]{.definition})]{.subscript}
+This is the [empirical rule:]{.definition})]{.subscript}
+
+-   [$P( |Z| \leq 1) = 0.683$]{.lightbluetext}. ($\sim \frac{2}{3}$ prob. within 1 $\sigma$)
+-   [$P( |Z| \leq 2) = 0.954$]{.lightgreentext} ($\sim \frac{19}{20}$ prob. within 2 $\sigma$)
+-   [$P( |Z| \leq 3) = 0.997$]{.lightredtext} ($\sim \frac{99}{100}$ prob. within 3 $\sigma$)
 
 :::::: columns
-::: {.column width="50%"}
+::: {.column width="33%"}
 ```{r}
 #| label: normalEmpRuleGeneral
 #| echo: false
@@ -447,22 +451,31 @@ outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 outPlot
 ```
 
-. . .
+:::
+::: {.column width="33%"}
 
 ```{r}
-outPlot = outPlot +   stat_function(fun = funcShaded, args = list(lower_bound = 2), 
-                  geom = "area", fill = 'lightgreen', alpha = .5) 
+outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
+    stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
+stat_function(fun = funcShaded, args = list(lower_bound = 2), 
+                  geom = "area", fill = 'lightgreen', alpha = .5)  +
+    scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 outPlot
 ```
 
-. . .
+:::
+::: {.column width="33%"}
+
 
 ```{r}
-outPlot = outPlot +
-    stat_function(fun = funcShaded, args = list(lower_bound = 1), 
-                  geom = "area", fill = 'lightblue', alpha = .5) 
+outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
+    stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
+stat_function(fun = funcShaded, args = list(lower_bound = 1), 
+                  geom = "area", fill = 'lightblue', alpha = .5)   +
+    scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 outPlot
 ```
+<!--
 -   [$P( |X - \mu| \leq \sigma) = 0.683$]{.lightbluetext}
 -   [$P( |X - \mu| \leq 2\sigma) = 0.954$]{.lightgreentext}
 -   [$P( |X - \mu| \leq 3\sigma) = 0.997$]{.lightredtext}
@@ -478,7 +491,7 @@ outPlot
 -   $P( |Z| \leq 3) = 0.997$
 :::
 ::::::
-
+-->
 ## We'll be back...
 
 The normal plays a [central]{.emphasis} role in probability and statistics
