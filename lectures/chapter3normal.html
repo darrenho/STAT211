@@ -472,6 +472,8 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </section>
 <section id="computing-values-quantiles" class="slide level2 scrollable">
 <h2>Computing values (quantiles)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <p>Continuing with <span class="math inline">\(X \sim N(5,9)\)</span>, we found that <span class="math inline">\(P(X &lt; 4)\)</span> is:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -483,12 +485,12 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="chapter3normal_files/figure-revealjs/normalProbPlot-1.png" style="width:20.0%"></p>
+<p><img data-src="chapter3normal_files/figure-revealjs/normalProbPlot-1.png" style="width:30.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-<div class="fragment">
+</div><p>. . .</p><div class="column" style="width:50%;">
 <p>Now, let’s ask the <strong>opposite</strong> question: at what value <span class="math inline">\(x\)</span> does <span class="math inline">\(P(X\leq x) = .7\)</span>? .</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -506,7 +508,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 </div>
-</div>
+</div></div>
 <div class="fragment">
 <p><span class="example">Concept Check:</span> What would this code resolve to:</p>
 <div class="cell">

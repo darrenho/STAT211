@@ -68,8 +68,12 @@ pnorm(x, mu, sqrt(sigmaSq))
 
 ## Computing values (quantiles) {.scrollable}
 
-Continuing with $X \sim N(5,9)$, we found that $P(X < 4)$ is:
 
+
+:::::: columns
+::: {.column width="50%"}
+
+Continuing with $X \sim N(5,9)$, we found that $P(X < 4)$ is:
 ```{r}
 #| echo: true
 pnorm(4,5,3)
@@ -79,7 +83,7 @@ pnorm(4,5,3)
 #| label: normalProbPlot
 #| echo: false
 #| fig-asp: 1
-#| out-width: "20%" 
+#| out-width: "30%" 
 x       = 4
 mu      = 5
 sigmaSq = 9
@@ -99,9 +103,11 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
                   geom = "area", fill = 'lightblue', alpha = .5) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
+:::
 
 . . .
 
+::: {.column width="50%"}
 Now, let's ask the **opposite** question: at what value $x$ does $P(X\leq x) = .7$? .
 
 ```{r}
@@ -133,6 +139,8 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
                   geom = "area", fill = 'lightblue', alpha = .5) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
+:::
+::::::
 
 . . .
 
