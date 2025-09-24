@@ -1,4 +1,6 @@
 format:
+  html:
+    html-math-method: webtex
   revealjs:
     theme: [default, custom]
     toc: true
@@ -11,5 +13,3 @@ format:
     css: styles.css
     highlight-style: a11y
     footer: "[https://darrenho.github.io/](https://darrenho.github.io/)"
-  html:
-    html-math-method: webtex
