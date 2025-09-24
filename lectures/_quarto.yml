@@ -1,7 +1,3 @@
-author:
-  name: Darren Homrighausen
-  institute: Texas A&M University
-
 format:
   revealjs:
     theme: [default, custom.scss]
@@ -14,4 +10,4 @@ format:
     logo: _images/tamu.png
     css: styles.css
     highlight-style: a11y
-    footer: "[https://darrenho.github.io/](https://darrenho.github.io/)"
+    footer: "Darren Homrighausen [https://darrenho.github.io/](https://darrenho.github.io/)"

@@ -105,10 +105,11 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 ```
 :::
 
+::: {.column width="50%"}
+
 . . .
 
-::: {.column width="50%"}
-Now, let's ask the **opposite** question: at what value $x$ does $P(X\leq x) = .7$? .
+Now, let's ask the **opposite** question: at what value $x$ does $P(X\leq x) = .7$?
 
 ```{r}
 #| echo: true
