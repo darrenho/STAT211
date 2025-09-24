@@ -25,7 +25,7 @@ $$
 
 [(Just like the binomial, you don't need to know this formula for this class)]{.subscript}
 
-## Computing probabilities: old vs. new school {.scrollable}
+## Computing probabilities: old vs. new  {.scrollable}
 
 Computing probabilities with the normal **requires** computers
 
@@ -41,7 +41,7 @@ pnorm(1.89,0,1)
 
 # Computing Probabilities and Values
 
-## Computing probabilities for the normal
+## Computing probabilities
 
 We will always write $X\sim N(\mu,\sigma^2)$ for the normal
 
@@ -66,7 +66,7 @@ sigmaSq = 9
 pnorm(x, mu, sqrt(sigmaSq))
 ```
 
-## Computing values for the normal {.scrollable}
+## Computing values {.scrollable}
 
 Continuing with $X \sim N(5,9)$, we found that $P(X < 4)$ is:
 

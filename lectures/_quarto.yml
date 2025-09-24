@@ -1,6 +1,4 @@
 format:
-  html:
-    html-math-method: webtex
   revealjs:
     theme: [default, custom]
     toc: true
