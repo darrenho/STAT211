@@ -15,7 +15,7 @@ require(ggplot2)
 The [normal]{.definition} (also known as 'Gaussian') is $X\sim N(\mu,\sigma^2)$:
 
 -   $\mu$ is the expected value ($E[X]$)
--   $\sigma^2$ is the variance of (Var$[X]$)
+-   $\sigma^2$ is the variance of ($Var[X]$)
 
 Its pdf:
 
@@ -31,7 +31,7 @@ Computing probabilities with the normal **requires** computers
 
 Luckily, we already know the general idea...
 
-![](figures/normalTable.png){width="200%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
+![](figures/normalTable.png){width="250%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
 
 ```{r}
 #| echo: true
@@ -83,7 +83,7 @@ pnorm(4,5,3)
 #| label: normalProbPlot
 #| echo: false
 #| fig-asp: 1
-#| out-width: "30%" 
+#| out-width: "50%" 
 x       = 4
 mu      = 5
 sigmaSq = 9
@@ -103,11 +103,13 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
                   geom = "area", fill = 'lightblue', alpha = .5) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
+
+. . .
+
 :::
 
 ::: {.column width="50%"}
 
-. . .
 
 Now, let's ask the **opposite** question: at what value $x$ does $P(X\leq x) = .7$?
 
@@ -116,7 +118,7 @@ Now, let's ask the **opposite** question: at what value $x$ does $P(X\leq x) = .
 qnorm(.7,5,3)
 ```
 
-This is called a [quantile]{.definition} of the normal
+This is called a [quantile]{.definition} of the normal a corresponds to a particular value $x$
 
 ```{r}
 #| label: normalQuantilePlot
@@ -140,10 +142,13 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
                   geom = "area", fill = 'lightblue', alpha = .5) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
+
+. . .
+
 :::
 ::::::
 
-. . .
+
 
 [Concept Check:]{.example} What would this code resolve to:
 
