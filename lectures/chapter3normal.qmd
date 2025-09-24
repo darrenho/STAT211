@@ -559,7 +559,7 @@ outPlot
 
 
 
-![](figures/appletScott.png){fig-align="left" width="100%" fig-alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution"}
+![moo](figures/appletScott.png){fig-align="left" width="100%" fig-alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution"}
 
 [Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
 
