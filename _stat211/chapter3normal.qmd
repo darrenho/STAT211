@@ -372,9 +372,11 @@ $$
 \text{z-score} = \frac{x - \mu}{\sigma}
 $$
 
-The main use case is comparing values from two different distributions
+The main use case: compare values from two different distributions
 
-[Question:]{.smallCap} Which of the two values is more [extreme]{.emphasis}?
+[Question:]{.smallCap} Which of the two values is more [unusual]{.emphasis}?
+
+. . .
 
 [Answer:]{.smallCap} Whichever has larger [magnitude]{.emphasis} z-score 
 
@@ -382,14 +384,14 @@ The main use case is comparing values from two different distributions
 
 . . .
 
-[Example:]{.example} We want to compare olympic records in men's sprinting  and women's sprinting
+[Example:]{.example} We want to compare olympic records in men's and women's sprinting. Which is more unusual?  
 
-Which is more extreme?  Let's look at a table:
+Let's look at a table:
 
 | Category | Mens | Womens |
 |---------|-----:|------:|
 | average | 9.84   | 10.81 |
-| variance | .0046  |   .0049 |
+| variance | .0057  |   .0049 |
 | record | 9.63  |   10.61 |
 : Table of Average and Standard Deviation of Olympic Sprinting times.
 
@@ -405,7 +407,7 @@ zScoreWomen =  (10.61 - 10.83)/sqrt(.0049)
 
 The z-score for men is `r round(zScoreMen,3)` while for women it is `r round(zScoreWomen,3)`
 
-Hence, the women's result is more extreme as:
+Hence, the women's result is more unusual:
 
 ```{r zScoreExampleConclusion}
 #| echo: true
@@ -417,11 +419,13 @@ abs(zScoreMen) < abs(zScoreWomen)
 
 Values from normal distributions contain predictable amounts of probability
 
-This is the [empirical rule:]{.definition})]{.subscript}
+This is the [empirical rule:]{.definition}]
 
 -   [$P( |Z| \leq 1) = 0.683$]{.lightbluetext} ($\sim \frac{2}{3}$ obs. within 1 $\sigma$)
 -   [$P( |Z| \leq 2) = 0.954$]{.lightgreentext} ($\sim \frac{19}{20}$ obs. within 2 $\sigma$)
 -   [$P( |Z| \leq 3) = 0.997$]{.lightredtext} ($\sim \frac{99}{100}$ obs. within 3 $\sigma$)
+
+. . .
 
 :::::: columns
 ::: {.column width="33%"}
@@ -494,9 +498,9 @@ outPlot
 -   [$P( |X - \mu| \leq 3\sigma) = 0.997$]{.lightredtext}
 :::
 -->
-::: {.column width="10%"}
+<!-- ::: {.column width="10%"} -->
 <!-- empty column to create gap -->
-:::
+<!--::: -->
 <!--
 ::: {.column width="50%"}
 -   $P( |Z| \leq 1) = 0.683$
@@ -506,8 +510,28 @@ outPlot
 ::::::
 -->
 
+## A (potentially) helpful applet
+
+```{=html}
+<iframe width="780" height="500" src="https://people.tamu.edu/~scottcrawford/ftable.html" title="Probability applet"></iframe>
+```
+
+[Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
+
+Returning to SAT example:
+
+```{r SATprobRevisit}
+#| echo: true
+x       = 600
+mu      = 520
+sigmaSq = 3600
+pnorm(x, mu, sqrt(sigmaSq))
+```
+
+To use the applet, we need the z-score = `r (600 - 520)/sqrt(sigmaSq)`
+
 ## We'll be back...
 
 The normal plays a [central]{.emphasis} role in probability and statistics
 
-We will return to it in Chapter 5..
+We will return to it in when we discuss [sampling distributions]{.smallCap}...

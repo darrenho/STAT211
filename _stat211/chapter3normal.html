@@ -227,6 +227,7 @@
 <li><a href="#/the-standard-normal-distribution" id="/toc-the-standard-normal-distribution">The Standard Normal Distribution</a></li>
 <li><a href="#/z-scores-comparing-values" id="/toc-z-scores-comparing-values">Z-scores: Comparing values</a></li>
 <li><a href="#/empirical-rule" id="/toc-empirical-rule">Empirical rule</a></li>
+<li><a href="#/a-potentially-helpful-applet" id="/toc-a-potentially-helpful-applet">A (potentially) helpful applet</a></li>
 <li><a href="#/well-be-back" id="/toc-well-be-back">We’ll be back…</a></li>
 </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="chapter3normal.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -499,13 +500,15 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <p><span class="math display">\[
 \text{z-score} = \frac{x - \mu}{\sigma}
 \]</span></p>
-<p>The main use case is comparing values from two different distributions</p>
-<p><span class="smallCap">Question:</span> Which of the two values is more <span class="emphasis">extreme</span>?</p>
+<p>The main use case: compare values from two different distributions</p>
+<p><span class="smallCap">Question:</span> Which of the two values is more <span class="emphasis">unusual</span>?</p>
+<div class="fragment">
 <p><span class="smallCap">Answer:</span> Whichever has larger <span class="emphasis">magnitude</span> z-score</p>
 <p><span class="subscript">(that is, largest |z-score|)</span></p>
+</div>
 <div class="fragment">
-<p><span class="example">Example:</span> We want to compare olympic records in men’s sprinting and women’s sprinting</p>
-<p>Which is more extreme? Let’s look at a table:</p>
+<p><span class="example">Example:</span> We want to compare olympic records in men’s and women’s sprinting. Which is more unusual?</p>
+<p>Let’s look at a table:</p>
 <table class="caption-top table">
 <caption>Table of Average and Standard Deviation of Olympic Sprinting times.</caption>
 <thead>
@@ -523,7 +526,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 </tr>
 <tr class="even">
 <td>variance</td>
-<td style="text-align: right;">.0046</td>
+<td style="text-align: right;">.0057</td>
 <td style="text-align: right;">.0049</td>
 </tr>
 <tr class="odd">
@@ -541,7 +544,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <span id="cb25-2"><a href=""></a>zScoreWomen <span class="ot">=</span>  (<span class="fl">10.61</span> <span class="sc">-</span> <span class="fl">10.83</span>)<span class="sc">/</span><span class="fu">sqrt</span>(.<span class="dv">0049</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The z-score for men is -2.914 while for women it is -3.143</p>
-<p>Hence, the women’s result is more extreme as:</p>
+<p>Hence, the women’s result is more unusual:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="fu">abs</span>(zScoreMen) <span class="sc">&lt;</span> <span class="fu">abs</span>(zScoreWomen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -553,12 +556,13 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <section id="empirical-rule" class="slide level2 scrollable">
 <h2>Empirical rule</h2>
 <p>Values from normal distributions contain predictable amounts of probability</p>
-<p>This is the <span class="definition">empirical rule:</span>)]{.subscript}</p>
+<p>This is the <span class="definition">empirical rule:</span>]</p>
 <ul>
 <li><span class="lightbluetext"><span class="math inline">\(P( |Z| \leq 1) = 0.683\)</span></span> (<span class="math inline">\(\sim \frac{2}{3}\)</span> obs. within 1 <span class="math inline">\(\sigma\)</span>)</li>
 <li><span class="lightgreentext"><span class="math inline">\(P( |Z| \leq 2) = 0.954\)</span></span> (<span class="math inline">\(\sim \frac{19}{20}\)</span> obs. within 2 <span class="math inline">\(\sigma\)</span>)</li>
 <li><span class="lightredtext"><span class="math inline">\(P( |Z| \leq 3) = 0.997\)</span></span> (<span class="math inline">\(\sim \frac{99}{100}\)</span> obs. within 3 <span class="math inline">\(\sigma\)</span>)</li>
 </ul>
+<div class="fragment">
 <div class="columns">
 <div class="column" style="width:33%;">
 <div class="cell">
@@ -597,9 +601,10 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 -   [$P( |X - \mu| \leq 3\sigma) = 0.997$]{.lightredtext}
 :::
 -->
-<div class="column" style="width:10%;">
+<!-- ::: {.column width="10%"} -->
 <!-- empty column to create gap -->
-</div><!--
+<!--::: -->
+<!--
 ::: {.column width="50%"}
 -   $P( |Z| \leq 1) = 0.683$
 -   $P( |Z| \leq 2) = 0.954$
@@ -607,11 +612,28 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 :::
 ::::::
 -->
+</div>
+</section>
+<section id="a-potentially-helpful-applet" class="slide level2">
+<h2>A (potentially) helpful applet</h2>
+<iframe width="780" height="500" src="https://people.tamu.edu/~scottcrawford/ftable.html" title="Probability applet"></iframe>
+<p><a href="https://people.tamu.edu/~scottcrawford/ftable.html" class="external" target="_blank">Probability applet</a></p>
+<p>Returning to SAT example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
+<span id="cb28-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
+<span id="cb28-3"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
+<span id="cb28-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9087888</code></pre>
+</div>
+</div>
+<p>To use the applet, we need the z-score = 1.3333333</p>
 </section>
 <section id="well-be-back" class="slide level2">
 <h2>We’ll be back…</h2>
 <p>The normal plays a <span class="emphasis">central</span> role in probability and statistics</p>
-<p>We will return to it in Chapter 5..</p>
+<p>We will return to it in when we discuss <span class="smallCap">sampling distributions</span>…</p>
 
 </section>
     </div>
