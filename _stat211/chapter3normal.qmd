@@ -426,7 +426,7 @@ This is the [empirical rule:]{.definition})]{.subscript}
 :::::: columns
 ::: {.column width="33%"}
 ```{r}
-#| label: normalEmpRuleGeneral
+#| label: normalEmpRuleGeneral1
 #| echo: false
 #| fig-asp: 1
 #| out-width: "100%"
@@ -455,6 +455,11 @@ outPlot
 ::: {.column width="33%"}
 
 ```{r}
+#| label: normalEmpRuleGeneral2
+#| echo: false
+#| fig-asp: 1
+#| out-width: "100%"
+
 outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
     stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
 stat_function(fun = funcShaded, args = list(lower_bound = 2), 
@@ -468,6 +473,11 @@ outPlot
 
 
 ```{r}
+#| label: normalEmpRuleGeneral3
+#| echo: false
+#| fig-asp: 1
+#| out-width: "100%"
+
 outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
     stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
 stat_function(fun = funcShaded, args = list(lower_bound = 1), 
@@ -475,16 +485,19 @@ stat_function(fun = funcShaded, args = list(lower_bound = 1),
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 outPlot
 ```
+:::
+::::::
+
 <!--
 -   [$P( |X - \mu| \leq \sigma) = 0.683$]{.lightbluetext}
 -   [$P( |X - \mu| \leq 2\sigma) = 0.954$]{.lightgreentext}
 -   [$P( |X - \mu| \leq 3\sigma) = 0.997$]{.lightredtext}
 :::
-
+-->
 ::: {.column width="10%"}
 <!-- empty column to create gap -->
 :::
-
+<!--
 ::: {.column width="50%"}
 -   $P( |Z| \leq 1) = 0.683$
 -   $P( |Z| \leq 2) = 0.954$
@@ -492,6 +505,7 @@ outPlot
 :::
 ::::::
 -->
+
 ## We'll be back...
 
 The normal plays a [central]{.emphasis} role in probability and statistics
