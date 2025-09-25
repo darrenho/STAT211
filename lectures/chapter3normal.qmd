@@ -276,7 +276,7 @@ $P(X \leq 600) = $
 :::
 
 ::: {.fragment}
-$P(X \leq x) = 0.96$
+$P(X \leq 600) = $
 :::
 
 ::: {.fragment}
@@ -299,7 +299,7 @@ pnorm(x, mu, sqrt(sigmaSq))
 #| label: SATprobabilityNoEcho
 #| echo: false
 #| fig-asp: 1
-#| out-width: "100%" 
+#| out-width: "110%" 
 x       = 600
 mu      = 520
 sigmaSq = 3600
