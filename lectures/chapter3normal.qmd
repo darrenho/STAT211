@@ -29,15 +29,25 @@ $$
 
 Computing probabilities with the normal **requires** computers
 
-Luckily, we already know the general idea...
+:::::: columns
+::: {.column width="50%"}
 
-![](figures/normalTable.png){width="250%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
+In times of yore, this meant using tables:
+
+![](figures/normalTable.png){width="350%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
+:::
+::: {.column width="50%"}
+
+Now, we can just use a computer:
 
 ```{r}
 #| echo: true
 pnorm(1.8,0,1)
 pnorm(1.89,0,1)
 ```
+
+:::
+::::::
 
 # Computing Probabilities and Values
 
@@ -486,6 +496,7 @@ This is the [empirical rule:]{.definition}\]
 
 :::::: columns
 ::: {.column width="33%"}
+
 ```{r}
 #| label: normalEmpRuleGeneral1
 #| echo: false
