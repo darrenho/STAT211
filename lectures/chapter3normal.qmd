@@ -273,7 +273,7 @@ What is the probability someone scores less than 600?
 
 ::: {.fragment}
 
-$P(X \leq x) = 0.96$
+$P(X \leq 600) = $?
 
 :::
 
