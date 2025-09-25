@@ -297,20 +297,19 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div></div>
 </div>
+<div class="fragment">
+<p>Now, let’s ask the <strong>opposite</strong> question!</p>
+<p>For a fixed probability <span class="math inline">\(p\)</span>, what is the value <span class="math inline">\(x\)</span> so that <span class="math inline">\(P(X \leq x) = p\)</span>?</p>
 <div class="columns">
 <div class="column" style="width:60%;">
-<div class="fragment">
-<p>Now, let’s ask the <strong>opposite</strong> question:</p>
-<p>for a particular probability <span class="math inline">\(p\)</span>, what is the value <span class="math inline">\(x\)</span> such that <span class="math inline">\(P(X \leq x) = p\)</span></p>
-<p>For example: <span class="math inline">\(P(X\leq x) = .7\)</span>?</p>
+<p><span class="example">Example:</span> <span class="math inline">\(P(X\leq x) = .7\)</span>?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 6.573202</code></pre>
 </div>
 </div>
-</div>
-<div class="column" style="width:40%;">
+</div><div class="column" style="width:40%;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -321,7 +320,8 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 <p>This value is called a <span class="definition">quantile</span></p>
-</div></div></div>
+</div></div>
+</div>
 </section>
 <section id="using-pnorm-and-qnorm" class="slide level2">
 <h2>Using pnorm and qnorm</h2>

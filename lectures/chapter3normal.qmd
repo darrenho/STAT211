@@ -133,19 +133,15 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 ::::::
 
 
+::: {.fragment}
+Now, let's ask the **opposite** question!
+
+For a fixed probability $p$, what is the value $x$ so that $P(X \leq x) = p$?
 
 :::::: columns
 ::: {.column width="60%"}
 
-::: {.fragment}
-
-Now, let's ask the **opposite** question: 
-
-for a particular probability $p$, what is the value $x$ such that $P(X \leq x) = p$
-
-
-
-For example: $P(X\leq x) = .7$?
+[Example:]{.example} $P(X\leq x) = .7$?
 
 ```{r}
 #| echo: true
@@ -180,9 +176,8 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 
 This value is called a [quantile]{.definition}
 :::
-:::
 ::::::
-
+:::
 
 
 ## Using pnorm and qnorm 
