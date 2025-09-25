@@ -438,11 +438,11 @@ What is the probability that that a measurement will be within $\pm$.001 centime
 
 [(An inch is 2.54 cm)]{.subscript}
 
-. . .
+
 
 $Y = 2.54X$, therefore $Y \sim N(2.54,  2.54^2*.000001)$
 
-. . .
+
 
 $$
 \begin{align}
