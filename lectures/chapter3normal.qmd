@@ -271,12 +271,9 @@ The scores on the SAT math section are $X \sim N(520,3600)$
 
 What is the probability someone scores less than 600?
 
+$P(X \leq 600) = $
 ::: {.fragment}
-$P(X \leq 600) = p$
-:::
-
-::: {.fragment}
-$P(X \leq x) = .96$
+$P(X \leq 600) = ?$
 :::
 
 ::: {.fragment}
