@@ -90,7 +90,7 @@ Continuing with $X \sim N(5,9)$:
 :::::: columns
 ::: {.column width="60%"}
 
-[Recall:]{.example} For a value $x = 4$, the probability $P(X \leq 4)$:
+[Recall:]{.example} For a value $x = 4$, then $P(X \leq 4)$:
 
 ```{r}
 #| echo: true
@@ -139,13 +139,17 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 Now, let's ask the **opposite** question!
 
 For a fixed probability $p$, what is the value $x$ so that $P(X \leq x) = p$?
+
+This value is called a [quantile]{.definition}
 :::
 
 ::: {.fragment}
 :::::: columns
 ::: {.column width="60%"}
 
-[Example:]{.example} What $x$ makes $P(X\leq x) = .7$?
+[Example:]{.example} 
+
+What $x$ makes $P(X\leq x) = .7$?
 
 ```{r}
 #| echo: true
@@ -180,7 +184,7 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 
 :::
 ::::::
-This value is called a [quantile]{.definition}
+
 :::
 
 :::
