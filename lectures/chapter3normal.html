@@ -276,7 +276,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <p>Continuing with <span class="math inline">\(X \sim N(5,9)\)</span>:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>We found that <span class="math inline">\(P(X &lt; 4)\)</span> is:</p>
+<p>We found that for a particular value <span class="math inline">\(x = 4\)</span>, what is the probability <span class="math inline">\(P(X \leq 4)\)</span> is:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -292,6 +292,8 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 </div>
+<p>. . .</p>
+<p>Now, let’s ask the <strong>opposite</strong> question: for a particular probability <span class="math inline">\(p\)</span>, what is the value <span class="math inline">\(P(X \leq x) = p\)</span> . . .</p>
 </div><div class="column" style="width:50%;">
 <p>Now, let’s ask the <strong>opposite</strong> question: at what value <span class="math inline">\(x\)</span> does <span class="math inline">\(P(X\leq x) = .7\)</span>?</p>
 <div class="cell">
@@ -310,11 +312,12 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 </div>
-<p>. . .</p>
 </div></div>
+<div class="fragment">
 <p><span class="example">Concept Check:</span> What would this code resolve to:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">qnorm</span>( <span class="fu">pnorm</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <div class="fragment">
 <div class="cell">
