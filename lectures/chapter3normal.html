@@ -292,8 +292,9 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 </div>
-<p>. . .</p>
-<p>Now, let’s ask the <strong>opposite</strong> question: for a particular probability <span class="math inline">\(p\)</span>, what is the value <span class="math inline">\(P(X \leq x) = p\)</span> . . .</p>
+<div class="fragment">
+<p>Now, let’s ask the <strong>opposite</strong> question: for a particular probability <span class="math inline">\(p\)</span>, what is the value <span class="math inline">\(P(X \leq x) = p\)</span></p>
+</div>
 </div><div class="column" style="width:50%;">
 <p>Now, let’s ask the <strong>opposite</strong> question: at what value <span class="math inline">\(x\)</span> does <span class="math inline">\(P(X\leq x) = .7\)</span>?</p>
 <div class="cell">
@@ -363,12 +364,14 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 </section>
-<section id="computing-probabilities-sats" class="slide level2 scrollable">
+<section id="computing-probabilities-sats" class="slide level2">
 <h2>Computing probabilities: SATs</h2>
 <p><span class="example">Example</span></p>
-<p>Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 (that is, <span class="math inline">\(X \sim N(520,3600)\)</span>)</p>
+<p>The scores on the SAT math section are <span class="math inline">\(X \sim N(520,3600)\)</span></p>
+<p><span class="subscript">that is, normal with expected value 520 and variance 3600</span></p>
 <p>What is the probability someone scores less than 600?</p>
 <div class="fragment">
+<div class="scrolling">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -378,8 +381,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 </div>
-</div>
-<div class="fragment">
+<p>. . .</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
 <span id="cb19-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
@@ -390,12 +392,12 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="computing-values-sats" class="slide level2 scrollable">
 <h2>Computing values: SATs</h2>
 <p><span class="example">Example</span></p>
-<p>Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600</p>
-<p><span class="subscript">(that is, <span class="math inline">\(X \sim N(520,3600)\)</span>)</span></p>
+<p>The scores on the SAT math section are <span class="math inline">\(X \sim N(520,3600)\)</span></p>
 <p>The stats dept. identifies students scoring at or above 96% for recruitment</p>
 <p>What is the cutoff score (<span class="math inline">\(x\)</span>) for recruitment by the stats dept.?</p>
 <div class="fragment">

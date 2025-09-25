@@ -117,10 +117,10 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
 
-. . .
 
+::: {.fragment}
 Now, let's ask the **opposite** question: for a particular probability $p$, what is the value $P(X \leq x) = p$
-. . .
+:::
 
 :::
 
@@ -221,15 +221,19 @@ pnorm(0,3.2,sqrt(100))
 qnorm(.05,-3.2,sqrt(100))
 ```
 
-## Computing probabilities: SATs {.scrollable}
+## Computing probabilities: SATs 
 
 [Example]{.example}
 
-Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600 (that is, $X \sim N(520,3600)$)
+The scores on the SAT math section are $X \sim N(520,3600)$
+
+[that is, normal with expected value 520 and variance 3600]{.subscript}
 
 What is the probability someone scores less than 600?
 
 . . .
+
+:::{.scrolling}
 
 ```{r}
 #| label: SATquationNoEcho
@@ -265,13 +269,13 @@ sigmaSq = 3600
 pnorm(x, mu, sqrt(sigmaSq))
 ```
 
+:::
+
 ## Computing values: SATs {.scrollable}
 
 [Example]{.example}
 
-Suppose that the scores on the SAT math section are normally distributed with an expected value of 520 and a variance of 3600
-
-[(that is, $X \sim N(520,3600)$)]{.subscript}
+The scores on the SAT math section are $X \sim N(520,3600)$
 
 The stats dept. identifies students scoring at or above 96% for recruitment
 
