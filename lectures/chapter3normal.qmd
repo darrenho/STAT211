@@ -88,9 +88,11 @@ Continuing with $X \sim N(5,9)$:
 
 ::: {.fragment}
 :::::: columns
-::: {.column width="60%"}
+::: {.column width="50%"}
 
-[Recall:]{.example} For a value $x = 4$, $P(X \leq 4)$:
+[Recall:]{.example} 
+
+For a value $x = 4$, $P(X \leq 4)$:
 
 ```{r}
 #| echo: true
@@ -100,7 +102,7 @@ pnorm(4,5,3)
 
 :::
 
-::: {.column width="40%"}
+::: {.column width="50%"}
 
 ```{r}
 #| label: normalProbPlot
@@ -145,7 +147,7 @@ This value is called a [quantile]{.definition}
 
 ::: {.fragment}
 :::::: columns
-::: {.column width="60%"}
+::: {.column width="50%"}
 
 [Example:]{.example} 
 
@@ -157,7 +159,7 @@ qnorm(.7,5,3)
 ```
 :::
 
-::: {.column width="40%"}
+::: {.column width="50%"}
 
 ```{r}
 #| label: normalQuantilePlot
@@ -257,7 +259,7 @@ pnorm(0,-3.2,sqrt(100))
 qnorm(.05,-3.2,sqrt(100))
 ```
 
-## Computing probabilities: SATs 
+## Computing probabilities: SATs{.scrollable}
 
 [Example]{.example}
 
@@ -271,7 +273,7 @@ What is the probability someone scores less than 600?
 
 
 :::::: columns
-::: {.column width="40%"}
+::: {.column width="50%"}
 
 ```{r SATprobEcho}
 #| echo: true
@@ -282,7 +284,7 @@ pnorm(x, mu, sqrt(sigmaSq))
 ```
 
 :::
-::: {.column width="60%"}
+::: {.column width="50%"}
 
 
 ```{r}

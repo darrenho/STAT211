@@ -278,15 +278,16 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <div class="scrolling">
 <div class="fragment">
 <div class="columns">
-<div class="column" style="width:60%;">
-<p><span class="example">Recall:</span> For a value <span class="math inline">\(x = 4\)</span>, <span class="math inline">\(P(X \leq 4)\)</span>:</p>
+<div class="column" style="width:50%;">
+<p><span class="example">Recall:</span></p>
+<p>For a value <span class="math inline">\(x = 4\)</span>, <span class="math inline">\(P(X \leq 4)\)</span>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3694413</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -305,7 +306,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 <div class="fragment">
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:50%;">
 <p><span class="example">Example:</span></p>
 <p>What <span class="math inline">\(x\)</span> makes <span class="math inline">\(P(X\leq x) = .7\)</span>?</p>
 <div class="cell">
@@ -314,7 +315,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <pre><code>[1] 6.573202</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -385,7 +386,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 </section>
-<section id="computing-probabilities-sats" class="slide level2">
+<section id="computing-probabilities-sats" class="slide level2 scrollable">
 <h2>Computing probabilities: SATs</h2>
 <p><span class="example">Example</span></p>
 <p>The scores on the SAT math section are <span class="math inline">\(X \sim N(520,3600)\)</span></p>
@@ -393,7 +394,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <p>What is the probability someone scores less than 600?</p>
 <div class="fragment">
 <div class="columns">
-<div class="column" style="width:40%;">
+<div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
 <span id="cb19-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
@@ -403,7 +404,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <pre><code>[1] 0.9087888</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:60%;">
+</div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
