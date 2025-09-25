@@ -386,15 +386,16 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 </section>
-<section id="computing-probabilities-sats" class="slide level2 scrollable">
+<section id="computing-probabilities-sats" class="slide level2">
 <h2>Computing probabilities: SATs</h2>
+<div class="scrolling">
 <p><span class="example">Example</span></p>
 <p>The scores on the SAT math section are <span class="math inline">\(X \sim N(520,3600)\)</span></p>
 <p><span class="subscript">(that is, normal with expected value 520 and variance 3600)</span></p>
 <p>What is the probability someone scores less than 600?</p>
-<div class="fragment">
+<p>. . .</p>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:52%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
 <span id="cb19-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
@@ -404,7 +405,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <pre><code>[1] 0.9087888</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:48%;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -417,16 +418,16 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div></div>
 </div>
 </section>
-<section id="computing-values-sats" class="slide level2 scrollable">
+<section id="computing-values-sats" class="slide level2">
 <h2>Computing values: SATs</h2>
 <p><span class="example">Example</span></p>
 <p>The scores on the SAT math section are <span class="math inline">\(X \sim N(520,3600)\)</span></p>
-<p>The stats dept. identifies students scoring at or above 96% for recruitment</p>
+<p>The stats dept. admits students scoring above <span class="math inline">\(96^{th}\)</span> percentile</p>
 <p>What is the cutoff score (<span class="math inline">\(x\)</span>) for recruitment by the stats dept.?</p>
 <div class="fragment">
+<div class="scrolling">
 <p><span class="math inline">\(P(X \leq x) = 0.96\)</span></p>
-</div>
-<div class="fragment">
+<p>. . .</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>prob    <span class="ot">=</span> .<span class="dv">96</span></span>
 <span id="cb21-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
@@ -434,6 +435,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <span id="cb21-4"><a href=""></a><span class="fu">qnorm</span>(prob, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 625.0412</code></pre>
+</div>
 </div>
 </div>
 <!--

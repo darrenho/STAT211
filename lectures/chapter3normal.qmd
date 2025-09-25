@@ -259,8 +259,10 @@ pnorm(0,-3.2,sqrt(100))
 qnorm(.05,-3.2,sqrt(100))
 ```
 
-## Computing probabilities: SATs{.scrollable}
+## Computing probabilities: SATs
 
+
+:::{.scrolling}
 [Example]{.example}
 
 The scores on the SAT math section are $X \sim N(520,3600)$
@@ -273,7 +275,7 @@ What is the probability someone scores less than 600?
 
 
 :::::: columns
-::: {.column width="50%"}
+::: {.column width="52%"}
 
 ```{r SATprobEcho}
 #| echo: true
@@ -284,7 +286,7 @@ pnorm(x, mu, sqrt(sigmaSq))
 ```
 
 :::
-::: {.column width="50%"}
+::: {.column width="48%"}
 
 
 ```{r}
@@ -314,18 +316,20 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 
 :::
 ::::::
-
-## Computing values: SATs {.scrollable}
+:::
+## Computing values: SATs 
 
 [Example]{.example}
 
 The scores on the SAT math section are $X \sim N(520,3600)$
 
-The stats dept. identifies students scoring at or above 96% for recruitment
+The stats dept. admits students scoring above $96^{th}$ percentile
 
 What is the cutoff score ($x$) for recruitment by the stats dept.?
 
 . . .
+
+:::{.scrolling}
 
 $P(X \leq x) = 0.96$
 
@@ -338,6 +342,8 @@ mu      = 520
 sigmaSq = 3600
 qnorm(prob, mu, sqrt(sigmaSq))
 ```
+
+:::
 
 ```{=html}
 <!--
