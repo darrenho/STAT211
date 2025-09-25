@@ -82,7 +82,7 @@ pnorm(x, mu, sqrt(sigmaSq))
 
 Continuing with $X \sim N(5,9)$:
 
-[that is, normal with expected value 5 and variance 9]{.subscript}
+[(that is, normal with expected value 5 and variance 9)]{.subscript}
 
 :::::: columns
 ::: {.column width="50%"}
@@ -118,26 +118,27 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
                   geom = "area", fill = 'lightblue', alpha = .5) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
+:::
 
+::: {.column width="50%"}
 
 ::: {.fragment}
 Now, let's ask the **opposite** question: 
 
 for a particular probability $p$, what is the value $x$ such that $P(X \leq x) = p$
-:::
-
-:::
-
-::: {.column width="50%"}
 
 
-At what value $x$ does $P(X\leq x) = .7$?
+
+For example: $P(X\leq x) = .7$?
 
 ```{r}
 #| echo: true
 qnorm(.7,5,3)
 ```
 
+:::
+
+::: {.fragment}
 This value is called a [quantile]{.definition}
 
 ```{r}
@@ -162,12 +163,13 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
                   geom = "area", fill = 'lightblue', alpha = .5) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
-
+:::
 :::
 ::::::
 
 
-. . .
+
+## Using pnorm and qnorm 
 
 [Concept Check:]{.example} What would this code resolve to:
 
@@ -221,7 +223,7 @@ This is always zero!
 
 ```{r}
 #| echo: true
-pnorm(0,3.2,sqrt(100))
+pnorm(0,-3.2,sqrt(100))
 ```
 
 . . .
@@ -241,13 +243,15 @@ qnorm(.05,-3.2,sqrt(100))
 
 The scores on the SAT math section are $X \sim N(520,3600)$
 
-[that is, normal with expected value 520 and variance 3600]{.subscript}
+[(that is, normal with expected value 520 and variance 3600)]{.subscript}
 
 What is the probability someone scores less than 600?
 
 . . .
 
-:::{.scrolling}
+
+:::::: columns
+::: {.column width="40%"}
 
 ```{r}
 #| label: SATquationNoEcho
@@ -273,7 +277,8 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
     scale_x_continuous(name = "Score") + scale_y_continuous(name = "f(x)")
 ```
 
-. . .
+:::
+::: {.column width="60%"}
 
 ```{r SATprobEcho}
 #| echo: true
@@ -284,6 +289,7 @@ pnorm(x, mu, sqrt(sigmaSq))
 ```
 
 :::
+::::::
 
 ## Computing values: SATs {.scrollable}
 
