@@ -43,6 +43,7 @@ pnorm(1.89,0,1)
 
 ## Computing probabilities
 
+
 We will always write $X\sim N(\mu,\sigma^2)$ for the normal
 
 R syntax will be specified with $\mu$ and $\sigma = \sqrt{\sigma^2}$ instead
@@ -69,11 +70,13 @@ pnorm(x, mu, sqrt(sigmaSq))
 ## Computing values (quantiles) {.scrollable}
 
 
+Continuing with $X \sim N(5,9)$:
 
 :::::: columns
 ::: {.column width="50%"}
 
-Continuing with $X \sim N(5,9)$, we found that $P(X < 4)$ is:
+We found that $P(X < 4)$ is:
+
 ```{r}
 #| echo: true
 pnorm(4,5,3)
@@ -104,7 +107,7 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
 
-. . .
+
 
 :::
 
