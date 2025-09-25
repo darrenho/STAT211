@@ -77,12 +77,14 @@ sigmaSq = 9
 pnorm(x, mu, sqrt(sigmaSq))
 ```
 
-## Computing values (quantiles) {.scrollable}
+## Computing values (quantiles) 
 
 
 Continuing with $X \sim N(5,9)$:
 
 [(that is, normal with expected value 5 and variance 9)]{.subscript}
+
+:::{.scrolling}
 
 ::: {.fragment}
 :::::: columns
@@ -137,11 +139,13 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 Now, let's ask the **opposite** question!
 
 For a fixed probability $p$, what is the value $x$ so that $P(X \leq x) = p$?
+:::
 
+::: {.fragment}
 :::::: columns
 ::: {.column width="60%"}
 
-[Example:]{.example} $P(X\leq x) = .7$?
+[Example:]{.example} What $x$ makes $P(X\leq x) = .7$?
 
 ```{r}
 #| echo: true
@@ -155,7 +159,7 @@ qnorm(.7,5,3)
 #| label: normalQuantilePlot
 #| echo: false
 #| fig-asp: 1
-#| out-width: "50%" 
+#| out-width: "100%" 
 x   = qnorm(.7,mu,sqrt(sigmaSq))
 lab = 'x' 
 
@@ -174,11 +178,12 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
 
-This value is called a [quantile]{.definition}
 :::
 ::::::
+This value is called a [quantile]{.definition}
 :::
 
+:::
 
 ## Using pnorm and qnorm 
 
