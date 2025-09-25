@@ -355,7 +355,7 @@ qnorm(prob, mu, sqrt(sigmaSq))
 #| label: SATvalueNoEcho
 #| echo: false
 #| fig-asp: 1
-#| out-width: "60%" 
+#| out-width: "100%" 
 x       = qnorm(prob, mu, sqrt(sigmaSq))
 mu      = 520
 sigmaSq = 3600
