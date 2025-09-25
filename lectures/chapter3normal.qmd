@@ -82,6 +82,8 @@ pnorm(x, mu, sqrt(sigmaSq))
 
 Continuing with $X \sim N(5,9)$:
 
+[that is, normal with expected value 5 and variance 9]{.subscript}
+
 :::::: columns
 ::: {.column width="50%"}
 
@@ -119,7 +121,9 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 
 
 ::: {.fragment}
-Now, let's ask the **opposite** question: for a particular probability $p$, what is the value $P(X \leq x) = p$
+Now, let's ask the **opposite** question: 
+
+for a particular probability $p$, what is the value $x$ such that $P(X \leq x) = p$
 :::
 
 :::
@@ -127,14 +131,14 @@ Now, let's ask the **opposite** question: for a particular probability $p$, what
 ::: {.column width="50%"}
 
 
-Now, let's ask the **opposite** question: at what value $x$ does $P(X\leq x) = .7$?
+At what value $x$ does $P(X\leq x) = .7$?
 
 ```{r}
 #| echo: true
 qnorm(.7,5,3)
 ```
 
-This is called a [quantile]{.definition} of the normal a corresponds to a particular value $x$
+This value is called a [quantile]{.definition}
 
 ```{r}
 #| label: normalQuantilePlot
@@ -197,9 +201,19 @@ pnorm(qnorm(.2,5,3), 5, 3)
 pnorm(qnorm(.2,5,3), 5, 3)
 ```
 
-## Computing probabilities and values {.scrollable}
+## Computing probabilities and values 
 
 Suppose $X \sim N(-3.2, 100)$
+
+[that is, normal with expected value -3.2 and variance 100]{.subscript}
+
+[Probability:]{.smallCap} What is the probability $X$ equals 0?
+
+. . .
+
+This is always zero!
+
+. . .
 
 [Probability:]{.smallCap} What is the probability $X$ is less than 0?
 

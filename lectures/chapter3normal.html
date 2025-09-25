@@ -274,6 +274,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <section id="computing-values-quantiles" class="slide level2 scrollable">
 <h2>Computing values (quantiles)</h2>
 <p>Continuing with <span class="math inline">\(X \sim N(5,9)\)</span>:</p>
+<p><span class="subscript">that is, normal with expected value 5 and variance 9</span></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>We found that for a particular value <span class="math inline">\(x = 4\)</span>, what is the probability <span class="math inline">\(P(X \leq 4)\)</span> is:</p>
@@ -293,17 +294,18 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 <div class="fragment">
-<p>Now, let’s ask the <strong>opposite</strong> question: for a particular probability <span class="math inline">\(p\)</span>, what is the value <span class="math inline">\(P(X \leq x) = p\)</span></p>
+<p>Now, let’s ask the <strong>opposite</strong> question:</p>
+<p>for a particular probability <span class="math inline">\(p\)</span>, what is the value <span class="math inline">\(x\)</span> such that <span class="math inline">\(P(X \leq x) = p\)</span></p>
 </div>
 </div><div class="column" style="width:50%;">
-<p>Now, let’s ask the <strong>opposite</strong> question: at what value <span class="math inline">\(x\)</span> does <span class="math inline">\(P(X\leq x) = .7\)</span>?</p>
+<p>At what value <span class="math inline">\(x\)</span> does <span class="math inline">\(P(X\leq x) = .7\)</span>?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 6.573202</code></pre>
 </div>
 </div>
-<p>This is called a <span class="definition">quantile</span> of the normal a corresponds to a particular value <span class="math inline">\(x\)</span></p>
+<p>This value is called a <span class="definition">quantile</span></p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -340,10 +342,17 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 </section>
-<section id="computing-probabilities-and-values-1" class="slide level2 scrollable">
+<section id="computing-probabilities-and-values-1" class="slide level2">
 <h2>Computing probabilities and values</h2>
 <p>Suppose <span class="math inline">\(X \sim N(-3.2, 100)\)</span></p>
+<p><span class="subscript">that is, normal with expected value -3.2 and variance 100</span></p>
+<p><span class="smallCap">Probability:</span> What is the probability <span class="math inline">\(X\)</span> equals 0?</p>
+<div class="fragment">
+<p>This is always zero!</p>
+</div>
+<div class="fragment">
 <p><span class="smallCap">Probability:</span> What is the probability <span class="math inline">\(X\)</span> is less than 0?</p>
+</div>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">0</span>,<span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

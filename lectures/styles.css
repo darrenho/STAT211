@@ -1,16 +1,7 @@
-<style>
-/* Or embed CSS directly within the document */
-.cell-output-display {
-  overflow-x: unset !important;
+.scrolling {
+  max-height: 500px;
+  overflow-y: auto;
 }
-
-th {
-  position: sticky;
-  top: 0;
-  background-color: white;
-  z-index: 10;
-}
-</style>
 
 .border {
   border: 1px solid #dee2e6;
