@@ -137,15 +137,13 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 ::::::
 
 
-::: {.fragment}
 Now, let's ask the **opposite** question!
 
 For a fixed probability $p$, what is the value $x$ so that $P(X \leq x) = p$?
 
 This value is called a [quantile]{.definition}
-:::
 
-::: {.fragment}
+
 :::::: columns
 ::: {.column width="50%"}
 
@@ -187,7 +185,7 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 :::
 ::::::
 
-:::
+
 
 :::
 
