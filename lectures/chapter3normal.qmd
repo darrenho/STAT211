@@ -90,7 +90,7 @@ Continuing with $X \sim N(5,9)$:
 :::::: columns
 ::: {.column width="60%"}
 
-[Recall:]{.example} For a value $x = 4$, then $P(X \leq 4)$:
+[Recall:]{.example} For a value $x = 4$, $P(X \leq 4)$:
 
 ```{r}
 #| echo: true
