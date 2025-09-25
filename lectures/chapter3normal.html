@@ -229,7 +229,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 \]</span></p>
 <p><span class="subscript">(Just like the binomial, you don’t need to know this formula for this class)</span></p>
 </section>
-<section id="computing-probabilities-old-vs.-new" class="slide level2 scrollable">
+<section id="computing-probabilities-old-vs.-new" class="slide level2">
 <h2>Computing probabilities: old vs.&nbsp;new</h2>
 <p>Computing probabilities with the normal <strong>requires</strong> computers</p>
 <div class="columns">
@@ -275,6 +275,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <h2>Computing values (quantiles)</h2>
 <p>Continuing with <span class="math inline">\(X \sim N(5,9)\)</span>:</p>
 <p><span class="subscript">(that is, normal with expected value 5 and variance 9)</span></p>
+<div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>We found that for a particular value <span class="math inline">\(x = 4\)</span>, what is the probability <span class="math inline">\(P(X \leq 4)\)</span> is:</p>
@@ -284,6 +285,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <pre><code>[1] 0.3694413</code></pre>
 </div>
 </div>
+</div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -293,7 +295,10 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</div></div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
 <div class="fragment">
 <p>Now, let’s ask the <strong>opposite</strong> question:</p>
 <p>for a particular probability <span class="math inline">\(p\)</span>, what is the value <span class="math inline">\(x\)</span> such that <span class="math inline">\(P(X \leq x) = p\)</span></p>
@@ -305,8 +310,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 </div>
-<div class="fragment">
-<p>This value is called a <span class="definition">quantile</span></p>
+<div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -316,8 +320,8 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </div>
 </div>
-</div>
-</div></div>
+<p>This value is called a <span class="definition">quantile</span></p>
+</div></div></div>
 </section>
 <section id="using-pnorm-and-qnorm" class="slide level2">
 <h2>Using pnorm and qnorm</h2>

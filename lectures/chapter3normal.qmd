@@ -25,7 +25,7 @@ $$
 
 [(Just like the binomial, you don't need to know this formula for this class)]{.subscript}
 
-## Computing probabilities: old vs. new {.scrollable}
+## Computing probabilities: old vs. new 
 
 Computing probabilities with the normal **requires** computers
 
@@ -84,6 +84,7 @@ Continuing with $X \sim N(5,9)$:
 
 [(that is, normal with expected value 5 and variance 9)]{.subscript}
 
+::: {.fragment}
 :::::: columns
 ::: {.column width="50%"}
 
@@ -93,6 +94,11 @@ We found that for a particular value $x = 4$, what is the probability $P(X \leq 
 #| echo: true
 pnorm(4,5,3)
 ```
+
+
+:::
+
+::: {.column width="50%"}
 
 ```{r}
 #| label: normalProbPlot
@@ -118,11 +124,21 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
                   geom = "area", fill = 'lightblue', alpha = .5) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
-:::
 
+
+
+
+:::
+:::
+::::::
+
+
+
+:::::: columns
 ::: {.column width="50%"}
 
 ::: {.fragment}
+
 Now, let's ask the **opposite** question: 
 
 for a particular probability $p$, what is the value $x$ such that $P(X \leq x) = p$
@@ -135,11 +151,8 @@ For example: $P(X\leq x) = .7$?
 #| echo: true
 qnorm(.7,5,3)
 ```
-
 :::
-
-::: {.fragment}
-This value is called a [quantile]{.definition}
+::: {.column width="50%"}
 
 ```{r}
 #| label: normalQuantilePlot
@@ -163,6 +176,8 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
                   geom = "area", fill = 'lightblue', alpha = .5) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
+
+This value is called a [quantile]{.definition}
 :::
 :::
 ::::::
