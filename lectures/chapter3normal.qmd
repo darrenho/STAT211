@@ -328,13 +328,14 @@ The stats dept. admits students scoring above $96^{th}$ percentile
 
 What is the cutoff score ($x$) for recruitment by the stats dept.?
 
-. . .
-
+::: {.fragment}
 
 
 $P(X \leq x) = 0.96$
 
-. . .
+:::
+
+::: {.fragment}
 
 ```{r SATvalueEcho}
 #| echo: true
@@ -367,7 +368,7 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
                   geom = "area", fill = 'lightblue', alpha = .5) +
     scale_x_continuous(name = "Score") + scale_y_continuous(name = "f(x)")
 ```
-
+:::
 :::
 
 ```{=html}
