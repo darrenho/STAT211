@@ -290,7 +290,7 @@ pnorm(x, mu, sqrt(sigmaSq))
 
 
 ```{r}
-#| label: SATquationNoEcho
+#| label: SATprobabilityNoEcho
 #| echo: false
 #| fig-asp: 1
 #| out-width: "100%" 
@@ -319,6 +319,7 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 :::
 ## Computing values: SATs 
 
+:::{.scrolling}
 [Example]{.example}
 
 The scores on the SAT math section are $X \sim N(520,3600)$
@@ -329,7 +330,7 @@ What is the cutoff score ($x$) for recruitment by the stats dept.?
 
 . . .
 
-:::{.scrolling}
+
 
 $P(X \leq x) = 0.96$
 
@@ -341,6 +342,30 @@ prob    = .96
 mu      = 520
 sigmaSq = 3600
 qnorm(prob, mu, sqrt(sigmaSq))
+```
+
+```{r}
+#| label: SATvalueNoEcho
+#| echo: false
+#| fig-asp: 1
+#| out-width: "100%" 
+x       = 600
+mu      = 520
+sigmaSq = 3600
+
+funcShaded <- function(x, lower_bound) {
+    y = dnorm(x, mean = mu, sd = sqrt(sigmaSq))
+    y[x >= lower_bound] <- NA
+    return(y)
+}
+
+xMin = 350
+xMax = 700
+ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
+    stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
+    stat_function(fun = funcShaded, args = list(lower_bound = x), 
+                  geom = "area", fill = 'lightblue', alpha = .5) +
+    scale_x_continuous(name = "Score") + scale_y_continuous(name = "f(x)")
 ```
 
 :::
