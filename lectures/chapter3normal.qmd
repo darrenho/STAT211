@@ -304,8 +304,8 @@ funcShaded <- function(x, lower_bound) {
     return(y)
 }
 
-xMin = 350
-xMax = 700
+xMin = mu - sqrt(sigmaSq)*4
+xMax = mu + sqrt(sigmaSq)*4
 ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
     stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
     stat_function(fun = funcShaded, args = list(lower_bound = x), 
@@ -349,8 +349,8 @@ qnorm(prob, mu, sqrt(sigmaSq))
 #| label: SATvalueNoEcho
 #| echo: false
 #| fig-asp: 1
-#| out-width: "100%" 
-x       = 600
+#| out-width: "60%" 
+x       = qnorm(prob, mu, sqrt(sigmaSq))
 mu      = 520
 sigmaSq = 3600
 
@@ -360,8 +360,8 @@ funcShaded <- function(x, lower_bound) {
     return(y)
 }
 
-xMin = 350
-xMax = 700
+xMin = mu - sqrt(sigmaSq)*4
+xMax = mu + sqrt(sigmaSq)*4
 ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
     stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
     stat_function(fun = funcShaded, args = list(lower_bound = x), 
