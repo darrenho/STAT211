@@ -90,7 +90,7 @@ Continuing with $X \sim N(5,9)$:
 :::::: columns
 ::: {.column width="60%"}
 
-We found that for a particular value $x = 4$, what is the probability $P(X \leq 4)$ is:
+[Recall:]{.example} For a value $x = 4$, the probability $P(X \leq 4)$:
 
 ```{r}
 #| echo: true
@@ -187,12 +187,12 @@ This value is called a [quantile]{.definition}
 
 ## Using pnorm and qnorm 
 
-[Concept Check:]{.example} What would this code resolve to:
+[Concept Check:]{.example} What would each of the following codes produce?
 
 ```{r}
 #| echo: true
 #| eval: false
-qnorm( pnorm(3,5,3), 5,3)
+qnorm( pnorm(3,5,3), 5, 3)
 ```
 
 . . .
@@ -200,7 +200,7 @@ qnorm( pnorm(3,5,3), 5,3)
 ```{r}
 #| echo: false
 #| eval: true
-qnorm( pnorm(3,5,3), 5,3)
+qnorm( pnorm(3,5,3), 5, 3)
 ```
 
 . . .
@@ -208,7 +208,7 @@ qnorm( pnorm(3,5,3), 5,3)
 ```{r}
 #| echo: true
 #| eval: false
-pnorm(qnorm(.2,5,3), 5, 3)
+pnorm( qnorm(.2,5,3), 5, 3)
 ```
 
 . . .
@@ -216,7 +216,7 @@ pnorm(qnorm(.2,5,3), 5, 3)
 ```{r}
 #| echo: false
 #| eval: true
-pnorm(qnorm(.2,5,3), 5, 3)
+pnorm( qnorm(.2,5,3), 5, 3)
 ```
 
 ## Computing probabilities and values 
@@ -269,11 +269,23 @@ What is the probability someone scores less than 600?
 :::::: columns
 ::: {.column width="40%"}
 
+```{r SATprobEcho}
+#| echo: true
+x       = 600
+mu      = 520
+sigmaSq = 3600
+pnorm(x, mu, sqrt(sigmaSq))
+```
+
+:::
+::: {.column width="60%"}
+
+
 ```{r}
 #| label: SATquationNoEcho
 #| echo: false
 #| fig-asp: 1
-#| out-width: "50%" 
+#| out-width: "100%" 
 x       = 600
 mu      = 520
 sigmaSq = 3600
@@ -293,16 +305,6 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
     scale_x_continuous(name = "Score") + scale_y_continuous(name = "f(x)")
 ```
 
-:::
-::: {.column width="60%"}
-
-```{r SATprobEcho}
-#| echo: true
-x       = 600
-mu      = 520
-sigmaSq = 3600
-pnorm(x, mu, sqrt(sigmaSq))
-```
 
 :::
 ::::::
