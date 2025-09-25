@@ -425,7 +425,8 @@ $$
 
 <!-- add a picture of measuring a gauge block using a ruler -->
 
-We are measuring a standard inch using a ruler with a fine scale
+:::{.scrolling}
+We are measuring a standard inch using a ruler on a fine scale
 
 If several people measure, they will get some random amount of measurement error:
 
@@ -459,6 +460,8 @@ sigmaSq = 2.54^2*.000001
 pnorm(1.001, mu, sqrt(sigmaSq)) - 
     pnorm(.999, mu, sqrt(sigmaSq))
 ```
+
+:::
 
 ## The Standard Normal Distribution {.scrollable}
 
