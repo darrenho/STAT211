@@ -337,6 +337,9 @@ $P(X \leq x) = 0.96$
 
 ::: {.fragment}
 
+:::::: columns
+::: {.column width="52%"}
+
 ```{r SATvalueEcho}
 #| echo: true
 prob    = .96
@@ -345,6 +348,9 @@ sigmaSq = 3600
 qnorm(prob, mu, sqrt(sigmaSq))
 ```
 
+:::
+
+::: {.column width="48%"}
 ```{r}
 #| label: SATvalueNoEcho
 #| echo: false
@@ -368,6 +374,8 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
                   geom = "area", fill = 'lightblue', alpha = .5) +
     scale_x_continuous(name = "Score") + scale_y_continuous(name = "f(x)")
 ```
+:::
+::::::
 :::
 :::
 
