@@ -86,7 +86,7 @@ Continuing with $X \sim N(5,9)$:
 
 ::: {.fragment}
 :::::: columns
-::: {.column width="50%"}
+::: {.column width="60%"}
 
 We found that for a particular value $x = 4$, what is the probability $P(X \leq 4)$ is:
 
@@ -98,13 +98,13 @@ pnorm(4,5,3)
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 
 ```{r}
 #| label: normalProbPlot
 #| echo: false
 #| fig-asp: 1
-#| out-width: "50%" 
+#| out-width: "100%" 
 x       = 4
 mu      = 5
 sigmaSq = 9
@@ -135,7 +135,7 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 
 
 :::::: columns
-::: {.column width="50%"}
+::: {.column width="60%"}
 
 ::: {.fragment}
 
@@ -152,7 +152,8 @@ For example: $P(X\leq x) = .7$?
 qnorm(.7,5,3)
 ```
 :::
-::: {.column width="50%"}
+
+::: {.column width="40%"}
 
 ```{r}
 #| label: normalQuantilePlot
