@@ -421,7 +421,7 @@ $$
 Y = 3X + 30 \sim N(480, 900)
 $$
 
-## Transforming Normals: inches to cm {.scrollable}
+## Transforming Normals: inches to cm 
 
 <!-- add a picture of measuring a gauge block using a ruler -->
 
