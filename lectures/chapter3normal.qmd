@@ -441,7 +441,7 @@ $$
 X \sim N(.875, .00005)
 $$
 
-What is the probability that that a measurement will be within $\pm$.001 centimeters?
+What is the probability that that a measurement will be within $\pm$.01 centimeters?
 
 [(An inch is 2.54 cm)]{.subscript}
 
@@ -453,7 +453,7 @@ $Y = 2.54X$, therefore $Y \sim N(2.54*.875,  2.54^2*.00005) = N(2.2225,  0.00032
 
 $$
 \begin{align}
-P(2.2225 - .001 \leq Y \leq 2.2225 + .001) & = P(2.2215 \leq Y \leq 2.2235) \\
+P(2.2225 - .01 \leq Y \leq 2.2225 + .01) & = P(2.2215 \leq Y \leq 2.2235) \\
 & = F(2.2235) - F(2.2215)
 \end{align}
 $$ 
@@ -464,8 +464,8 @@ $$
 #| echo: true
 mu      = 2.54*.875
 sigmaSq = 2.54^2*.00005
-pnorm(mu + .001, mu, sqrt(sigmaSq)) - 
-    pnorm(mu - .001, mu, sqrt(sigmaSq))
+pnorm(mu + .01, mu, sqrt(sigmaSq)) - 
+    pnorm(mu - .01, mu, sqrt(sigmaSq))
 ```
 
 :::

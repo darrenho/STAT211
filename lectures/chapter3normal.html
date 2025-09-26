@@ -507,22 +507,22 @@ Y = 3X + 30 \sim N(480, 900)
 <p><span class="math display">\[
 X \sim N(.875, .00005)
 \]</span></p>
-<p>What is the probability that that a measurement will be within <span class="math inline">\(\pm\)</span>.001 centimeters?</p>
+<p>What is the probability that that a measurement will be within <span class="math inline">\(\pm\)</span>.01 centimeters?</p>
 <p><span class="subscript">(An inch is 2.54 cm)</span></p>
 <p><span class="math inline">\(Y = 2.54X\)</span>, therefore <span class="math inline">\(Y \sim N(2.54*.875,  2.54^2*.00005) = N(2.2225,  0.00032)\)</span></p>
 <p><span class="math display">\[
 \begin{align}
-P(2.2225 - .001 \leq Y \leq 2.2225 + .001) &amp; = P(2.2215 \leq Y \leq 2.2235) \\
+P(2.2225 - .01 \leq Y \leq 2.2225 + .01) &amp; = P(2.2215 \leq Y \leq 2.2235) \\
 &amp; = F(2.2235) - F(2.2215)
 \end{align}
 \]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>mu      <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">*</span>.<span class="dv">875</span></span>
 <span id="cb23-2"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>.<span class="dv">00005</span></span>
-<span id="cb23-3"><a href=""></a><span class="fu">pnorm</span>(mu <span class="sc">+</span> .<span class="dv">001</span>, mu, <span class="fu">sqrt</span>(sigmaSq)) <span class="sc">-</span> </span>
-<span id="cb23-4"><a href=""></a>    <span class="fu">pnorm</span>(mu <span class="sc">-</span> .<span class="dv">001</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-3"><a href=""></a><span class="fu">pnorm</span>(mu <span class="sc">+</span> .<span class="dv">01</span>, mu, <span class="fu">sqrt</span>(sigmaSq)) <span class="sc">-</span> </span>
+<span id="cb23-4"><a href=""></a>    <span class="fu">pnorm</span>(mu <span class="sc">-</span> .<span class="dv">01</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.04440143</code></pre>
+<pre><code>[1] 0.4223202</code></pre>
 </div>
 </div>
 </div>
