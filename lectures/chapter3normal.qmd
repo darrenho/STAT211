@@ -726,7 +726,7 @@ On the exams, there will be a link to this applet:  [Probability applet](https:/
 
 [Note: This applet is totally optional and unnecessary if you use R]{.emphasis}
 
-![](figures/normalTable.png){width="10%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
+![](figures/appletScott.png){width="10%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
 
 
 :::{.scrolling}
