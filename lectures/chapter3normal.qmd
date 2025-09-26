@@ -598,7 +598,7 @@ $$
 Here, use
  
 -   z-score from the female sprinters
--   the $\mu$ and $\sigma$ from the male sprinters
+-   the $\mu$ and $\sigma$ from the male sprinters ($mu = 9.85$ and $\sigma^2 = .0057$)
 
 ```{r zScoreExampleValue}
 #| echo: true
@@ -606,7 +606,7 @@ x = zScoreW * sqrt(.0057) + 9.84
 x
 ```
 
-The male record would need to be `r round(x,3)` seconds to be as as unusual as the female record.
+The male record would need to be `r round(x,3)` seconds to be as unusual as the female record.
 
 :::
 
