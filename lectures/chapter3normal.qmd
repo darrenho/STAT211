@@ -513,6 +513,8 @@ $$
 \text{z-score} = \frac{x - \mu}{\sigma}
 $$
 
+:::{.scrolling}
+
 [Question:]{.smallCap} Which of the two values from two different distributions is more [unusual]{.emphasis}?
 
 . . .
@@ -553,6 +555,8 @@ Hence, the women's result is more unusual:
 #| echo: true
 abs(zScoreMen) < abs(zScoreWomen)
 ```
+
+:::
 
 ## Z-scores: Another application {.scrollable}
 
