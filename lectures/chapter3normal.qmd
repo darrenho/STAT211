@@ -426,12 +426,12 @@ $$
 <!-- add a picture of measuring a gauge block using a ruler -->
 
 :::{.scrolling}
-We are measuring a standard inch using a ruler on a fine scale
+We are measuring a standard inch using a ruler on a .001" scale
 
 If several people measure, they will get some random amount of measurement error:
 
 $$
-X \sim N(1, .000001)
+X \sim N(1, .0003)
 $$
 
 What is the probability that that a measurement will be within $\pm$.001 centimeters?
@@ -440,7 +440,7 @@ What is the probability that that a measurement will be within $\pm$.001 centime
 
 
 
-$Y = 2.54X$, therefore $Y \sim N(2.54,  2.54^2*.000001)$
+$Y = 2.54X$, therefore $Y \sim N(2.54,  2.54^2*.0003) = N(2.54,  0.00194)$
 
 
 
@@ -456,7 +456,7 @@ $$
 ```{r transformNormalInchCM}
 #| echo: true
 mu      = 1
-sigmaSq = 2.54^2*.000001
+sigmaSq = 2.54^2*.0003
 pnorm(1.001, mu, sqrt(sigmaSq)) - 
     pnorm(.999, mu, sqrt(sigmaSq))
 ```

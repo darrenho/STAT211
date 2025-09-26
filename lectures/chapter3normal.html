@@ -492,14 +492,14 @@ Y = 3X + 30 \sim N(480, 900)
 <h2>Transforming Normals: inches to cm</h2>
 <!-- add a picture of measuring a gauge block using a ruler -->
 <div class="scrolling">
-<p>We are measuring a standard inch using a ruler on a fine scale</p>
+<p>We are measuring a standard inch using a ruler on a .001” scale</p>
 <p>If several people measure, they will get some random amount of measurement error:</p>
 <p><span class="math display">\[
-X \sim N(1, .000001)
+X \sim N(1, .0003)
 \]</span></p>
 <p>What is the probability that that a measurement will be within <span class="math inline">\(\pm\)</span>.001 centimeters?</p>
 <p><span class="subscript">(An inch is 2.54 cm)</span></p>
-<p><span class="math inline">\(Y = 2.54X\)</span>, therefore <span class="math inline">\(Y \sim N(2.54,  2.54^2*.000001)\)</span></p>
+<p><span class="math inline">\(Y = 2.54X\)</span>, therefore <span class="math inline">\(Y \sim N(2.54,  2.54^2*.0003) = N(2.54,  0.00194)\)</span></p>
 <p><span class="math display">\[
 \begin{align}
 P(1 - .001 \leq Y \leq 1 + .001) &amp; = P(.999 \leq Y \leq 1.001) \\
@@ -509,11 +509,11 @@ P(1 - .001 \leq Y \leq 1 + .001) &amp; = P(.999 \leq Y \leq 1.001) \\
 <p>. . .</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb23-2"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>.<span class="dv">000001</span></span>
+<span id="cb23-2"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>.<span class="dv">0003</span></span>
 <span id="cb23-3"><a href=""></a><span class="fu">pnorm</span>(<span class="fl">1.001</span>, mu, <span class="fu">sqrt</span>(sigmaSq)) <span class="sc">-</span> </span>
 <span id="cb23-4"><a href=""></a>    <span class="fu">pnorm</span>(.<span class="dv">999</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.306198</code></pre>
+<pre><code>[1] 0.01813461</code></pre>
 </div>
 </div>
 </div>
