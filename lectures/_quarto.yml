@@ -1,6 +1,4 @@
 format:
-  html:
-    embed-resources: true
   revealjs:
     theme: [default, custom.scss]
     toc: true
