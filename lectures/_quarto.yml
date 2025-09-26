@@ -1,4 +1,5 @@
 format:
+  html: default
   revealjs:
     theme: [default, custom.scss]
     toc: true
@@ -11,5 +12,3 @@ format:
     css: styles.css
     highlight-style: a11y
     footer: "Darren Homrighausen [https://darrenho.github.io/](https://darrenho.github.io/)"
-  html:
-    html-math-method: webtex
