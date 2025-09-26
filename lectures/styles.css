@@ -1,5 +1,5 @@
 .scrolling {
-  max-height: 400px;
+  max-height: none;
   overflow-y: scroll;
 }
 
