@@ -3,7 +3,7 @@ format:
     theme: [default, custom.scss]
     toc: true
     toc-depth: 1
-    slide-number: c/t
+    slide-number: c
     chalkboard: 
       buttons: false
     preview-links: auto
