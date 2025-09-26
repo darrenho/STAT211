@@ -12,3 +12,4 @@ format:
     highlight-style: a11y
     footer: "Darren Homrighausen [https://darrenho.github.io/](https://darrenho.github.io/)"
     preload-iframes: true
+    output-file: chapter3normalReveal.html

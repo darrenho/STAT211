@@ -4,7 +4,7 @@ subtitle: "Computing probabilities and quantiles from this important distributio
 format:
   html:
     embed-resources: true
-    output-file: chapter3normalPrint.html
+    output-file: chapter3normalPrint.html    
 ---
 
 ```{r loadPacks}
