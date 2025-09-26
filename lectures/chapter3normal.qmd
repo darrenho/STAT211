@@ -722,16 +722,12 @@ outPlot
 
 ## A (potentially) helpful applet 
 
-On the exams, there will be a link to this applet:
-
-
-
-
-![](figures/normalTable.png){width="50%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
+On the exams, there will be a link to this applet:  [Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
 
 [Note: This applet is totally optional and unnecessary if you use R]{.emphasis}
 
-Here is a link: [Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
+![](figures/normalTable.png){width="50%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
+
 
 :::{.scrolling}
 
