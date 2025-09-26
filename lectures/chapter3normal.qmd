@@ -598,7 +598,7 @@ $$
 Here, use
  
 -   z-score from the female sprinters
--   the $\mu$ and $\sigma$ from the male sprinters ($mu = 9.85$ and $\sigma^2 = .0057$)
+-   the $\mu$ and $\sigma$ from the male sprinters ($\mu = 9.85$, $\sigma^2 = .0057$)
 
 ```{r zScoreExampleValue}
 #| echo: true
