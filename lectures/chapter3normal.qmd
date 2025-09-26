@@ -542,7 +542,7 @@ Let's look at a table:
 Let's compute the two [z-scores]{.definition}:
 
 :::::: columns
-::: {.column width="55%"}
+::: {.column width="65%"}
 
 ```{r zScoreExample}
 #| echo: true
@@ -554,7 +554,7 @@ zScoreW
 
 :::
 
-::: {.column width="45%"}
+::: {.column width="35%"}
 
 The women's result is more unusual
 
