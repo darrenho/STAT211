@@ -12,3 +12,5 @@ format:
     highlight-style: a11y
     footer: "Darren Homrighausen [https://darrenho.github.io/](https://darrenho.github.io/)"
     preload-iframes: true
+  html:
+    image-lazy-loading: false
