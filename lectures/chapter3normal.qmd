@@ -654,7 +654,7 @@ outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 outPlot
 ```
 
-[$P( |Z| \leq 1) = 0.683$]{.lightbluetext}
+[$P( |Z| \leq 1) = 0.68$]{.lightbluetext}
 :::
 
 ::: {.column width="33%"}
@@ -671,6 +671,7 @@ stat_function(fun = funcShaded, args = list(lower_bound = 2),
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 outPlot
 ```
+[$P( |Z| \leq 2) = 0.95$]{.lightgreentext}
 :::
 
 ::: {.column width="33%"}
@@ -687,6 +688,7 @@ stat_function(fun = funcShaded, args = list(lower_bound = 3),
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 outPlot
 ```
+[$P( |Z| \leq 3) = 0.997$]{.lightredtext}
 :::
 ::::::
 
@@ -723,8 +725,7 @@ outPlot
 On the exams, there will be a link to this applet:
 
 
-![Optional Applet](figures/appletScott.png){width="75%" fig-alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution"}
-
+<img src="figures/appletScott.png" style="width:75.0%" alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution" class="r-stretch quarto-figure-center"><p class="caption">Optional Applet</p>
 
 
 Here is a link: [Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
