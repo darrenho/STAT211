@@ -398,7 +398,7 @@ In particular, any linear combination of Normal rvs is again a Normal:
 -->
 ```
 
-# Transformations and Z-scores
+# Transformations
 
 ## Transforming Normals: $aX + b$ {#transformingNormals}
 
@@ -503,6 +503,8 @@ $$
 [(this is using the results in [Transforming Normals](#transformingNormals))]{.subscript}
 
 
+# Z-scores: How to compare values
+ 
 ## Z-scores: Comparing values {.scrollable}
 
 If we are given a value $x$ from a distribution with mean $\mu$ and variance $\sigma^2$, we can compute its [z-score]{.definition} via
