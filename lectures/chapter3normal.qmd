@@ -505,7 +505,7 @@ $$
 
 # Z-scores: How to compare values
  
-## Z-scores: Comparing values {.scrollable}
+## Z-scores: Comparing values 
 
 If we are given a value $x$ from a distribution with mean $\mu$ and variance $\sigma^2$, we can compute its [z-score]{.definition} via
 
@@ -564,6 +564,8 @@ Another usage of [z-scores]{.definition}: what value $x$ would be equally as unu
 
 [Answer:]{.smallCap} Choose the $x$ so that the z-scores are [equal]{.emphasis}
 
+:::{.scrolling}
+
 . . .
 
 [Example:]{.example} What time would a men's sprinter need to get to be as unusal as the female record?
@@ -593,6 +595,8 @@ x = zScoreWomen * sqrt(.0057) + 9.84
 ```
 
 The male record would need to be `r round(x,3)` seconds to be as as unusual as the female record.
+
+:::
 
 ## Empirical rule {.scrollable}
 
