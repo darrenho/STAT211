@@ -720,17 +720,21 @@ outPlot
 
 :::
 
-## A (potentially) helpful applet {.scrollable}
+## A (potentially) helpful applet 
 
 On the exams, there will be a link to this applet:
 
 
 <img src="figures/appletScott.png" style="width:75.0%" alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution" class="r-stretch quarto-figure-center"><p class="caption">Optional Applet</p>
 
+![](figures/steelRuler.png){width="50%" fig-alt="Measuring to a shoulder on a machined part with a steel rule"}
+
+[Note: This applet is totally optional and unnecessary if you use R]{.emphasis}
 
 Here is a link: [Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
 
-[Note: This applet is totally optional and unnecessary if you use R]{.emphasis}
+:::{.scrolling}
+
 
 Returning to SAT example:
 
@@ -752,6 +756,8 @@ To use the applet
 #| echo: true
 1.751*sqrt(sigmaSq) + mu
 ```
+
+:::
 
 ## We'll be back...
 
