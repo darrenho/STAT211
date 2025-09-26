@@ -727,7 +727,7 @@ On exams, there will be a link to an applet:  [Probability applet](https://peopl
 [Note: This applet is totally optional and unnecessary if you use R]{.emphasis}
 
 ```{=html}
-<img src="figures/appletScott.png" style="width:75.0%" alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution" class="r-stretch quarto-figure-center"><p class="caption">Optional Applet</p>
+<img src="figures/nikeAd.png" style="width:75.0%" alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution" class="r-stretch quarto-figure-center"><p class="caption">Optional Applet</p>
 ```
 
 
