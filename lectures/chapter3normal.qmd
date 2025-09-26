@@ -551,10 +551,6 @@ zScoreWomen
 
 The women's result is more unusual
 
-The z-score for men is `r round(zScoreMen,3)` while for women it is `r round(zScoreWomen,3)`
-
-
-
 :::
 
 ## Z-scores: Another application
