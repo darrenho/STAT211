@@ -432,13 +432,13 @@ $$
 ![](figures/steelRuler.png){width="50%" fig-alt="Measuring to a shoulder on a machined part with a steel rule"}
 
 
-We are measuring a standard inch using a ruler on a .01" scale
+We are measuring a machined part using a ruler on a .01" scale
 
 
 If several people measure, they will get some random amount of measurement error:
 
 $$
-X \sim N(1, .00005)
+X \sim N(.875, .00005)
 $$
 
 What is the probability that that a measurement will be within $\pm$.001 centimeters?
@@ -447,7 +447,7 @@ What is the probability that that a measurement will be within $\pm$.001 centime
 
 
 
-$Y = 2.54X$, therefore $Y \sim N(2.54,  2.54^2*.00005) = N(2.54,  0.00032)$
+$Y = 2.54X$, therefore $Y \sim N(2.54*.875,  2.54^2*.00005) = N(2.2225,  0.00032)$
 
 
 
@@ -462,7 +462,7 @@ $$
 
 ```{r transformNormalInchCM}
 #| echo: true
-mu      = 1
+mu      = 2.2225
 sigmaSq = 2.54^2*.00005
 pnorm(1.001, mu, sqrt(sigmaSq)) - 
     pnorm(.999, mu, sqrt(sigmaSq))
