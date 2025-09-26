@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <script src="chapter3normal_files/libs/clipboard/clipboard.min.js"></script>
-<script src="chapter3normal_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="chapter3normal_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="chapter3normal_files/libs/quarto-html/popper.min.js"></script>
-<script src="chapter3normal_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="chapter3normal_files/libs/quarto-html/anchor.min.js"></script>
-<link href="chapter3normal_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="chapter3normal_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="chapter3normal_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="chapter3normal_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="chapter3normal_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script src="chapter3normal_files/libs/clipboard/clipboard.min.js"></script>
 <script src="chapter3normal_files/libs/quarto-html/tabby.min.js"></script>
 <script src="chapter3normal_files/libs/quarto-html/popper.min.js"></script>
 <script src="chapter3normal_files/libs/quarto-html/tippy.umd.min.js"></script>
@@ -200,7 +190,7 @@
     }
   </style>
 </head>
-<body class="quarto-light fullcontent">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -220,7 +210,7 @@
 <li><a href="#/transformations" id="/toc-transformations">Transformations</a></li>
 <li><a href="#/z-scores-how-to-compare-values" id="/toc-z-scores-how-to-compare-values">Z-scores: How to compare values</a></li>
 </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="chapter3normal.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+</nav>
 </section>
 <section>
 <section id="the-normal-distribution" class="title-slide slide level1 center">
@@ -250,11 +240,11 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div><div class="column" style="width:50%;">
 <p>Now, we can just use a computer:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">pnorm</span>(<span class="fl">1.8</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">pnorm</span>(<span class="fl">1.8</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9640697</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">pnorm</span>(<span class="fl">1.89</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">pnorm</span>(<span class="fl">1.89</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.970621</code></pre>
 </div>
@@ -275,7 +265,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <div class="sourceCode" id="cb5" data-code-line-numbers="1|2-3|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">4</span></span>
 <span id="cb5-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">5</span></span>
 <span id="cb5-3"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="dv">9</span></span>
-<span id="cb5-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3694413</code></pre>
@@ -292,7 +282,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <p><span class="example">Recall:</span></p>
 <p>For a value <span class="math inline">\(x = 4\)</span>, <span class="math inline">\(P(X \leq 4)\)</span>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3694413</code></pre>
 </div>
@@ -301,8 +291,8 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img data-src="chapter3normal_files/figure-revealjs/normalProbPlot-1.png" style="width:100.0%" class="figure-img"></p>
+<figure>
+<p><img data-src="chapter3normal_files/figure-revealjs/normalProbPlot-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -316,7 +306,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <p><span class="example">Example:</span></p>
 <p>What <span class="math inline">\(x\)</span> makes <span class="math inline">\(P(X\leq x) = .7\)</span>?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 6.573202</code></pre>
 </div>
@@ -325,8 +315,8 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img data-src="chapter3normal_files/figure-revealjs/normalQuantilePlot-1.png" style="width:100.0%" class="figure-img"></p>
+<figure>
+<p><img data-src="chapter3normal_files/figure-revealjs/normalQuantilePlot-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -338,7 +328,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <h2>Using pnorm and qnorm</h2>
 <p><span class="example">Concept Check:</span> What would each of the following codes produce?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">qnorm</span>( <span class="fu">pnorm</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">qnorm</span>( <span class="fu">pnorm</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -349,7 +339,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">pnorm</span>( <span class="fu">qnorm</span>(.<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">pnorm</span>( <span class="fu">qnorm</span>(.<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -373,7 +363,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.6255158</code></pre>
 </div>
@@ -384,7 +374,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">05</span>,<span class="sc">-</span><span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">05</span>,<span class="sc">-</span><span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -19.64854</code></pre>
 </div>
@@ -408,7 +398,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
 <span id="cb19-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
 <span id="cb19-3"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
-<span id="cb19-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9087888</code></pre>
 </div>
@@ -417,8 +407,8 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img data-src="chapter3normal_files/figure-revealjs/SATprobabilityNoEcho-1.png" style="width:120.0%" class="figure-img"></p>
+<figure>
+<p><img data-src="chapter3normal_files/figure-revealjs/SATprobabilityNoEcho-1.png" style="width:120.0%"></p>
 </figure>
 </div>
 </div>
@@ -444,7 +434,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>prob    <span class="ot">=</span> .<span class="dv">96</span></span>
 <span id="cb21-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
 <span id="cb21-3"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
-<span id="cb21-4"><a href=""></a><span class="fu">qnorm</span>(prob, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-4"><a href=""></a><span class="fu">qnorm</span>(prob, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 625.0412</code></pre>
 </div>
@@ -453,8 +443,8 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img data-src="chapter3normal_files/figure-revealjs/SATvalueNoEcho-1.png" style="width:100.0%" class="figure-img"></p>
+<figure>
+<p><img data-src="chapter3normal_files/figure-revealjs/SATvalueNoEcho-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -520,7 +510,7 @@ P(2.2225 - .01 \leq Y \leq 2.2225 + .01) &amp; = \\
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>mu      <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">*</span>.<span class="dv">875</span></span>
 <span id="cb23-2"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>.<span class="dv">00005</span></span>
 <span id="cb23-3"><a href=""></a><span class="fu">pnorm</span>(mu <span class="sc">+</span> .<span class="dv">01</span>, mu, <span class="fu">sqrt</span>(sigmaSq)) <span class="sc">-</span> </span>
-<span id="cb23-4"><a href=""></a>    <span class="fu">pnorm</span>(mu <span class="sc">-</span> .<span class="dv">01</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-4"><a href=""></a>    <span class="fu">pnorm</span>(mu <span class="sc">-</span> .<span class="dv">01</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.4223202</code></pre>
 </div>
@@ -566,7 +556,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <p><span class="subscript">(that is, largest |z-score|)</span></p>
 <p><span class="example">Example:</span> We want to compare olympic records in men’s and women’s sprinting. Which is more unusual?</p>
 <p>Let’s look at a table:</p>
-<table class="caption-top table">
+<table class="caption-top">
 <caption>Table of Average and Standard Deviation of Olympic Sprinting times.</caption>
 <thead>
 <tr class="header">
@@ -598,12 +588,12 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <div class="column" style="width:67%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>zScoreM <span class="ot">=</span> (<span class="fl">9.63</span> <span class="sc">-</span> <span class="fl">9.85</span>)<span class="sc">/</span><span class="fu">sqrt</span>(.<span class="dv">0057</span>)</span>
-<span id="cb25-2"><a href=""></a>zScoreM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-2"><a href=""></a>zScoreM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -2.913971</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a>zScoreW <span class="ot">=</span> (<span class="fl">10.61</span> <span class="sc">-</span> <span class="fl">10.83</span>)<span class="sc">/</span><span class="fu">sqrt</span>(.<span class="dv">0049</span>)</span>
-<span id="cb27-2"><a href=""></a>zScoreW</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-2"><a href=""></a>zScoreW</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -3.142857</code></pre>
 </div>
@@ -622,7 +612,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <p><span class="smallCap">Answer:</span> Choose the <span class="math inline">\(x\)</span> so that the z-scores are <span class="emphasis">equal</span></p>
 <div class="scrolling">
 <p><span class="example">Example:</span> What time for a men’s sprinter would be equivalent to the female record?</p>
-<table class="caption-top table">
+<table class="caption-top">
 <caption>Table of Average and Standard Deviation of Olympic Sprinting times.</caption>
 <thead>
 <tr class="header">
@@ -660,7 +650,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>x <span class="ot">=</span> zScoreW <span class="sc">*</span> <span class="fu">sqrt</span>(.<span class="dv">0057</span>) <span class="sc">+</span> <span class="fl">9.84</span></span>
-<span id="cb29-2"><a href=""></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-2"><a href=""></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 9.602719</code></pre>
 </div>
@@ -683,8 +673,8 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img data-src="chapter3normal_files/figure-revealjs/normalEmpRuleGeneral1-1.png" style="width:110.0%" class="figure-img"></p>
+<figure>
+<p><img data-src="chapter3normal_files/figure-revealjs/normalEmpRuleGeneral1-1.png" style="width:110.0%"></p>
 </figure>
 </div>
 </div>
@@ -694,8 +684,8 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img data-src="chapter3normal_files/figure-revealjs/normalEmpRuleGeneral2-1.png" style="width:110.0%" class="figure-img"></p>
+<figure>
+<p><img data-src="chapter3normal_files/figure-revealjs/normalEmpRuleGeneral2-1.png" style="width:110.0%"></p>
 </figure>
 </div>
 </div>
@@ -705,8 +695,8 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img data-src="chapter3normal_files/figure-revealjs/normalEmpRuleGeneral3-1.png" style="width:110.0%" class="figure-img"></p>
+<figure>
+<p><img data-src="chapter3normal_files/figure-revealjs/normalEmpRuleGeneral3-1.png" style="width:110.0%"></p>
 </figure>
 </div>
 </div>
@@ -734,7 +724,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 </section>
 <section id="a-potentially-helpful-applet" class="slide level2">
 <h2>A (potentially) helpful applet</h2>
-<p>On the exams, there will be a link to this applet: <a href="https://people.tamu.edu/~scottcrawford/ftable.html" class="external" target="_blank">Probability applet</a></p>
+<p>On exams, there will be a link to an applet: <a href="https://people.tamu.edu/~scottcrawford/ftable.html" class="external" target="_blank">Probability applet</a></p>
 <p><span class="emphasis">Note: This applet is totally optional and unnecessary if you use R</span></p>
 <img src="figures/appletScott.png" style="width:75.0%" alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution" class="r-stretch quarto-figure-center"><p class="caption">Optional Applet</p>
 <div class="scrolling">
@@ -743,11 +733,11 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
 <span id="cb31-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
 <span id="cb31-3"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
-<span id="cb31-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9087888</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">96</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">96</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 625.0412</code></pre>
 </div>
@@ -758,7 +748,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <li><span class="smallCap">Value:</span> We need to unstandardize to get value.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="fl">1.751</span><span class="sc">*</span><span class="fu">sqrt</span>(sigmaSq) <span class="sc">+</span> mu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="fl">1.751</span><span class="sc">*</span><span class="fu">sqrt</span>(sigmaSq) <span class="sc">+</span> mu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 625.06</code></pre>
 </div>

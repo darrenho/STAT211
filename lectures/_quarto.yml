@@ -1,6 +1,4 @@
 format:
-  html:
-    image-lazy-loading: false
   revealjs:
     theme: [default, custom.scss]
     toc: true

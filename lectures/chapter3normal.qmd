@@ -722,7 +722,7 @@ outPlot
 
 ## A (potentially) helpful applet 
 
-On the exams, there will be a link to this applet:  [Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
+On exams, there will be a link to an applet:  [Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
 
 [Note: This applet is totally optional and unnecessary if you use R]{.emphasis}
 
