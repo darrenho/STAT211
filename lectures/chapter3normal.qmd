@@ -727,10 +727,10 @@ On exams, there will be a link to an applet:  [Probability applet](https://peopl
 
 [Note: This applet is totally optional and unnecessary if you use R]{.emphasis}
 
-![](figures/appletScott.png){width=500px fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
 
 
 :::{.scrolling}
+![](figures/appletScott.png){width=700px fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
 
 
 Returning to SAT example:
