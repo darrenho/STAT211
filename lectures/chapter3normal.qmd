@@ -727,7 +727,6 @@ On the exams, there will be a link to this applet:
 
 ![](figures/appletScott.png){width="50%" fig-alt="Measuring to a shoulder on a machined part with a steel rule"}
 
-![](figures/steelRuler.png){width="50%" fig-alt="Measuring to a shoulder on a machined part with a steel rule"}
 
 [Note: This applet is totally optional and unnecessary if you use R]{.emphasis}
 
