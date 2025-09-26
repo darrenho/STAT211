@@ -724,11 +724,10 @@ outPlot
 
 On exams, there will be a link to an applet:  [Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
 
+
 [Note: This applet is totally optional and unnecessary if you use R]{.emphasis}
 
-```{=html}
-<img src="figures/appletScott.png" style="width:375.0%" alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution" class="r-stretch quarto-figure-center"><p class="caption">Optional Applet</p>
-```
+![](figures/appletScott.png){width="1000%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
 
 
 :::{.scrolling}
