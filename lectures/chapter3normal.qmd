@@ -520,7 +520,7 @@ $$
 [Question:]{.smallCap} Which of the two values from two different distributions is more [unusual]{.emphasis}?
 
 
-[Answer:]{.smallCap} Whichever has larger [magnitude]{.emphasis} z-score
+[Answer:]{.smallCap} Whichever z-score has larger [magnitude]{.emphasis} 
 
 [(that is, largest \|z-score\|)]{.subscript}
 
@@ -532,7 +532,7 @@ Let's look at a table:
 
 | Category |  Mens | Womens |
 |----------|------:|-------:|
-| average  |  9.84 |  10.81 |
+| average  |  9.85 |  10.83 |
 | variance | .0057 |  .0049 |
 | record   |  9.63 |  10.61 |
 
@@ -549,12 +549,7 @@ zScoreWomen =  (10.61 - 10.83)/sqrt(.0049)
 
 The z-score for men is `r round(zScoreMen,3)` while for women it is `r round(zScoreWomen,3)`
 
-Hence, the women's result is more unusual:
-
-```{r zScoreExampleConclusion}
-#| echo: true
-abs(zScoreMen) < abs(zScoreWomen)
-```
+Hence, the women's result is more unusual
 
 :::
 
@@ -572,7 +567,7 @@ Another usage of [z-scores]{.definition}: what value $x$ would be equally as unu
 
 | Category |  Mens | Womens |
 |----------|------:|-------:|
-| average  |  9.84 |  10.81 |
+| average  |  9.85 |  10.83 |
 | variance | .0057 |  .0049 |
 | record   |  9.63 |  10.61 |
 
