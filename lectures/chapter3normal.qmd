@@ -729,7 +729,7 @@ On the exams, there will be a link to this applet:  [Probability applet](https:/
 ![](figures/appletScott.png){width="10%" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
 
 
-:::{.scrolling}
+
 
 
 Returning to SAT example:
@@ -753,7 +753,7 @@ To use the applet
 1.751*sqrt(sigmaSq) + mu
 ```
 
-:::
+
 
 ## We'll be back...
 
