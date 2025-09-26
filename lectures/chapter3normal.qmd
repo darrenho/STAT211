@@ -556,8 +556,9 @@ zScoreW
 
 ::: {.column width="33%"}
 
+:::{fragment}
 The women's result is more unusual
-
+:::
 
 :::
 ::::::
