@@ -715,7 +715,7 @@ outPlot
 
 On the exams, there will be a link to this applet:
 
-![](figures/appletScott.png){width="75%" fig-alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution"}
+![](figures/appletScott.png)
 
 
 
