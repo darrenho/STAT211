@@ -474,6 +474,8 @@ pnorm(mu + .01, mu, sqrt(sigmaSq)) -
 
 ## The Standard Normal Distribution {.scrollable}
 
+:::{.scrolling}
+
 When $\mu=0$ and $\sigma=1$, we call it the [standard normal]{.definition}
 
 $$
@@ -492,6 +494,8 @@ $$
 X \sim N(\mu, \sigma^2) \longrightarrow Z = \frac{X - \mu}{\sigma} \sim N(0,1)
 $$
 
+. . .
+
 The opposite (actually, the [inverse]{.definition}) is true
 
 $$
@@ -499,6 +503,8 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 $$
 
 [(this is using the results in [Transforming Normals](#transformingNormals))]{.subscript}
+
+:::
 
 ## Z-scores: Comparing values {.scrollable}
 
