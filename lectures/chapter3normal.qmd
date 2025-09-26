@@ -86,7 +86,7 @@ Continuing with $X \sim N(5,9)$:
 
 :::{.scrolling}
 
-::: {.fragment}
+
 :::::: columns
 ::: {.column width="50%"}
 
@@ -130,9 +130,6 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 ```
 
 
-
-
-:::
 :::
 ::::::
 
@@ -453,8 +450,9 @@ $Y = 2.54X$, therefore $Y \sim N(2.54*.875,  2.54^2*.00005) = N(2.2225,  0.00032
 
 $$
 \begin{align}
-P(2.2225 - .01 \leq Y \leq 2.2225 + .01) & = P(2.2215 \leq Y \leq 2.2235) \\
-& = F(2.2235) - F(2.2215)
+P(2.2225 - .01 \leq Y \leq 2.2225 + .01) & = \\
+ = P(2.2125 \leq Y \leq 2.2325) & \\
+ = F(2.2135) - F(2.2315)
 \end{align}
 $$ 
 
