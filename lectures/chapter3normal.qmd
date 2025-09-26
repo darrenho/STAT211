@@ -519,7 +519,6 @@ $$
 
 [Question:]{.smallCap} Which of the two values from two different distributions is more [unusual]{.emphasis}?
 
-. . .
 
 [Answer:]{.smallCap} Whichever has larger [magnitude]{.emphasis} z-score
 
@@ -559,7 +558,7 @@ abs(zScoreMen) < abs(zScoreWomen)
 
 :::
 
-## Z-scores: Another application {.scrollable}
+## Z-scores: Another application
 
 Another usage of [z-scores]{.definition}: what value $x$ would be equally as unusual?
 
