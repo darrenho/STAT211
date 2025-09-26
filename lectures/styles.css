@@ -1,6 +1,6 @@
 .scrolling {
   max-height: 550px;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .border {

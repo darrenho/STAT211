@@ -546,10 +546,10 @@ Let's compute the two [z-scores]{.definition}:
 
 ```{r zScoreExample}
 #| echo: true
-zScoreMen   = (9.63 - 9.85)/sqrt(.0057)
-zScoreMen
-zScoreWomen = (10.61 - 10.83)/sqrt(.0049)
-zScoreWomen
+zScoreM = (9.63 - 9.85)/sqrt(.0057)
+zScoreM
+zScoreW = (10.61 - 10.83)/sqrt(.0049)
+zScoreW
 ```
 
 :::
@@ -558,11 +558,11 @@ zScoreWomen
 
 The women's result is more unusual
 
-The z-score for men is `r round(zScoreMen,3)` while for women it is `r round(zScoreWomen,3)`
 
 :::
 ::::::
 
+The z-score for men is `r round(zScoreM,3)` while for women it is `r round(zScoreW,3)`
 
 :::
 
@@ -586,20 +586,20 @@ Another usage of [z-scores]{.definition}: what value $x$ would be equally as unu
 
 : Table of Average and Standard Deviation of Olympic Sprinting times.
 
-We found the female z-score = `r round(zScoreWomen,3)`
+We found the female z-score = `r round(zScoreW,3)`
 
 $$
 \text{z-score}*\sigma  + \mu = x
 $$
 
 Here, use
-
--   z-score from the female sprinters
+ 
+-   z-score from the female sprinters: `r zScoreW`
 -   the $\mu$ and $\sigma$ from the male sprinters
 
 ```{r zScoreExampleValue}
 #| echo: true
-x = zScoreWomen * sqrt(.0057) + 9.84
+x = zScoreW * sqrt(.0057) + 9.84
 ```
 
 The male record would need to be `r round(x,3)` seconds to be as as unusual as the female record.
