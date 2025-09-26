@@ -725,6 +725,17 @@ outPlot
 On the exams, there will be a link to this applet:
 
 
+
+```{=html}
+<iframe width="780" height="500" src="https://people.tamu.edu/~scottcrawford/ftable.html"></iframe>
+```
+
+```{=html}
+<img data-src="figures/appletScott.png" style="width:75.0%" alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution" class="r-stretch quarto-figure-center"><p class="caption">Optional Applet</p>
+```
+
+tst
+
 ![](figures/appletScott.png){width="50%" fig-alt="Measuring to a shoulder on a machined part with a steel rule"}
 
 
