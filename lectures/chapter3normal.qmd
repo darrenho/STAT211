@@ -542,7 +542,7 @@ Let's look at a table:
 Let's compute the two [z-scores]{.definition}:
 
 :::::: columns
-::: {.column width="65%"}
+::: {.column width="67%"}
 
 ```{r zScoreExample}
 #| echo: true
@@ -554,7 +554,7 @@ zScoreW
 
 :::
 
-::: {.column width="35%"}
+::: {.column width="33%"}
 
 The women's result is more unusual
 
@@ -576,7 +576,7 @@ Another usage of [z-scores]{.definition}: what value $x$ would be equally as unu
 
 
 
-[Example:]{.example} What time would a men's sprinter need to get to be as unusal as the female record?
+[Example:]{.example} What time for a men's sprinter would be equivalent to the female record?
 
 | Category |  Mens | Womens |
 |----------|------:|-------:|
@@ -588,13 +588,15 @@ Another usage of [z-scores]{.definition}: what value $x$ would be equally as unu
 
 We found the female z-score = `r round(zScoreW,3)`
 
+To find the equivalent time, we need to [unstandardize]{.definition
+}
 $$
 \text{z-score}*\sigma  + \mu = x
 $$
 
 Here, use
  
--   z-score from the female sprinters: `r zScoreW`
+-   z-score from the female sprinters
 -   the $\mu$ and $\sigma$ from the male sprinters
 
 ```{r zScoreExampleValue}
