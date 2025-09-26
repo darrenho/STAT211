@@ -555,16 +555,16 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 </section>
 <section id="z-scores-comparing-values" class="slide level2">
 <h2>Z-scores: Comparing values</h2>
-<p>If we are given a value <span class="math inline">\(x\)</span> from a distribution with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, we can compute its <span class="definition">z-score</span> via</p>
+<p>The <span class="definition">z-score</span> can be computed:</p>
 <p><span class="math display">\[
 \text{z-score} = \frac{x - \mu}{\sigma}
 \]</span></p>
 <div class="scrolling">
+<p><span class="subscript">(For a value <span class="math inline">\(x\)</span> from a distribution with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>)</span></p>
 <p><span class="smallCap">Question:</span> Which of the two values from two different distributions is more <span class="emphasis">unusual</span>?</p>
 <p>. . .</p>
 <p><span class="smallCap">Answer:</span> Whichever has larger <span class="emphasis">magnitude</span> z-score</p>
 <p><span class="subscript">(that is, largest |z-score|)</span></p>
-<p>. . .</p>
 <p><span class="example">Example:</span> We want to compare olympic records in men’s and women’s sprinting. Which is more unusual?</p>
 <p>Let’s look at a table:</p>
 <table class="caption-top table">
@@ -594,7 +594,6 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 </tr>
 </tbody>
 </table>
-<p>. . .</p>
 <p>Let’s compute the two <span class="definition">z-scores</span>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>zScoreMen   <span class="ot">=</span>  (<span class="fl">9.63</span> <span class="sc">-</span> <span class="fl">9.85</span>)<span class="sc">/</span><span class="fu">sqrt</span>(.<span class="dv">0057</span>)</span>
@@ -615,7 +614,6 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <p>Another usage of <span class="definition">z-scores</span>: what value <span class="math inline">\(x\)</span> would be equally as unusual?</p>
 <p><span class="smallCap">Answer:</span> Choose the <span class="math inline">\(x\)</span> so that the z-scores are <span class="emphasis">equal</span></p>
 <div class="scrolling">
-<p>. . .</p>
 <p><span class="example">Example:</span> What time would a men’s sprinter need to get to be as unusal as the female record?</p>
 <table class="caption-top table">
 <caption>Table of Average and Standard Deviation of Olympic Sprinting times.</caption>

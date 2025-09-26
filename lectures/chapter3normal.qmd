@@ -507,13 +507,15 @@ $$
  
 ## Z-scores: Comparing values 
 
-If we are given a value $x$ from a distribution with mean $\mu$ and variance $\sigma^2$, we can compute its [z-score]{.definition} via
+The [z-score]{.definition} can be computed:
 
 $$
 \text{z-score} = \frac{x - \mu}{\sigma}
 $$
 
 :::{.scrolling}
+
+[(For a value $x$ from a distribution with mean $\mu$ and variance $\sigma^2$)]{.subscript}
 
 [Question:]{.smallCap} Which of the two values from two different distributions is more [unusual]{.emphasis}?
 
@@ -523,7 +525,7 @@ $$
 
 [(that is, largest \|z-score\|)]{.subscript}
 
-. . .
+
 
 [Example:]{.example} We want to compare olympic records in men's and women's sprinting. Which is more unusual?
 
@@ -537,7 +539,6 @@ Let's look at a table:
 
 : Table of Average and Standard Deviation of Olympic Sprinting times.
 
-. . .
 
 Let's compute the two [z-scores]{.definition}:
 
@@ -566,7 +567,7 @@ Another usage of [z-scores]{.definition}: what value $x$ would be equally as unu
 
 :::{.scrolling}
 
-. . .
+
 
 [Example:]{.example} What time would a men's sprinter need to get to be as unusal as the female record?
 
