@@ -541,15 +541,28 @@ Let's look at a table:
 
 Let's compute the two [z-scores]{.definition}:
 
+:::::: columns
+::: {.column width="55%"}
+
 ```{r zScoreExample}
 #| echo: true
-zScoreMen   =  (9.63 - 9.85)/sqrt(.0057)
+zScoreMen   = (9.63 - 9.85)/sqrt(.0057)
 zScoreMen
-zScoreWomen =  (10.61 - 10.83)/sqrt(.0049)
+zScoreWomen = (10.61 - 10.83)/sqrt(.0049)
 zScoreWomen
 ```
 
+:::
+
+::: {.column width="45%"}
+
 The women's result is more unusual
+
+The z-score for men is `r round(zScoreMen,3)` while for women it is `r round(zScoreWomen,3)`
+
+:::
+::::::
+
 
 :::
 
