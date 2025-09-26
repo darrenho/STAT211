@@ -624,7 +624,6 @@ This is the [empirical rule:]{.definition}
 -   [$P( |Z| \leq 2) = 0.954$]{.lightgreentext} ($\sim \frac{19}{20}$ obs. within 2 $\sigma$)
 -   [$P( |Z| \leq 3) = 0.997$]{.lightredtext} ($\sim \frac{99}{100}$ obs. within 3 $\sigma$)
 
-. . .
 
 :::::: columns
 ::: {.column width="33%"}
@@ -654,6 +653,8 @@ outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 outPlot
 ```
+
+[$P( |Z| \leq 1) = 0.683$]{.lightbluetext}
 :::
 
 ::: {.column width="33%"}
