@@ -257,10 +257,12 @@ qnorm(.05,-3.2,sqrt(100))
 ## Computing probabilities: SATs
 
 
-:::{.scrolling}
+
 [Example]{.example}
 
 The scores on the SAT math section are $X \sim N(520,3600)$
+
+:::{.scrolling}
 
 [(that is, normal with expected value 520 and variance 3600)]{.subscript}
 
@@ -318,10 +320,12 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 :::
 ## Computing values: SATs 
 
-:::{.scrolling}
+
 [Example]{.example}
 
 The scores on the SAT math section are $X \sim N(520,3600)$
+
+:::{.scrolling}
 
 The stats dept. admits students scoring above $96^{th}$ percentile
 
