@@ -453,19 +453,19 @@ $Y = 2.54X$, therefore $Y \sim N(2.54*.875,  2.54^2*.00005) = N(2.2225,  0.00032
 
 $$
 \begin{align}
-P(1 - .001 \leq Y \leq 1 + .001) & = P(.999 \leq Y \leq 1.001) \\
-& = F(1.001) - F(.999)
+P(2.2225 - .001 \leq Y \leq 2.2225 + .001) & = P(2.2215 \leq Y \leq 2.2235) \\
+& = F(2.2235) - F(2.2215)
 \end{align}
 $$ 
 
-. . .
+
 
 ```{r transformNormalInchCM}
 #| echo: true
-mu      = 2.2225
+mu      = 2.54*.875
 sigmaSq = 2.54^2*.00005
-pnorm(1.001, mu, sqrt(sigmaSq)) - 
-    pnorm(.999, mu, sqrt(sigmaSq))
+pnorm(mu + .001, mu, sqrt(sigmaSq)) - 
+    pnorm(mu - .001, mu, sqrt(sigmaSq))
 ```
 
 :::

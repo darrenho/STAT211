@@ -382,21 +382,20 @@ In particular, any linear combination of Normal rvs is again a Normal:
 <p>What is the probability that that a measurement will be within <img style="vertical-align:middle" src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cpm" alt="\pm" title="\pm" class="math inline">.001 centimeters?</p>
 <p><span class="subscript">(An inch is 2.54 cm)</span></p>
 <p><img style="vertical-align:middle" src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20Y%20%3D%202.54X" alt="Y = 2.54X" title="Y = 2.54X" class="math inline">, therefore <img style="vertical-align:middle" src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20Y%20%5Csim%20N%282.54%2A.875%2C%20%202.54%5E2%2A.00005%29%20%3D%20N%282.2225%2C%20%200.00032%29" alt="Y \sim N(2.54*.875,  2.54^2*.00005) = N(2.2225,  0.00032)" title="Y \sim N(2.54*.875,  2.54^2*.00005) = N(2.2225,  0.00032)" class="math inline"></p>
-<p><img style="vertical-align:middle" src="https://latex.codecogs.com/svg.latex?%5Cdisplaystyle%20%5Cbegin%7Balign%7D%0AP%281%20-%20.001%20%5Cleq%20Y%20%5Cleq%201%20%2B%20.001%29%20%26%20%3D%20P%28.999%20%5Cleq%20Y%20%5Cleq%201.001%29%20%5C%5C%0A%26%20%3D%20F%281.001%29%20-%20F%28.999%29%0A%5Cend%7Balign%7D" alt="\begin{align}
-P(1 - .001 \leq Y \leq 1 + .001) &amp; = P(.999 \leq Y \leq 1.001) \\
-&amp; = F(1.001) - F(.999)
+<p><img style="vertical-align:middle" src="https://latex.codecogs.com/svg.latex?%5Cdisplaystyle%20%5Cbegin%7Balign%7D%0AP%282.2225%20-%20.001%20%5Cleq%20Y%20%5Cleq%202.2225%20%2B%20.001%29%20%26%20%3D%20P%282.2215%20%5Cleq%20Y%20%5Cleq%202.2235%29%20%5C%5C%0A%26%20%3D%20F%282.2235%29%20-%20F%282.2215%29%0A%5Cend%7Balign%7D" alt="\begin{align}
+P(2.2225 - .001 \leq Y \leq 2.2225 + .001) &amp; = P(2.2215 \leq Y \leq 2.2235) \\
+&amp; = F(2.2235) - F(2.2215)
 \end{align}" title="\begin{align}
-P(1 - .001 \leq Y \leq 1 + .001) &amp; = P(.999 \leq Y \leq 1.001) \\
-&amp; = F(1.001) - F(.999)
+P(2.2225 - .001 \leq Y \leq 2.2225 + .001) &amp; = P(2.2215 \leq Y \leq 2.2235) \\
+&amp; = F(2.2235) - F(2.2215)
 \end{align}" class="math display"></p>
-<p>. . .</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="" aria-hidden="true" tabindex="-1"></a>mu      <span class="ot">=</span> <span class="fl">2.2225</span></span>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="" aria-hidden="true" tabindex="-1"></a>mu      <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">*</span>.<span class="dv">875</span></span>
 <span id="cb24-2"><a href="" aria-hidden="true" tabindex="-1"></a>sigmaSq <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>.<span class="dv">00005</span></span>
-<span id="cb24-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.001</span>, mu, <span class="fu">sqrt</span>(sigmaSq)) <span class="sc">-</span> </span>
-<span id="cb24-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pnorm</span>(.<span class="dv">999</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(mu <span class="sc">+</span> .<span class="dv">001</span>, mu, <span class="fu">sqrt</span>(sigmaSq)) <span class="sc">-</span> </span>
+<span id="cb24-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pnorm</span>(mu <span class="sc">-</span> .<span class="dv">001</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0</code></pre>
+<pre><code>[1] 0.04440143</code></pre>
 </div>
 </div>
 </div>
