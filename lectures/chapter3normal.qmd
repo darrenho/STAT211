@@ -602,6 +602,7 @@ Here, use
 ```{r zScoreExampleValue}
 #| echo: true
 x = zScoreW * sqrt(.0057) + 9.84
+x
 ```
 
 The male record would need to be `r round(x,3)` seconds to be as as unusual as the female record.
@@ -627,7 +628,7 @@ This is the [empirical rule:]{.definition}\]
 #| label: normalEmpRuleGeneral1
 #| echo: false
 #| fig-asp: 1
-#| out-width: "100%"
+#| out-width: "110%"
 
 mu      = 0
 sigmaSq = 1
@@ -655,7 +656,7 @@ outPlot
 #| label: normalEmpRuleGeneral2
 #| echo: false
 #| fig-asp: 1
-#| out-width: "100%"
+#| out-width: "110%"
 
 outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
     stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
@@ -671,7 +672,7 @@ outPlot
 #| label: normalEmpRuleGeneral3
 #| echo: false
 #| fig-asp: 1
-#| out-width: "100%"
+#| out-width: "110%"
 
 outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
     stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 

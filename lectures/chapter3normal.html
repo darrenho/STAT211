@@ -657,7 +657,11 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <li>the <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> from the male sprinters</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>x <span class="ot">=</span> zScoreW <span class="sc">*</span> <span class="fu">sqrt</span>(.<span class="dv">0057</span>) <span class="sc">+</span> <span class="fl">9.84</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>x <span class="ot">=</span> zScoreW <span class="sc">*</span> <span class="fu">sqrt</span>(.<span class="dv">0057</span>) <span class="sc">+</span> <span class="fl">9.84</span></span>
+<span id="cb29-2"><a href=""></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9.602719</code></pre>
+</div>
 </div>
 <p>The male record would need to be 9.603 seconds to be as as unusual as the female record.</p>
 </div>
@@ -678,7 +682,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img data-src="chapter3normal_files/figure-revealjs/normalEmpRuleGeneral1-1.png" style="width:100.0%" class="figure-img"></p>
+<p><img data-src="chapter3normal_files/figure-revealjs/normalEmpRuleGeneral1-1.png" style="width:110.0%" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -688,7 +692,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img data-src="chapter3normal_files/figure-revealjs/normalEmpRuleGeneral2-1.png" style="width:100.0%" class="figure-img"></p>
+<p><img data-src="chapter3normal_files/figure-revealjs/normalEmpRuleGeneral2-1.png" style="width:110.0%" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -698,7 +702,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img data-src="chapter3normal_files/figure-revealjs/normalEmpRuleGeneral3-1.png" style="width:100.0%" class="figure-img"></p>
+<p><img data-src="chapter3normal_files/figure-revealjs/normalEmpRuleGeneral3-1.png" style="width:110.0%" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -729,14 +733,14 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <img data-src="figures/appletScott.png" style="width:75.0%" alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution" class="r-stretch"><p>Here is a link: <a href="https://people.tamu.edu/~scottcrawford/ftable.html" class="external" target="_blank">Probability applet</a></p>
 <p>Returning to SAT example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
-<span id="cb30-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
-<span id="cb30-3"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
-<span id="cb30-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
+<span id="cb31-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
+<span id="cb31-3"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
+<span id="cb31-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9087888</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">96</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">96</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 625.0412</code></pre>
 </div>
@@ -747,7 +751,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <li><span class="smallCap">Value:</span> We need to unstandardize to get value.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a><span class="fl">1.751</span><span class="sc">*</span><span class="fu">sqrt</span>(sigmaSq) <span class="sc">+</span> mu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="fl">1.751</span><span class="sc">*</span><span class="fu">sqrt</span>(sigmaSq) <span class="sc">+</span> mu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 625.06</code></pre>
 </div>
