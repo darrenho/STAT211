@@ -747,13 +747,14 @@ qnorm(.96, mu, sqrt(sigmaSq))
 To use the applet
 
 -   [Probability:]{.smallCap} we need the z-score = `r (600 - 520)/sqrt(sigmaSq)`
--   [Value:]{.smallCap} We need to unstandardize to get value.
+-   [Value:]{.smallCap} We need to get standardized z-score from applet and then unstandardize to get value.
 
 ```{r SATvalueRevisit}
 #| echo: true
 1.751*sqrt(sigmaSq) + mu
 ```
 
+[(here, 1.751 came from the applet by using the probability .96 from SAT example)]{.subscript}
 :::
 
 ## We'll be back...

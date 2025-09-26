@@ -745,7 +745,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <p>To use the applet</p>
 <ul>
 <li><span class="smallCap">Probability:</span> we need the z-score = 1.3333333</li>
-<li><span class="smallCap">Value:</span> We need to unstandardize to get value.</li>
+<li><span class="smallCap">Value:</span> We need to get standardized z-score from applet and then unstandardize to get value.</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="fl">1.751</span><span class="sc">*</span><span class="fu">sqrt</span>(sigmaSq) <span class="sc">+</span> mu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -753,6 +753,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <pre><code>[1] 625.06</code></pre>
 </div>
 </div>
+<p><span class="subscript">(here, 1.751 came from the applet by using the probability .96 from SAT example)</span></p>
 </div>
 </section>
 <section id="well-be-back" class="slide level2">
