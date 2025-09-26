@@ -429,7 +429,7 @@ $$
 
 :::{.scrolling}
 
-![](figures/steelRuler.png){width="250%" fig-alt="Measuring to a shoulder on a machined part with a steel rule"}
+![](figures/steelRuler.png){width="50%" fig-alt="Measuring to a shoulder on a machined part with a steel rule"}
 
 
 We are measuring a standard inch using a ruler on a .01" scale
