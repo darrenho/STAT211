@@ -1,6 +1,9 @@
 ---
 title: "STAT 211: Normal Distribution"
 subtitle: "Computing probabilities and quantiles from this important distribution"
+format:
+  html:
+    output-file: chapter3normalPrint.html
 ---
 
 ```{r loadPacks}
