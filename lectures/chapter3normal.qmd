@@ -610,11 +610,15 @@ The male record would need to be `r round(x,3)` seconds to be as as unusual as t
 
 :::
 
-## Empirical rule {.scrollable}
+## Empirical rule 
+
+
 
 Values from normal distributions contain predictable amounts of probability
 
-This is the [empirical rule:]{.definition}\]
+This is the [empirical rule:]{.definition}
+
+:::{.scrolling}
 
 -   [$P( |Z| \leq 1) = 0.683$]{.lightbluetext} ($\sim \frac{2}{3}$ obs. within 1 $\sigma$)
 -   [$P( |Z| \leq 2) = 0.954$]{.lightgreentext} ($\sim \frac{19}{20}$ obs. within 2 $\sigma$)
@@ -711,11 +715,13 @@ outPlot
 -->
 ```
 
+:::
+
 ## A (potentially) helpful applet {.scrollable}
 
 On the exams, there will be a link to this applet:
 
-![](figures/appletScott.png)
+![](figures/appletScott.png){width="75%" fig-alt="Screenshot of web applet for computing probabilities and values from the normal and t distribution"}
 
 
 
