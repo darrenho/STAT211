@@ -587,7 +587,7 @@ Another usage of [z-scores]{.definition}: what value $x$ would be equally as unu
 
 : Table of Average and Standard Deviation of Olympic Sprinting times.
 
-We found the female z-score = $\frac{x - 10.83}{\sqrt{.0049}}$ = `r round(zScoreW,3)`
+We found the female z-score = $\frac{10.61 - 10.83}{\sqrt{.0049}}$ = `r round(zScoreW,3)`
 
 To find the equivalent time, we need to [unstandardize]{.definition
 }
