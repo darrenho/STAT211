@@ -15,4 +15,5 @@ format:
     preload-iframes: true
     standalone: true
     self-contained-math: true
+    html-math-method: mathjax
   
