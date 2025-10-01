@@ -13,7 +13,6 @@ format:
     highlight-style: a11y
     footer: "[https://darrenho.github.io/ (Darren Homrighausen)](https://darrenho.github.io/)"
     preload-iframes: true
-    embed-resources: true
     standalone: true
     self-contained-math: true
   
