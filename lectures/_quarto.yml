@@ -1,14 +1,19 @@
+project:
+  output-dir: slides
 format:
   revealjs:
+    author: Darren Homrighausen
     theme: [default, custom.scss]
     toc: true
     toc-depth: 1
     slide-number: c
-    chalkboard: 
-      buttons: false
     preview-links: auto
     logo: _images/tamu.png
     css: styles.css
     highlight-style: a11y
-    footer: "Darren Homrighausen [https://darrenho.github.io/](https://darrenho.github.io/)"
+    footer: "[https://darrenho.github.io/ (Darren Homrighausen)](https://darrenho.github.io/)"
     preload-iframes: true
+    embed-resources: true
+    standalone: true
+    self-contained-math: true
+  

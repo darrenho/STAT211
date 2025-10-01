@@ -1,6 +1,13 @@
 ---
 title: "STAT 211: Normal Distribution"
 subtitle: "Computing probabilities and quantiles from this important distribution"
+
+
+format:
+  revealjs:
+    output-file: chapter3normal.html
+  html: 
+    output-file: chapter3normalPrintable.html
 ---
 
 ```{r loadPacks}
@@ -451,14 +458,11 @@ What is the probability that that a measurement will be within $\pm$.01 centimet
 $Y = 2.54X$, therefore $Y \sim N(2.54*.875,  2.54^2*.00005) = N(2.2225,  0.00032)$
 
 
-
-$$
 \begin{align}
 P(2.2225 - .01 \leq Y \leq 2.2225 + .01) & = \\
  = P(2.2125 \leq Y \leq 2.2325) & \\
  = F(2.2325) - F(2.2125)
 \end{align}
-$$ 
 
 
 
