@@ -136,45 +136,35 @@ window.Quarto = {
 </div>
 <section id="joint-distributions-continuous" class="level1">
 <h1>Joint Distributions: Continuous</h1>
-<section id="computing-probabilities-old-vs.-new" class="level2">
-<h2 class="anchored" data-anchor-id="computing-probabilities-old-vs.-new">Computing probabilities: old vs.&nbsp;new</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>In times of yore, this meant using tables:</p>
-<p><img src="figures/normalTable.png" class="img-fluid" style="width:350.0%" alt="Standard Normal Table for getting probabilities from Z-scores"></p>
-</div><div class="column" style="width:50%;">
-<p>Now, we can just use a computer:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.8</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9640697</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.89</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.970621</code></pre>
-</div>
-</div>
-</div>
-</div>
+<section id="probability-for-bivariate-pdfs" class="level2">
+<h2 class="anchored" data-anchor-id="probability-for-bivariate-pdfs">Probability for bivariate pdf’s</h2>
+<p><span class="example">Example:</span> Consider the joint pdf</p>
+<p><span class="math display">\[\begin{align}
+f_{X,Y}(x,y) =
+\begin{cases}
+\frac{12}{7}(x^2 + xy) &amp; \text{for } 0 \leq x,y \leq 1\\
+0 &amp; \text{otherwise}
+\end{cases}
+\end{align}\]</span></p>
+<p><span class="math inline">\(P(X \leq 0.6 \text{ and } Y \leq 0.4)\)</span> = ?</p>
+</section>
+<section id="numerical-integration-desmos" class="level2">
+<h2 class="anchored" data-anchor-id="numerical-integration-desmos">Numerical integration: Desmos</h2>
+<iframe data-external="1" src="https://www.desmos.com/3d/8aexkmwznv" width="1500" height="1500" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
+</section>
+<section id="central-limit-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="central-limit-theorem">Central Limit Theorem</h2>
+<iframe data-external="1" src="https://onlinestatbook.com/stat_sim/sampling_dist/" width="1250" height="1250" style="border: 1px solid #ccc" frameborder="0">
+</iframe>
 </section>
 </section>
 <section id="computing-probabilities-and-values" class="level1">
 <h1>Computing Probabilities and Values</h1>
-<section id="computing-probabilities" class="level2">
-<h2 class="anchored" data-anchor-id="computing-probabilities">Computing probabilities</h2>
-<p>We will always write <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span> for the normal</p>
-<p>R syntax will be specified with <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma = \sqrt{\sigma^2}\)</span> instead</p>
-<p><span class="example">Example</span></p>
-<p>If <span class="math inline">\(X \sim N(5,9)\)</span>, then the probability <span class="math inline">\(X\)</span> is less than 4 is:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>x       <span class="ot">=</span> <span class="dv">4</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>mu      <span class="ot">=</span> <span class="dv">5</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>sigmaSq <span class="ot">=</span> <span class="dv">9</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.3694413</code></pre>
-</div>
-</div>
+<section id="water-quality" class="level2">
+<h2 class="anchored" data-anchor-id="water-quality">water quality</h2>
+<iframe width="1100" height="600" src="https://www.youtube-nocookie.com/embed/bqRvhYefVzM?si=LL3jstHKprhb_Clm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
 </section>
 <section id="computing-values-quantiles" class="level2">
 <h2 class="anchored" data-anchor-id="computing-values-quantiles">Computing values (quantiles)</h2>
@@ -186,7 +176,7 @@ window.Quarto = {
 <p><span class="example">Recall:</span></p>
 <p>For a value <span class="math inline">\(x = 4\)</span>, <span class="math inline">\(P(X \leq 4)\)</span>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3694413</code></pre>
 </div>
@@ -211,7 +201,7 @@ window.Quarto = {
 <p><span class="example">Example:</span></p>
 <p>What <span class="math inline">\(x\)</span> makes <span class="math inline">\(P(X\leq x) = .7\)</span>?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(.<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(.<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 6.573202</code></pre>
 </div>
@@ -234,7 +224,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="using-pnorm-and-qnorm">Using pnorm and qnorm</h2>
 <p><span class="example">Concept Check:</span> What would each of the following codes produce?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>( <span class="fu">pnorm</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>( <span class="fu">pnorm</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>. . .</p>
 <div class="cell">
@@ -244,7 +234,7 @@ window.Quarto = {
 </div>
 <p>. . .</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>( <span class="fu">qnorm</span>(.<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>( <span class="fu">qnorm</span>(.<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>. . .</p>
 <div class="cell">
@@ -264,7 +254,7 @@ window.Quarto = {
 <p><span class="smallCap">Probability:</span> What is the probability <span class="math inline">\(X\)</span> is less than 0?</p>
 <p>. . .</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.6255158</code></pre>
 </div>
@@ -273,7 +263,7 @@ window.Quarto = {
 <p><span class="smallCap">Values:</span> at what value <span class="math inline">\(x\)</span> does <span class="math inline">\(P(X\leq x) = .05\)</span>?</p>
 <p>. . .</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(.<span class="dv">05</span>,<span class="sc">-</span><span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(.<span class="dv">05</span>,<span class="sc">-</span><span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -19.64854</code></pre>
 </div>
@@ -293,10 +283,10 @@ window.Quarto = {
 <div class="columns">
 <div class="column" style="width:52%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9087888</code></pre>
 </div>
@@ -330,10 +320,10 @@ window.Quarto = {
 <div class="columns">
 <div class="column" style="width:52%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>prob    <span class="ot">=</span> .<span class="dv">96</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(prob, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>prob    <span class="ot">=</span> .<span class="dv">96</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(prob, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 625.0412</code></pre>
 </div>
@@ -403,10 +393,10 @@ P(2.2225 - .01 \leq Y \leq 2.2225 + .01) &amp; = \\
 = F(2.2325) - F(2.2125)
 \end{align}\]</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>mu      <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">*</span>.<span class="dv">875</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>sigmaSq <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>.<span class="dv">00005</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(mu <span class="sc">+</span> .<span class="dv">01</span>, mu, <span class="fu">sqrt</span>(sigmaSq)) <span class="sc">-</span> </span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pnorm</span>(mu <span class="sc">-</span> .<span class="dv">01</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>mu      <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">*</span>.<span class="dv">875</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>sigmaSq <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>.<span class="dv">00005</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(mu <span class="sc">+</span> .<span class="dv">01</span>, mu, <span class="fu">sqrt</span>(sigmaSq)) <span class="sc">-</span> </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pnorm</span>(mu <span class="sc">-</span> .<span class="dv">01</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.4223202</code></pre>
 </div>
@@ -481,13 +471,13 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <div class="columns">
 <div class="column" style="width:67%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>zScoreM <span class="ot">=</span> (<span class="fl">9.63</span> <span class="sc">-</span> <span class="fl">9.85</span>)<span class="sc">/</span><span class="fu">sqrt</span>(.<span class="dv">0057</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>zScoreM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>zScoreM <span class="ot">=</span> (<span class="fl">9.63</span> <span class="sc">-</span> <span class="fl">9.85</span>)<span class="sc">/</span><span class="fu">sqrt</span>(.<span class="dv">0057</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>zScoreM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -2.913971</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>zScoreW <span class="ot">=</span> (<span class="fl">10.61</span> <span class="sc">-</span> <span class="fl">10.83</span>)<span class="sc">/</span><span class="fu">sqrt</span>(.<span class="dv">0049</span>)</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>zScoreW</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>zScoreW <span class="ot">=</span> (<span class="fl">10.61</span> <span class="sc">-</span> <span class="fl">10.83</span>)<span class="sc">/</span><span class="fu">sqrt</span>(.<span class="dv">0049</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>zScoreW</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -3.142857</code></pre>
 </div>
@@ -544,8 +534,8 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <li>the <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> from the male sprinters (<span class="math inline">\(\mu = 9.85\)</span>, <span class="math inline">\(\sigma^2 = .0057\)</span>)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> zScoreW <span class="sc">*</span> <span class="fu">sqrt</span>(.<span class="dv">0057</span>) <span class="sc">+</span> <span class="fl">9.85</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> zScoreW <span class="sc">*</span> <span class="fu">sqrt</span>(.<span class="dv">0057</span>) <span class="sc">+</span> <span class="fl">9.85</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 9.612719</code></pre>
 </div>
@@ -626,14 +616,14 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <p><img src="figures/appletScott.png" class="img-fluid" alt="Standard Normal Table for getting probabilities from Z-scores" width="700"></p>
 <p>Returning to SAT example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9087888</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(.<span class="dv">96</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(.<span class="dv">96</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 625.0412</code></pre>
 </div>
@@ -644,7 +634,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <li><span class="smallCap">Value:</span> We need to get standardized z-score from applet and then unstandardize to get value.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1.751</span><span class="sc">*</span><span class="fu">sqrt</span>(sigmaSq) <span class="sc">+</span> mu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1.751</span><span class="sc">*</span><span class="fu">sqrt</span>(sigmaSq) <span class="sc">+</span> mu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 625.06</code></pre>
 </div>

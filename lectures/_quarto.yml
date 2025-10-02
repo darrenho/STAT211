@@ -8,8 +8,8 @@ format:
     toc-depth: 1
     slide-number: c
     preview-links: auto
-    logo: _images/tamu.png
-    css: styles.css
+    logo: images/tamu.png
+    css: /css/styles.css
     highlight-style: a11y
     footer: "[https://darrenho.github.io/ (Darren Homrighausen)](https://darrenho.github.io/)"
     preload-iframes: true
