@@ -2,11 +2,26 @@
 title: "STAT 211: Normal Distribution"
 subtitle: "Computing probabilities and quantiles from this important distribution"
 
+engine: knitr
+filters:
+  - webr
 format:
   revealjs:
     output-file: chapter4jointAndConditional.html
   html: 
     output-file: chapter4jointAndConditionalPrintable.html
+
+include-in-header:
+  - text: |
+      <style>
+      .quarto-title-meta-heading {
+        display: none;
+      }
+      .quarto-title-meta-contents {
+        display: none;
+      }
+      </style>
+
 ---
 
 ```{r loadPacks}
@@ -14,7 +29,18 @@ format:
 require(ggplot2)
 ```
 
+
 # Joint Distributions: Continuous
+
+## Webr
+
+This is a webR-enabled code cell in a Quarto HTML document.
+
+```{webr-r}
+fit = lm(mpg ~ am, data = mtcars)
+
+summary(fit)
+```
 
 ## Probability for bivariate pdf's
 
@@ -46,6 +72,76 @@ $P(X \leq 0.6 \text{ and } Y \leq 0.4)$ = ?
 ## water quality
 
 <iframe width="1100" height="600" src="https://www.youtube-nocookie.com/embed/bqRvhYefVzM?si=LL3jstHKprhb_Clm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## leaflet
+
+```{r}
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
+```
+
+## rgl
+
+```{r}
+
+library(rgl)
+#library(rglwidget)
+library(htmltools)
+
+theta <- seq(0, 6*pi, len=100)
+xyz <- cbind(sin(theta), cos(theta), theta)
+lineid <- plot3d(xyz, type="l", alpha = 1:0, 
+                 lwd = 5, col = "blue")["data"]
+
+browsable(tagList(
+  rglwidget(elementId = "example", width = 500, height = 400,
+            controllers = "player"),
+  playwidget("example", 
+             ageControl(births = theta, ages = c(0, 0, 1),
+                        objids = lineid, alpha = c(0, 1, 0)),
+                        start = 1, stop = 6*pi, step = 0.1, 
+                        rate = 6,elementId = "player")
+))
+
+```
+
+## rgl 2
+
+```{r}
+library(rgl)
+plotids <- with(iris, plot3d(Sepal.Length, Sepal.Width, Petal.Length, 
+                  type="s", col=as.numeric(Species)))
+rglwidget(elementId = "plot3drgl")
+
+toggleWidget(sceneId = "plot3drgl", ids = plotids["data"], label = "Data")
+```
+
+## rgl joint
+
+```{r}
+library(rgl)
+fXY = function(x,y){
+  12/7*(x^2 + x*y)
+}
+
+#grid = expand.grid(x = seq(0,1,length=25),y=seq(0,1,length=25))
+#out  = apply(grid,1,fXY)
+plotids <- plot3d(fXY, xlim=c(-.1,1), ylim = c(-.1,1),
+                  col = colorRampPalette(c("blue", "white")),
+                  zlab = "f(x,y)")
+coords = matrix(0,nrow=4,ncol=3)
+coords[1,] = c(0,0,0)
+coords[2,] = c(0,.4,0)
+coords[3,] = c(.6,.4,0)
+coords[4,] = c(.6,0,0)
+segments3d(coords)
+#plotids = plotids + 
+rglwidget(elementId = "plot3drgl")
+
+toggleWidget(sceneId = "plot3drgl", ids = plotids["data"], label = "Data")
+```
 
 ## Computing values (quantiles)
 
