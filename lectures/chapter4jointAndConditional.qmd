@@ -1,6 +1,6 @@
 ---
-title: "STAT 211: Normal Distribution"
-subtitle: "Computing probabilities and quantiles from this important distribution"
+title: "STAT 211: Joint and Conditional Distributions"
+subtitle: "How do multiple random variables interact with each other?"
 
 engine: knitr
 filters:
@@ -57,13 +57,31 @@ f_{X,Y}(x,y) =
 
 $P(X \leq 0.6 \text{ and } Y \leq 0.4)$ = ?
 
+## Numerical integration: R
+
+
+```{r doubleIntRect}
+#| echo: true
+f_XY = function(x,y){
+  12/7*(x^2 + x*y)
+}
+
+doubleIntegralF = function(xLower,xUpper,yLower,yUpper){
+  innerF = function(y){sapply(y, function(z) { integrate(f_XY, xLower, xUpper,z)$value })}
+  integrate(innerF,yLower,yUpper)$value
+}
+doubleIntegralF(xLower = 0, xUpper = .6, yLower = 0, yUpper = .4)
+```
+
+
 ## Numerical integration: Desmos
 
 <iframe data-external="1" src="https://www.desmos.com/3d/8aexkmwznv" width="1500" height="1500" style="border: 1px solid #ccc" frameborder=0></iframe>
 
+
 ## Central Limit Theorem
 
-<iframe data-external="1" src="https://onlinestatbook.com/stat_sim/sampling_dist/" width="1250" height="1250" style="border: 1px solid #ccc" frameborder=0></iframe>
+<iframe data-external="1" src="https://onlinestatbook.com/stat_sim/sampling_dist/" width="1250" height="1200" style="border: 1px solid #ccc" frameborder=0></iframe>
 
 
 
@@ -73,14 +91,6 @@ $P(X \leq 0.6 \text{ and } Y \leq 0.4)$ = ?
 
 <iframe width="1100" height="600" src="https://www.youtube-nocookie.com/embed/bqRvhYefVzM?si=LL3jstHKprhb_Clm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## leaflet
-
-```{r}
-library(leaflet)
-leaflet() %>%
-  addTiles() %>%  # Add default OpenStreetMap map tiles
-  addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
-```
 
 ## rgl
 
@@ -110,7 +120,6 @@ browsable(tagList(
 ## rgl 2
 
 ```{r}
-library(rgl)
 plotids <- with(iris, plot3d(Sepal.Length, Sepal.Width, Petal.Length, 
                   type="s", col=as.numeric(Species)))
 rglwidget(elementId = "plot3drgl")
@@ -121,14 +130,13 @@ toggleWidget(sceneId = "plot3drgl", ids = plotids["data"], label = "Data")
 ## rgl joint
 
 ```{r}
-library(rgl)
 fXY = function(x,y){
   12/7*(x^2 + x*y)
 }
 
 #grid = expand.grid(x = seq(0,1,length=25),y=seq(0,1,length=25))
 #out  = apply(grid,1,fXY)
-plotids <- plot3d(fXY, xlim=c(-.1,1), ylim = c(-.1,1),
+plot3d(fXY, xlim=c(-.1,1), ylim = c(-.1,1),
                   col = colorRampPalette(c("blue", "white")),
                   zlab = "f(x,y)")
 coords = matrix(0,nrow=4,ncol=3)
@@ -142,614 +150,3 @@ rglwidget(elementId = "plot3drgl")
 
 toggleWidget(sceneId = "plot3drgl", ids = plotids["data"], label = "Data")
 ```
-
-## Computing values (quantiles)
-
-Continuing with $X \sim N(5,9)$:
-
-[(that is, normal with expected value 5 and variance 9)]{.subscript}
-
-::::::::: scrolling
-::::: columns
-::: {.column width="50%"}
-[Recall:]{.example}
-
-For a value $x = 4$, $P(X \leq 4)$:
-
-```{r}
-#| echo: true
-pnorm(4,5,3)
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| label: normalProbPlot
-#| echo: false
-#| fig-asp: 1
-#| out-width: "100%" 
-x       = 4
-mu      = 5
-sigmaSq = 9
-lab     = 'x'
-
-funcShaded <- function(x, lower_bound) {
-    y = dnorm(x, mean = mu, sd = sqrt(sigmaSq))
-    y[x >= lower_bound] <- NA
-    return(y)
-}
-
-xMin = mu - sqrt(sigmaSq)*4
-xMax = mu + sqrt(sigmaSq)*4
-ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
-    stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
-    stat_function(fun = funcShaded, args = list(lower_bound = x), 
-                  geom = "area", fill = 'lightblue', alpha = .5) +
-    scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
-```
-:::
-:::::
-
-Now, let's ask the **opposite** question!
-
-For a fixed probability $p$, what is the value $x$ so that $P(X \leq x) = p$?
-
-This value is called a [quantile]{.definition}
-
-::::: columns
-::: {.column width="50%"}
-[Example:]{.example}
-
-What $x$ makes $P(X\leq x) = .7$?
-
-```{r}
-#| echo: true
-qnorm(.7,5,3)
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| label: normalQuantilePlot
-#| echo: false
-#| fig-asp: 1
-#| out-width: "100%" 
-x   = qnorm(.7,mu,sqrt(sigmaSq))
-lab = 'x' 
-
-funcShaded <- function(x, lower_bound) {
-    y = dnorm(x, mean = mu, sd = sqrt(sigmaSq))
-    y[x >= lower_bound] <- NA
-    return(y)
-}
-
-xMin = mu - sqrt(sigmaSq)*4
-xMax = mu + sqrt(sigmaSq)*4
-ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
-    stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
-    stat_function(fun = funcShaded, args = list(lower_bound = x), 
-                  geom = "area", fill = 'lightblue', alpha = .5) +
-    scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
-```
-:::
-:::::
-:::::::::
-
-## Using pnorm and qnorm
-
-[Concept Check:]{.example} What would each of the following codes produce?
-
-```{r}
-#| echo: true
-#| eval: false
-qnorm( pnorm(3,5,3), 5, 3)
-```
-
-. . .
-
-```{r}
-#| echo: false
-#| eval: true
-qnorm( pnorm(3,5,3), 5, 3)
-```
-
-. . .
-
-```{r}
-#| echo: true
-#| eval: false
-pnorm( qnorm(.2,5,3), 5, 3)
-```
-
-. . .
-
-```{r}
-#| echo: false
-#| eval: true
-pnorm( qnorm(.2,5,3), 5, 3)
-```
-
-## Computing probabilities and values
-
-Suppose $X \sim N(-3.2, 100)$
-
-[that is, normal with expected value -3.2 and variance 100]{.subscript}
-
-[Probability:]{.smallCap} What is the probability $X$ equals 0?
-
-. . .
-
-This is always zero!
-
-. . .
-
-[Probability:]{.smallCap} What is the probability $X$ is less than 0?
-
-. . .
-
-```{r}
-#| echo: true
-pnorm(0,-3.2,sqrt(100))
-```
-
-. . .
-
-[Values:]{.smallCap} at what value $x$ does $P(X\leq x) = .05$?
-
-. . .
-
-```{r}
-#| echo: true
-qnorm(.05,-3.2,sqrt(100))
-```
-
-## Computing probabilities: SATs
-
-[Example]{.example}
-
-The scores on the SAT math section are $X \sim N(520,3600)$
-
-:::::::: scrolling
-[(that is, normal with expected value 520 and variance 3600)]{.subscript}
-
-What is the probability someone scores less than 600?
-
-::: fragment
-$P(X \leq 600) = \text{what probability?}$
-:::
-
-:::::: fragment
-::::: columns
-::: {.column width="52%"}
-```{r SATprobEcho}
-#| echo: true
-x       = 600
-mu      = 520
-sigmaSq = 3600
-pnorm(x, mu, sqrt(sigmaSq))
-```
-:::
-
-::: {.column width="48%"}
-```{r}
-#| label: SATprobabilityNoEcho
-#| echo: false
-#| fig-asp: 1
-#| out-width: "120%" 
-x       = 600
-mu      = 520
-sigmaSq = 3600
-
-funcShaded <- function(x, lower_bound) {
-    y = dnorm(x, mean = mu, sd = sqrt(sigmaSq))
-    y[x >= lower_bound] <- NA
-    return(y)
-}
-
-xMin = mu - sqrt(sigmaSq)*4
-xMax = mu + sqrt(sigmaSq)*4
-ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
-    stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
-    stat_function(fun = funcShaded, args = list(lower_bound = x), 
-                  geom = "area", fill = 'lightblue', alpha = .5) +
-    scale_x_continuous(name = "Score") + scale_y_continuous(name = "f(x)")
-```
-:::
-:::::
-::::::
-::::::::
-
-## Computing values: SATs
-
-[Example]{.example}
-
-The scores on the SAT math section are $X \sim N(520,3600)$
-
-:::::::: scrolling
-The stats dept. admits students scoring above $96^{th}$ percentile
-
-What is the cutoff score ($x$) for recruitment by the stats dept.?
-
-::: fragment
-$P(X \leq x) = 0.96$
-:::
-
-:::::: fragment
-::::: columns
-::: {.column width="52%"}
-```{r SATvalueEcho}
-#| echo: true
-prob    = .96
-mu      = 520
-sigmaSq = 3600
-qnorm(prob, mu, sqrt(sigmaSq))
-```
-:::
-
-::: {.column width="48%"}
-```{r}
-#| label: SATvalueNoEcho
-#| echo: false
-#| fig-asp: 1
-#| out-width: "100%" 
-x       = qnorm(prob, mu, sqrt(sigmaSq))
-mu      = 520
-sigmaSq = 3600
-
-funcShaded <- function(x, lower_bound) {
-    y = dnorm(x, mean = mu, sd = sqrt(sigmaSq))
-    y[x >= lower_bound] <- NA
-    return(y)
-}
-
-xMin = mu - sqrt(sigmaSq)*4
-xMax = mu + sqrt(sigmaSq)*4
-ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
-    stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
-    stat_function(fun = funcShaded, args = list(lower_bound = x), 
-                  geom = "area", fill = 'lightblue', alpha = .5) +
-    scale_x_continuous(name = "Score") + scale_y_continuous(name = "f(x)")
-```
-:::
-:::::
-::::::
-::::::::
-
-```{=html}
-<!--
-To Future Darren: Put this after we introduce correlation
-## Properties of Normal Distribution
-
-A [linear combination]{.definition} comes from 'summing' 'products', like:
-
-$$
-3x + 4y + 5z
-$$
-
-We can form [linear combinations]{.definition} of rvs too
-
-In particular, any linear combination of Normal rvs is again a Normal:
--->
-```
-
-# Transformations
-
-## Transforming Normals: $aX + b$ {#transformingNormals}
-
-Suppose again $X \sim N(\mu, \sigma^2)$
-
-If we multiply/add constants $a,b$ to $X$ to form a new rv $Y$:
-
-$$
-Y  = aX + b 
-$$
-
-then $Y \sim N(a\mu + b, a^2 \sigma^2)$
-
-[(This should remind you of our $E[X]$ and $Var[X]$ results)]{.subscript}
-
-[Example:]{.example}
-
-If $X \sim N(150,100)$ then
-
-$$
-Y = 3X + 30 \sim N(480, 900)
-$$
-
-## Transforming Normals: inches to cm
-
-::: scrolling
-![](figures/steelRuler.png){width="50%" fig-alt="Measuring to a shoulder on a machined part with a steel rule"}
-
-We are measuring a machined part using a ruler on a .01" scale
-
-If several people measure, they will get some random amount of measurement error:
-
-$$
-X \sim N(.875, .00005)
-$$
-
-What is the probability that that a measurement will be within $\pm$.01 centimeters?
-
-[(An inch is 2.54 cm)]{.subscript}
-
-$Y = 2.54X$, therefore $Y \sim N(2.54*.875,  2.54^2*.00005) = N(2.2225,  0.00032)$
-
-\begin{align}
-P(2.2225 - .01 \leq Y \leq 2.2225 + .01) & = \\
- = P(2.2125 \leq Y \leq 2.2325) & \\
- = F(2.2325) - F(2.2125)
-\end{align}
-
-```{r transformNormalInchCM}
-#| echo: true
-mu      = 2.54*.875
-sigmaSq = 2.54^2*.00005
-pnorm(mu + .01, mu, sqrt(sigmaSq)) - 
-    pnorm(mu - .01, mu, sqrt(sigmaSq))
-```
-:::
-
-## The Standard Normal Distribution
-
-When $\mu=0$ and $\sigma=1$, we call it the [standard normal]{.definition}
-
-$$
-f(x)=\frac1{\sqrt{2\pi}}e^{-x^2/2},\,\,-\infty<x<\infty.
-$$
-
-[(Once again, you don't need to know this formula for this class)]{.subscript}
-
-The standard normal will be notated as: $Z \sim N(0,1)$
-
-## Standardization
-
-Going from a general normal to a standard normal is known as [standardization]{.definition}
-
-$$
-X \sim N(\mu, \sigma^2) \longrightarrow Z = \frac{X - \mu}{\sigma} \sim N(0,1)
-$$
-
-The opposite (actually, the [inverse]{.definition}) is true
-
-$$
-Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
-$$
-
-[(this is using the results in [Transforming Normals](#transformingNormals))]{.subscript}
-
-# Z-scores: How to compare values
-
-## Z-scores: Comparing values
-
-The [z-score]{.definition} can be computed:
-
-$$
-\text{z-score} = \frac{x - \mu}{\sigma}
-$$
-
-::::::: scrolling
-[(For a value $x$ from a distribution with mean $\mu$ and variance $\sigma^2$)]{.subscript}
-
-[Question:]{.smallCap} Which of the two values from two different distributions is more [unusual]{.emphasis}?
-
-[Answer:]{.smallCap} Whichever z-score has larger [magnitude]{.emphasis}
-
-[(that is, largest \|z-score\|)]{.subscript}
-
-[Example:]{.example} We want to compare olympic records in men's and women's sprinting. Which is more unusual?
-
-Let's look at a table:
-
-| Category |  Mens | Womens |
-|----------|------:|-------:|
-| average  |  9.85 |  10.83 |
-| variance | .0057 |  .0049 |
-| record   |  9.63 |  10.61 |
-
-: Table of Average and Standard Deviation of Olympic Sprinting times.
-
-Let's compute the two [z-scores]{.definition}:
-
-:::::: columns
-::: {.column width="67%"}
-```{r zScoreExample}
-#| echo: true
-zScoreM = (9.63 - 9.85)/sqrt(.0057)
-zScoreM
-zScoreW = (10.61 - 10.83)/sqrt(.0049)
-zScoreW
-```
-:::
-
-:::: {.column width="33%"}
-::: fragment
-The women's result is more unusual
-:::
-::::
-::::::
-
-The z-score for men is `r round(zScoreM,3)` while for women it is `r round(zScoreW,3)`
-:::::::
-
-## Z-scores: Another application
-
-Another use of [z-scores]{.definition}: what value $x$ would be equally as unusual?
-
-[Answer:]{.smallCap} Choose the $x$ so that the z-scores are [equal]{.emphasis}
-
-::: scrolling
-[Example:]{.example} What time for a men's sprinter would be equivalent to the female record?
-
-| Category |  Mens | Womens |
-|----------|------:|-------:|
-| average  |  9.85 |  10.83 |
-| variance | .0057 |  .0049 |
-| record   |  9.63 |  10.61 |
-
-: Table of Average and Standard Deviation of Olympic Sprinting times.
-
-We found the female z-score = $\frac{10.61 - 10.83}{\sqrt{.0049}}$ = `r round(zScoreW,3)`
-
-To find the equivalent time, we need to [unstandardize]{.definition} $$
-\text{z-score}*\sigma  + \mu = x
-$$
-
-Here, use
-
--   z-score from the female sprinters
--   the $\mu$ and $\sigma$ from the male sprinters ($\mu = 9.85$, $\sigma^2 = .0057$)
-
-```{r zScoreExampleValue}
-#| echo: true
-x = zScoreW * sqrt(.0057) + 9.85
-x
-```
-
-The male record would need to be `r round(x,3)` seconds to be as unusual as the female record.
-:::
-
-## Empirical rule
-
-Values from normal distributions contain predictable amounts of probability
-
-This is the [empirical rule:]{.definition}
-
-::::::: scrolling
--   [$P( |Z| \leq 1) = 0.683$]{.lightbluetext} ($\sim \frac{2}{3}$ obs. within 1 $\sigma$)
--   [$P( |Z| \leq 2) = 0.954$]{.lightgreentext} ($\sim \frac{19}{20}$ obs. within 2 $\sigma$)
--   [$P( |Z| \leq 3) = 0.997$]{.lightredtext} ($\sim \frac{99}{100}$ obs. within 3 $\sigma$)
-
-:::::: columns
-::: {.column width="33%"}
-```{r}
-#| label: normalEmpRuleGeneral1
-#| echo: false
-#| fig-asp: 1
-#| out-width: "110%"
-
-mu      = 0
-sigmaSq = 1
-lab     = 'x' 
-
-funcShaded <- function(x, lower_bound) {
-    y = dnorm(x, mean = mu, sd = sqrt(sigmaSq))
-    y[x >= lower_bound | x <= -lower_bound] <- NA
-    return(y)
-}
-
-xMin = mu - sqrt(sigmaSq)*4
-xMax = mu + sqrt(sigmaSq)*4
-outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
-    stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
-    stat_function(fun = funcShaded, args = list(lower_bound = 1), 
-                  geom = "area", fill = 'lightblue', alpha = .5) +
-    scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
-outPlot
-```
-
-[$P( |Z| \leq 1) = 0.68$]{.lightbluetext}
-:::
-
-::: {.column width="33%"}
-```{r}
-#| label: normalEmpRuleGeneral2
-#| echo: false
-#| fig-asp: 1
-#| out-width: "110%"
-
-outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
-    stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
-stat_function(fun = funcShaded, args = list(lower_bound = 2), 
-                  geom = "area", fill = 'lightgreen', alpha = .5)  +
-    scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
-outPlot
-```
-
-[$P( |Z| \leq 2) = 0.95$]{.lightgreentext}
-:::
-
-::: {.column width="33%"}
-```{r}
-#| label: normalEmpRuleGeneral3
-#| echo: false
-#| fig-asp: 1
-#| out-width: "110%"
-
-outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
-    stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
-stat_function(fun = funcShaded, args = list(lower_bound = 3), 
-                  geom = "area", fill = 'lightcoral', alpha = .5)   +
-    scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
-outPlot
-```
-
-[$P( |Z| \leq 3) = 0.997$]{.lightredtext}
-:::
-::::::
-
-```{=html}
-<!--
--   [$P( |X - \mu| \leq \sigma) = 0.683$]{.lightbluetext}
--   [$P( |X - \mu| \leq 2\sigma) = 0.954$]{.lightgreentext}
--   [$P( |X - \mu| \leq 3\sigma) = 0.997$]{.lightredtext}
-:::
--->
-```
-
-<!-- ::: {.column width="10%"} -->
-
-<!-- empty column to create gap -->
-
-<!--::: -->
-
-```{=html}
-<!--
-::: {.column width="50%"}
--   $P( |Z| \leq 1) = 0.683$
--   $P( |Z| \leq 2) = 0.954$
--   $P( |Z| \leq 3) = 0.997$
-:::
-::::::
--->
-```
-:::::::
-
-## A (potentially) helpful applet {.nostretch}
-
-On exams, there will be a link to an applet: [Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
-
-[Note: This applet is totally optional and unnecessary if you use R]{.emphasis}
-
-::: scrolling
-![](figures/appletScott.png){width="700px" fig-alt="Standard Normal Table for getting probabilities from Z-scores"}
-
-Returning to SAT example:
-
-```{r SATprobRevisit}
-#| echo: true
-x       = 600
-mu      = 520
-sigmaSq = 3600
-pnorm(x, mu, sqrt(sigmaSq))
-qnorm(.96, mu, sqrt(sigmaSq))
-```
-
-To use the applet
-
--   [Probability:]{.smallCap} we need the z-score = `r (600 - 520)/sqrt(sigmaSq)`
--   [Value:]{.smallCap} We need to get standardized z-score from applet and then unstandardize to get value.
-
-```{r SATvalueRevisit}
-#| echo: true
-1.751*sqrt(sigmaSq) + mu
-```
-
-[(here, 1.751 came from the applet by using the probability .96 from SAT example)]{.subscript}
-:::
-
-## We'll be back...
-
-The normal plays a [central]{.emphasis} role in probability and statistics
-
-We will return to it later during [sampling distributions]{.smallCap}...
