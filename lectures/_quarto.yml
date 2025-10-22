@@ -16,6 +16,3 @@ format:
     standalone: true
     self-contained-math: true
     html-math-method: mathjax
-    chalkboard: 
-      buttons: true
-  
