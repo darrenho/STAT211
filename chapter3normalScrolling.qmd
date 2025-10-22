@@ -84,7 +84,7 @@ sigmaSq = 9
 pnorm(x, mu, sqrt(sigmaSq))
 ```
 
-## Computing values (quantiles) {.scrollable}
+## Computing values (quantiles) 
 
 
 Continuing with $X \sim N(5,9)$:
@@ -261,7 +261,7 @@ pnorm(0,-3.2,sqrt(100))
 qnorm(.05,-3.2,sqrt(100))
 ```
 
-## Computing probabilities: SATs {.scrollable}
+## Computing probabilities: SATs
 
 
 
@@ -325,7 +325,7 @@ ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 ::::::
 :::
 :::
-## Computing values: SATs  {.scrollable}
+## Computing values: SATs 
 
 
 [Example]{.example}
@@ -429,7 +429,7 @@ $$
 Y = 3X + 30 \sim N(480, 900)
 $$
 
-## Transforming Normals: inches to cm {.scrollable}
+## Transforming Normals: inches to cm 
 
 
 
@@ -509,7 +509,7 @@ $$
 
 # Z-scores: How to compare values
  
-## Z-scores: Comparing values {.scrollable}
+## Z-scores: Comparing values 
 
 The [z-score]{.definition} can be computed:
 
@@ -571,7 +571,7 @@ The z-score for men is `r round(zScoreM,3)` while for women it is `r round(zScor
 
 :::
 
-## Z-scores: Another application {.scrollable}
+## Z-scores: Another application
 
 Another use of [z-scores]{.definition}: what value $x$ would be equally as unusual?
 
@@ -614,7 +614,7 @@ The male record would need to be `r round(x,3)` seconds to be as unusual as the 
 
 :::
 
-## Empirical rule {.scrollable}
+## Empirical rule 
 
 
 
@@ -724,7 +724,7 @@ outPlot
 
 :::
 
-## A (potentially) helpful applet  {.nostretch .scrollable} 
+## A (potentially) helpful applet  {.nostretch}
 
 On exams, there will be a link to an applet:  [Probability applet](https://people.tamu.edu/~scottcrawford/ftable.html){.external target="_blank"}
 

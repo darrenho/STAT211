@@ -1,9 +1,5 @@
-.mjx-root {
-  padding-top: 10px !important;
-}
-
 .scrolling {
-  max-height: 400px;
+  max-height: 10px !important; 
   overflow-y: auto;
 }
 
