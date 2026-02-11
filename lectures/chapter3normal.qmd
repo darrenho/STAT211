@@ -8,7 +8,6 @@ format:
     output-file: chapter3normal.html
   html: 
     output-file: chapter3normalPrintable.html
-    embed-resources: true
 ---
 
 ```{r loadPacks}
