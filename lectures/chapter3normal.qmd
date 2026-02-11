@@ -8,6 +8,7 @@ format:
     output-file: chapter3normal.html
   html: 
     output-file: chapter3normalPrintable.html
+    embed-resources: true
 ---
 
 ```{r loadPacks}
@@ -180,11 +181,11 @@ funcShaded <- function(x, lower_bound) {
 
 xMin = mu - sqrt(sigmaSq)*4
 xMax = mu + sqrt(sigmaSq)*4
-ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
+print(ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
     stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
     stat_function(fun = funcShaded, args = list(lower_bound = x), 
                   geom = "area", fill = 'lightblue', alpha = .5) +
-    scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
+    scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)"))
 ```
 
 :::
