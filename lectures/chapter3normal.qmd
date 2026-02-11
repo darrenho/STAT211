@@ -19,15 +19,15 @@ require(ggplot2)
 
 ## Defining the normal distribution
 
-The [normal]{.definition} (also known as 'Gaussian') is $X\sim N(\mu,\sigma^2)$:
+The [normal]{.definition} (also known as 'Gaussian') is $X\sim N(\mu_X,\sigma_X^2)$:
 
--   $\mu$ is the expected value ($E[X]$)
--   $\sigma^2$ is the variance of ($Var[X]$)
+-   $\mu_X$ is the expected value ($E[X]$)
+-   $\sigma_X^2$ is the variance of ($Var[X]$)
 
 Its pdf:
 
 $$ 
-f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} 
+f_X(x)=\frac1{(2\pi\sigma_X^2)^{1/2}}e^{-\frac{(x-\mu_X)^2}{2\sigma_X^2}} 
 $$
 
 [(Just like the binomial, you don't need to know this formula for this class)]{.subscript}
@@ -61,9 +61,9 @@ pnorm(1.89,0,1)
 ## Computing probabilities
 
 
-We will always write $X\sim N(\mu,\sigma^2)$ for the normal
+We will always write $X\sim N(\mu_X,\sigma_X^2)$ for the normal
 
-R syntax will be specified with $\mu$ and $\sigma = \sqrt{\sigma^2}$ instead
+R syntax will be specified with $\mu_X$ and $\sigma_X = \sqrt{\sigma_X^2}$ instead
 
 [Example]{.example}
 
@@ -114,6 +114,7 @@ pnorm(4,5,3)
 ```{r}
 #| label: normalProbPlot
 #| echo: false
+#| warning: false
 #| fig-asp: 1
 #| out-width: "100%" 
 x       = 4
@@ -409,7 +410,7 @@ In particular, any linear combination of Normal rvs is again a Normal:
 
 ## Transforming Normals: $aX + b$ {#transformingNormals}
 
-Suppose again $X \sim N(\mu, \sigma^2)$
+Suppose again $X \sim N(\mu_X, \sigma_X^2)$
 
 If we multiply/add constants $a,b$ to $X$ to form a new rv $Y$:
 
@@ -417,7 +418,7 @@ $$
 Y  = aX + b 
 $$
 
-then $Y \sim N(a\mu + b, a^2 \sigma^2)$
+then $Y \sim N(a\mu_X + b, a^2 \sigma_X^2)$
 
 [(This should remind you of our $E[X]$ and $Var[X]$ results)]{.subscript}
 
@@ -482,7 +483,7 @@ pnorm(mu + .01, mu, sqrt(sigmaSq)) -
 When $\mu=0$ and $\sigma=1$, we call it the [standard normal]{.definition}
 
 $$
-f(x)=\frac1{\sqrt{2\pi}}e^{-x^2/2},\,\,-\infty<x<\infty.
+f_Z(z)=\frac1{\sqrt{2\pi}}e^{-z^2/2},\,\,-\infty<x<\infty.
 $$
 
 [(Once again, you don't need to know this formula for this class)]{.subscript}
@@ -494,14 +495,14 @@ The standard normal will be notated as: $Z \sim N(0,1)$
 Going from a general normal to a standard normal is known as [standardization]{.definition}
 
 $$
-X \sim N(\mu, \sigma^2) \longrightarrow Z = \frac{X - \mu}{\sigma} \sim N(0,1)
+X \sim N(\mu_X, \sigma_X^2) \longrightarrow Z = \frac{X - \mu_X}{\sigma_X} \sim N(0,1)
 $$
 
 
 The opposite (actually, the [inverse]{.definition}) is true
 
 $$
-Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
+Z \sim N(0, 1) \longrightarrow X = Z \cdot \sigma_X + \mu_X \sim N(\mu_X,\sigma_X^2)
 $$
 
 [(this is using the results in [Transforming Normals](#transformingNormals))]{.subscript}
@@ -514,12 +515,12 @@ $$
 The [z-score]{.definition} can be computed:
 
 $$
-\text{z-score} = \frac{x - \mu}{\sigma}
+\text{z-score} = \frac{x - \mu_X}{\sigma_X}
 $$
 
 :::{.scrolling}
 
-[(For a value $x$ from a distribution with mean $\mu$ and variance $\sigma^2$)]{.subscript}
+[(For a value $x$ from a distribution with mean $\mu_X$ and variance $\sigma_X^2$)]{.subscript}
 
 [Question:]{.smallCap} Which of the two values from two different distributions is more [unusual]{.emphasis}?
 
@@ -530,18 +531,15 @@ $$
 
 
 
-[Example:]{.example} We want to compare olympic records in men's and women's sprinting. Which is more unusual?
+[Example:]{.example} We want to compare Olympic records in men's and women's sprinting. Which is more unusual?
 
-Let's look at a table:
-
-| Category |  Mens | Womens |
+| Category |  Men's | Women's |
 |----------|------:|-------:|
-| average  |  9.85 |  10.83 |
-| variance | .0057 |  .0049 |
+| average ($\mu$)  |  $\mu_M = 9.85$ |  $\mu_W = 10.83$ |
+| variance ($\sigma^2$) | $\sigma_M^2 = .0057$ |  $\sigma_W^2 = .0049$ |
 | record   |  9.63 |  10.61 |
 
-: Table of Average and Standard Deviation of Olympic Sprinting times.
-
+: Table of Olympic Sprinting times (s)
 
 Let's compute the two [z-scores]{.definition}:
 
@@ -567,7 +565,7 @@ The women's result is more unusual
 :::
 ::::::
 
-The z-score for men is `r round(zScoreM,3)` while for women it is `r round(zScoreW,3)`
+The z-score for men is $\text{z-score}_M$ = `r round(zScoreM,3)` while for women it is $\text{z-score}_W$ = `r round(zScoreW,3)`
 
 :::
 
@@ -583,26 +581,32 @@ Another use of [z-scores]{.definition}: what value $x$ would be equally as unusu
 
 [Example:]{.example} What time for a men's sprinter would be equivalent to the female record?
 
-| Category |  Mens | Womens |
+| Category |  Men's | Women's |
 |----------|------:|-------:|
-| average  |  9.85 |  10.83 |
-| variance | .0057 |  .0049 |
+| average ($\mu$)  |  $\mu_M = 9.85$ |  $\mu_W = 10.83$ |
+| variance ($\sigma^2$) | $\sigma_M^2 = .0057$ |  $\sigma_W^2 = .0049$ |
 | record   |  9.63 |  10.61 |
 
-: Table of Average and Standard Deviation of Olympic Sprinting times.
+: Table of Olympic Sprinting times (s)
 
-We found the female z-score = $\frac{10.61 - 10.83}{\sqrt{.0049}}$ = `r round(zScoreW,3)`
+
+We previously found the female z-score: 
+
+$$
+\text{z-score}_W = \frac{10.61 - \mu_W}{\sigma_W} = \frac{10.61 - 10.83}{\sqrt{.0049}}
+$$
+= `r round(zScoreW,3)`
 
 To find the equivalent time, we need to [unstandardize]{.definition
 }
 $$
-\text{z-score}*\sigma  + \mu = x
+\text{z-score}_W*\sigma_M  + \mu_M = x
 $$
 
 Here, use
  
 -   z-score from the female sprinters
--   the $\mu$ and $\sigma$ from the male sprinters ($\mu = 9.85$, $\sigma^2 = .0057$)
+-   the $\mu_M$ and $\sigma_M$ from the male sprinters ($\mu_M = 9.85$, $\sigma_M^2 = .0057$)
 
 ```{r zScoreExampleValue}
 #| echo: true
@@ -613,6 +617,8 @@ x
 The male record would need to be `r round(x,3)` seconds to be as unusual as the female record.
 
 :::
+
+# Empirical Rule: A quick guide to normal probabilities
 
 ## Empirical rule {.scrollable}
 
@@ -723,6 +729,44 @@ outPlot
 ```
 
 :::
+
+## Empirical rule: Pulsar example
+
+
+
+```{r}
+#| label: normalEmpRuleExample
+#| echo: false
+#| fig-asp: .3
+#| out-width: "210%"
+n     = 29
+mu    = 5
+sigma = mu/4
+
+set.seed(4)
+x = round(rnorm(n,mu,sigma),1)
+```
+
+In looking at a sample of `r n` pulsar stars, they had periodicity:
+
+```{r}
+#| label: normalEmpRuleExample2
+#| echo: false
+#| fig-asp: .3
+#| out-width: "210%"
+
+plot(x,rep(0,n),pch=3,xlab='periodicity',ylab='',xlim=c(mu-3*sigma,mu+3*sigma),yaxt='n',xaxt='n')
+axis(1,at=seq(round(mu-3*sigma,0),round(mu+3*sigma,0),by=.5),
+     labels=seq(round(mu-3*sigma,0),round(mu+3*sigma,0),by=.5)
+     )
+
+```
+
+. . .
+
+`r paste('x = c(',paste(x,collapse=','),')',sep='')`
+
+This has sample standard deviation = `r sd(x)`
 
 ## A (potentially) helpful applet  {.nostretch .scrollable} 
 

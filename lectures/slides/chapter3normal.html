@@ -6,8 +6,8 @@
 <script src="chapter3normal_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="chapter3normal_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="chapter3normal_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="chapter3normal_files/libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="chapter3normal_files/libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Darren Homrighausen">
   <title>STAT 211: Normal Distribution</title>
@@ -95,7 +95,7 @@
     code span.vs { color: #008000; } /* VerbatimString */
     code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="chapter3normal_files/libs/revealjs/dist/theme/quarto-aad85c4fd4d95e0ed3861e640351d4a1.css">
+  <link rel="stylesheet" href="chapter3normal_files/libs/revealjs/dist/theme/quarto-460447a0313277de08da364d2b4eefae.css">
   <link rel="stylesheet" href="/css/styles.css">
   <link href="chapter3normal_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="chapter3normal_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -213,6 +213,7 @@ Darren Homrighausen
 <li><a href="#/computing-probabilities-and-values" id="/toc-computing-probabilities-and-values">Computing Probabilities and Values</a></li>
 <li><a href="#/transformations" id="/toc-transformations">Transformations</a></li>
 <li><a href="#/z-scores-how-to-compare-values" id="/toc-z-scores-how-to-compare-values">Z-scores: How to compare values</a></li>
+<li><a href="#/empirical-rule-a-quick-guide-to-normal-probabilities" id="/toc-empirical-rule-a-quick-guide-to-normal-probabilities">Empirical Rule: A quick guide to normal probabilities</a></li>
 </ul>
 </nav>
 </section>
@@ -223,14 +224,14 @@ Darren Homrighausen
 </section>
 <section id="defining-the-normal-distribution" class="slide level2">
 <h2>Defining the normal distribution</h2>
-<p>The <span class="definition">normal</span> (also known as ‘Gaussian’) is <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span>:</p>
+<p>The <span class="definition">normal</span> (also known as ‘Gaussian’) is <span class="math inline">\(X\sim N(\mu_X,\sigma_X^2)\)</span>:</p>
 <ul>
-<li><span class="math inline">\(\mu\)</span> is the expected value (<span class="math inline">\(E[X]\)</span>)</li>
-<li><span class="math inline">\(\sigma^2\)</span> is the variance of (<span class="math inline">\(Var[X]\)</span>)</li>
+<li><span class="math inline">\(\mu_X\)</span> is the expected value (<span class="math inline">\(E[X]\)</span>)</li>
+<li><span class="math inline">\(\sigma_X^2\)</span> is the variance of (<span class="math inline">\(Var[X]\)</span>)</li>
 </ul>
 <p>Its pdf:</p>
 <p><span class="math display">\[
-f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+f_X(x)=\frac1{(2\pi\sigma_X^2)^{1/2}}e^{-\frac{(x-\mu_X)^2}{2\sigma_X^2}}
 \]</span></p>
 <p><span class="subscript">(Just like the binomial, you don’t need to know this formula for this class)</span></p>
 </section>
@@ -244,11 +245,11 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div><div class="column" style="width:50%;">
 <p>Now, we can just use a computer:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">pnorm</span>(<span class="fl">1.8</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">pnorm</span>(<span class="fl">1.8</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9640697</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">pnorm</span>(<span class="fl">1.89</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">pnorm</span>(<span class="fl">1.89</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.970621</code></pre>
 </div>
@@ -262,14 +263,14 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </section>
 <section id="computing-probabilities" class="slide level2">
 <h2>Computing probabilities</h2>
-<p>We will always write <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span> for the normal</p>
-<p>R syntax will be specified with <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma = \sqrt{\sigma^2}\)</span> instead</p>
+<p>We will always write <span class="math inline">\(X\sim N(\mu_X,\sigma_X^2)\)</span> for the normal</p>
+<p>R syntax will be specified with <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\sigma_X = \sqrt{\sigma_X^2}\)</span> instead</p>
 <p><span class="example">Example</span></p>
 <p>If <span class="math inline">\(X \sim N(5,9)\)</span>, then the probability <span class="math inline">\(X\)</span> is less than 4 is:</p>
-<div class="sourceCode" id="cb5" data-code-line-numbers="1|2-3|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">4</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-code-line-numbers="1|2-3|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">4</span></span>
 <span id="cb5-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">5</span></span>
 <span id="cb5-3"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="dv">9</span></span>
-<span id="cb5-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3694413</code></pre>
@@ -286,7 +287,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <p><span class="example">Recall:</span></p>
 <p>For a value <span class="math inline">\(x = 4\)</span>, <span class="math inline">\(P(X \leq 4)\)</span>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3694413</code></pre>
 </div>
@@ -310,7 +311,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <p><span class="example">Example:</span></p>
 <p>What <span class="math inline">\(x\)</span> makes <span class="math inline">\(P(X\leq x) = .7\)</span>?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 6.573202</code></pre>
 </div>
@@ -332,7 +333,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <h2>Using pnorm and qnorm</h2>
 <p><span class="example">Concept Check:</span> What would each of the following codes produce?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">qnorm</span>( <span class="fu">pnorm</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">qnorm</span>( <span class="fu">pnorm</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -343,7 +344,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">pnorm</span>( <span class="fu">qnorm</span>(.<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">pnorm</span>( <span class="fu">qnorm</span>(.<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment">
@@ -367,7 +368,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.6255158</code></pre>
 </div>
@@ -378,7 +379,7 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">05</span>,<span class="sc">-</span><span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">05</span>,<span class="sc">-</span><span class="fl">3.2</span>,<span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -19.64854</code></pre>
 </div>
@@ -399,10 +400,10 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <div class="columns">
 <div class="column" style="width:52%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
 <span id="cb19-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
 <span id="cb19-3"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
-<span id="cb19-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9087888</code></pre>
 </div>
@@ -435,10 +436,10 @@ f(x)=\frac1{(2\pi\sigma^2)^{1/2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <div class="columns">
 <div class="column" style="width:52%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>prob    <span class="ot">=</span> .<span class="dv">96</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>prob    <span class="ot">=</span> .<span class="dv">96</span></span>
 <span id="cb21-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
 <span id="cb21-3"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
-<span id="cb21-4"><a href=""></a><span class="fu">qnorm</span>(prob, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-4"><a href=""></a><span class="fu">qnorm</span>(prob, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 625.0412</code></pre>
 </div>
@@ -478,12 +479,12 @@ In particular, any linear combination of Normal rvs is again a Normal:
 </section>
 <section id="transformingNormals" class="slide level2">
 <h2>Transforming Normals: <span class="math inline">\(aX + b\)</span></h2>
-<p>Suppose again <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span></p>
+<p>Suppose again <span class="math inline">\(X \sim N(\mu_X, \sigma_X^2)\)</span></p>
 <p>If we multiply/add constants <span class="math inline">\(a,b\)</span> to <span class="math inline">\(X\)</span> to form a new rv <span class="math inline">\(Y\)</span>:</p>
 <p><span class="math display">\[
 Y  = aX + b
 \]</span></p>
-<p>then <span class="math inline">\(Y \sim N(a\mu + b, a^2 \sigma^2)\)</span></p>
+<p>then <span class="math inline">\(Y \sim N(a\mu_X + b, a^2 \sigma_X^2)\)</span></p>
 <p><span class="subscript">(This should remind you of our <span class="math inline">\(E[X]\)</span> and <span class="math inline">\(Var[X]\)</span> results)</span></p>
 <p><span class="example">Example:</span></p>
 <p>If <span class="math inline">\(X \sim N(150,100)\)</span> then</p>
@@ -509,10 +510,10 @@ P(2.2225 - .01 \leq Y \leq 2.2225 + .01) &amp; = \\
 = F(2.2325) - F(2.2125)
 \end{align}\]</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>mu      <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">*</span>.<span class="dv">875</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>mu      <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">*</span>.<span class="dv">875</span></span>
 <span id="cb23-2"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="fl">2.54</span><span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>.<span class="dv">00005</span></span>
 <span id="cb23-3"><a href=""></a><span class="fu">pnorm</span>(mu <span class="sc">+</span> .<span class="dv">01</span>, mu, <span class="fu">sqrt</span>(sigmaSq)) <span class="sc">-</span> </span>
-<span id="cb23-4"><a href=""></a>    <span class="fu">pnorm</span>(mu <span class="sc">-</span> .<span class="dv">01</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-4"><a href=""></a>    <span class="fu">pnorm</span>(mu <span class="sc">-</span> .<span class="dv">01</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.4223202</code></pre>
 </div>
@@ -523,7 +524,7 @@ P(2.2225 - .01 \leq Y \leq 2.2225 + .01) &amp; = \\
 <h2>The Standard Normal Distribution</h2>
 <p>When <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma=1\)</span>, we call it the <span class="definition">standard normal</span></p>
 <p><span class="math display">\[
-f(x)=\frac1{\sqrt{2\pi}}e^{-x^2/2},\,\,-\infty&lt;x&lt;\infty.
+f_Z(z)=\frac1{\sqrt{2\pi}}e^{-z^2/2},\,\,-\infty&lt;x&lt;\infty.
 \]</span></p>
 <p><span class="subscript">(Once again, you don’t need to know this formula for this class)</span></p>
 <p>The standard normal will be notated as: <span class="math inline">\(Z \sim N(0,1)\)</span></p>
@@ -532,11 +533,11 @@ f(x)=\frac1{\sqrt{2\pi}}e^{-x^2/2},\,\,-\infty&lt;x&lt;\infty.
 <h2>Standardization</h2>
 <p>Going from a general normal to a standard normal is known as <span class="definition">standardization</span></p>
 <p><span class="math display">\[
-X \sim N(\mu, \sigma^2) \longrightarrow Z = \frac{X - \mu}{\sigma} \sim N(0,1)
+X \sim N(\mu_X, \sigma_X^2) \longrightarrow Z = \frac{X - \mu_X}{\sigma_X} \sim N(0,1)
 \]</span></p>
 <p>The opposite (actually, the <span class="definition">inverse</span>) is true</p>
 <p><span class="math display">\[
-Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
+Z \sim N(0, 1) \longrightarrow X = Z \cdot \sigma_X + \mu_X \sim N(\mu_X,\sigma_X^2)
 \]</span></p>
 <p><span class="subscript">(this is using the results in <a href="#/transformingNormals">Transforming Normals</a>)</span></p>
 </section></section>
@@ -549,34 +550,33 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <h2>Z-scores: Comparing values</h2>
 <p>The <span class="definition">z-score</span> can be computed:</p>
 <p><span class="math display">\[
-\text{z-score} = \frac{x - \mu}{\sigma}
+\text{z-score} = \frac{x - \mu_X}{\sigma_X}
 \]</span></p>
 <div class="scrolling">
-<p><span class="subscript">(For a value <span class="math inline">\(x\)</span> from a distribution with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>)</span></p>
+<p><span class="subscript">(For a value <span class="math inline">\(x\)</span> from a distribution with mean <span class="math inline">\(\mu_X\)</span> and variance <span class="math inline">\(\sigma_X^2\)</span>)</span></p>
 <p><span class="smallCap">Question:</span> Which of the two values from two different distributions is more <span class="emphasis">unusual</span>?</p>
 <p><span class="smallCap">Answer:</span> Whichever z-score has larger <span class="emphasis">magnitude</span></p>
 <p><span class="subscript">(that is, largest |z-score|)</span></p>
-<p><span class="example">Example:</span> We want to compare olympic records in men’s and women’s sprinting. Which is more unusual?</p>
-<p>Let’s look at a table:</p>
+<p><span class="example">Example:</span> We want to compare Olympic records in men’s and women’s sprinting. Which is more unusual?</p>
 <table class="caption-top">
-<caption>Table of Average and Standard Deviation of Olympic Sprinting times.</caption>
+<caption>Table of Olympic Sprinting times (s)</caption>
 <thead>
 <tr class="header">
 <th>Category</th>
-<th style="text-align: right;">Mens</th>
-<th style="text-align: right;">Womens</th>
+<th style="text-align: right;">Men’s</th>
+<th style="text-align: right;">Women’s</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>average</td>
-<td style="text-align: right;">9.85</td>
-<td style="text-align: right;">10.83</td>
+<td>average (<span class="math inline">\(\mu\)</span>)</td>
+<td style="text-align: right;"><span class="math inline">\(\mu_M = 9.85\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\mu_W = 10.83\)</span></td>
 </tr>
 <tr class="even">
-<td>variance</td>
-<td style="text-align: right;">.0057</td>
-<td style="text-align: right;">.0049</td>
+<td>variance (<span class="math inline">\(\sigma^2\)</span>)</td>
+<td style="text-align: right;"><span class="math inline">\(\sigma_M^2 = .0057\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\sigma_W^2 = .0049\)</span></td>
 </tr>
 <tr class="odd">
 <td>record</td>
@@ -589,13 +589,13 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <div class="columns">
 <div class="column" style="width:67%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>zScoreM <span class="ot">=</span> (<span class="fl">9.63</span> <span class="sc">-</span> <span class="fl">9.85</span>)<span class="sc">/</span><span class="fu">sqrt</span>(.<span class="dv">0057</span>)</span>
-<span id="cb25-2"><a href=""></a>zScoreM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>zScoreM <span class="ot">=</span> (<span class="fl">9.63</span> <span class="sc">-</span> <span class="fl">9.85</span>)<span class="sc">/</span><span class="fu">sqrt</span>(.<span class="dv">0057</span>)</span>
+<span id="cb25-2"><a href=""></a>zScoreM</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -2.913971</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a>zScoreW <span class="ot">=</span> (<span class="fl">10.61</span> <span class="sc">-</span> <span class="fl">10.83</span>)<span class="sc">/</span><span class="fu">sqrt</span>(.<span class="dv">0049</span>)</span>
-<span id="cb27-2"><a href=""></a>zScoreW</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a>zScoreW <span class="ot">=</span> (<span class="fl">10.61</span> <span class="sc">-</span> <span class="fl">10.83</span>)<span class="sc">/</span><span class="fu">sqrt</span>(.<span class="dv">0049</span>)</span>
+<span id="cb27-2"><a href=""></a>zScoreW</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -3.142857</code></pre>
 </div>
@@ -605,7 +605,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <p>The women’s result is more unusual</p>
 </div>
 </div></div>
-<p>The z-score for men is -2.914 while for women it is -3.143</p>
+<p>The z-score for men is <span class="math inline">\(\text{z-score}_M\)</span> = -2.914 while for women it is <span class="math inline">\(\text{z-score}_W\)</span> = -3.143</p>
 </div>
 </section>
 <section id="z-scores-another-application" class="slide level2 scrollable">
@@ -615,24 +615,24 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <div class="scrolling">
 <p><span class="example">Example:</span> What time for a men’s sprinter would be equivalent to the female record?</p>
 <table class="caption-top">
-<caption>Table of Average and Standard Deviation of Olympic Sprinting times.</caption>
+<caption>Table of Olympic Sprinting times (s)</caption>
 <thead>
 <tr class="header">
 <th>Category</th>
-<th style="text-align: right;">Mens</th>
-<th style="text-align: right;">Womens</th>
+<th style="text-align: right;">Men’s</th>
+<th style="text-align: right;">Women’s</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>average</td>
-<td style="text-align: right;">9.85</td>
-<td style="text-align: right;">10.83</td>
+<td>average (<span class="math inline">\(\mu\)</span>)</td>
+<td style="text-align: right;"><span class="math inline">\(\mu_M = 9.85\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\mu_W = 10.83\)</span></td>
 </tr>
 <tr class="even">
-<td>variance</td>
-<td style="text-align: right;">.0057</td>
-<td style="text-align: right;">.0049</td>
+<td>variance (<span class="math inline">\(\sigma^2\)</span>)</td>
+<td style="text-align: right;"><span class="math inline">\(\sigma_M^2 = .0057\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\sigma_W^2 = .0049\)</span></td>
 </tr>
 <tr class="odd">
 <td>record</td>
@@ -641,24 +641,32 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 </tr>
 </tbody>
 </table>
-<p>We found the female z-score = <span class="math inline">\(\frac{10.61 - 10.83}{\sqrt{.0049}}\)</span> = -3.143</p>
+<p>We previously found the female z-score:</p>
+<p><span class="math display">\[
+\text{z-score}_W = \frac{10.61 - \mu_W}{\sigma_W} = \frac{10.61 - 10.83}{\sqrt{.0049}}
+\]</span> = -3.143</p>
 <p>To find the equivalent time, we need to <span class="definition">unstandardize</span> <span class="math display">\[
-\text{z-score}*\sigma  + \mu = x
+\text{z-score}_W*\sigma_M  + \mu_M = x
 \]</span></p>
 <p>Here, use</p>
 <ul>
 <li>z-score from the female sprinters</li>
-<li>the <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> from the male sprinters (<span class="math inline">\(\mu = 9.85\)</span>, <span class="math inline">\(\sigma^2 = .0057\)</span>)</li>
+<li>the <span class="math inline">\(\mu_M\)</span> and <span class="math inline">\(\sigma_M\)</span> from the male sprinters (<span class="math inline">\(\mu_M = 9.85\)</span>, <span class="math inline">\(\sigma_M^2 = .0057\)</span>)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>x <span class="ot">=</span> zScoreW <span class="sc">*</span> <span class="fu">sqrt</span>(.<span class="dv">0057</span>) <span class="sc">+</span> <span class="fl">9.85</span></span>
-<span id="cb29-2"><a href=""></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>x <span class="ot">=</span> zScoreW <span class="sc">*</span> <span class="fu">sqrt</span>(.<span class="dv">0057</span>) <span class="sc">+</span> <span class="fl">9.85</span></span>
+<span id="cb29-2"><a href=""></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 9.612719</code></pre>
 </div>
 </div>
 <p>The male record would need to be 9.613 seconds to be as unusual as the female record.</p>
 </div>
+</section></section>
+<section>
+<section id="empirical-rule-a-quick-guide-to-normal-probabilities" class="title-slide slide level1 center">
+<h1>Empirical Rule: A quick guide to normal probabilities</h1>
+
 </section>
 <section id="empirical-rule" class="slide level2 scrollable">
 <h2>Empirical rule</h2>
@@ -724,6 +732,15 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 -->
 </div>
 </section>
+<section id="empirical-rule-pulsar-example" class="slide level2">
+<h2>Empirical rule: Pulsar example</h2>
+<p>In looking at a sample of 29 pulsar stars, they had periodicity:</p>
+
+<img data-src="chapter3normal_files/figure-revealjs/normalEmpRuleExample2-1.png" style="width:210.0%" class="r-stretch"><div class="fragment">
+<p>x = c(5.3,4.3,6.1,5.7,7,5.9,3.4,4.7,7.4,7.2,5.7,5,5.5,4.9,5,5.2,6.5,4.9,4.9,4.6,6.9,5.2,6.6,6.6,5.7,4.6,6.6,6.1,3.8)</p>
+<p>This has sample standard deviation = 1.0181965</p>
+</div>
+</section>
 <section id="a-potentially-helpful-applet" class="slide level2 nostretch scrollable">
 <h2>A (potentially) helpful applet</h2>
 <p>On exams, there will be a link to an applet: <a href="https://people.tamu.edu/~scottcrawford/ftable.html" class="external" target="_blank">Probability applet</a></p>
@@ -732,14 +749,14 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <p><img data-src="figures/appletScott.png" alt="Standard Normal Table for getting probabilities from Z-scores" width="700"></p>
 <p>Returning to SAT example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>x       <span class="ot">=</span> <span class="dv">600</span></span>
 <span id="cb31-2"><a href=""></a>mu      <span class="ot">=</span> <span class="dv">520</span></span>
 <span id="cb31-3"><a href=""></a>sigmaSq <span class="ot">=</span> <span class="dv">3600</span></span>
-<span id="cb31-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-4"><a href=""></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9087888</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">96</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a><span class="fu">qnorm</span>(.<span class="dv">96</span>, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 625.0412</code></pre>
 </div>
@@ -750,7 +767,7 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
 <li><span class="smallCap">Value:</span> We need to get standardized z-score from applet and then unstandardize to get value.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="fl">1.751</span><span class="sc">*</span><span class="fu">sqrt</span>(sigmaSq) <span class="sc">+</span> mu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="fl">1.751</span><span class="sc">*</span><span class="fu">sqrt</span>(sigmaSq) <span class="sc">+</span> mu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 625.06</code></pre>
 </div>
@@ -1066,13 +1083,14 @@ Z \sim N(0, 1) \longrightarrow X = Z \sigma + \mu \sim N(\mu,\sigma^2)
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

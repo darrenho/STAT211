@@ -16,3 +16,7 @@ format:
     standalone: true
     self-contained-math: true
     html-math-method: mathjax
+execute: 
+  warning: false
+  message: false
+  echo: false
