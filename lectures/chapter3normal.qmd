@@ -730,8 +730,7 @@ outPlot
 
 :::
 
-## Empirical rule: Pulsar example
-
+## Empirical rule: Pulsar example {.scrollable}
 
 
 ```{r}
