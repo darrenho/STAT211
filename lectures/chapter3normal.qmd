@@ -483,7 +483,7 @@ pnorm(mu + .01, mu, sqrt(sigmaSq)) -
 When $\mu=0$ and $\sigma=1$, we call it the [standard normal]{.definition}
 
 $$
-f_Z(z)=\frac1{\sqrt{2\pi}}e^{-z^2/2},\,\,-\infty<x<\infty.
+f_Z(z)=\frac1{\sqrt{2\pi}}e^{-z^2/2},\,\,-\infty<z<\infty.
 $$
 
 [(Once again, you don't need to know this formula for this class)]{.subscript}
@@ -537,7 +537,7 @@ $$
 |----------|------:|-------:|
 | average ($\mu$)  |  $\mu_M = 9.85$ |  $\mu_W = 10.83$ |
 | variance ($\sigma^2$) | $\sigma_M^2 = .0057$ |  $\sigma_W^2 = .0049$ |
-| record   |  9.63 |  10.61 |
+| record   |  $x = 9.63$ |  $x = 10.61$ |
 
 : Table of Olympic Sprinting times (s)
 
@@ -585,7 +585,7 @@ Another use of [z-scores]{.definition}: what value $x$ would be equally as unusu
 |----------|------:|-------:|
 | average ($\mu$)  |  $\mu_M = 9.85$ |  $\mu_W = 10.83$ |
 | variance ($\sigma^2$) | $\sigma_M^2 = .0057$ |  $\sigma_W^2 = .0049$ |
-| record   |  9.63 |  10.61 |
+| record   |  $x = 9.63$ |  $x = 10.61$ |
 
 : Table of Olympic Sprinting times (s)
 
@@ -664,7 +664,7 @@ outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 outPlot
 ```
 
-[$P( |Z| \leq 1) = 0.68$,]{.lightbluetext}
+[prob. = 0.68]{.lightbluetext}
 :::
 
 ::: {.column width="33%"}
@@ -681,7 +681,7 @@ stat_function(fun = funcShaded, args = list(lower_bound = 2),
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 outPlot
 ```
-[$P( |Z| \leq 2) = 0.95$,]{.lightgreentext}
+[prob. = 0.95]{.lightgreentext}
 :::
 
 ::: {.column width="33%"}
@@ -698,7 +698,7 @@ stat_function(fun = funcShaded, args = list(lower_bound = 3),
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 outPlot
 ```
-[$P( |Z| \leq 3) = 0.997$]{.lightredtext}
+[prob. = 0.997]{.lightredtext}
 :::
 ::::::
 
