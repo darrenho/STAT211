@@ -664,7 +664,7 @@ outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 outPlot
 ```
 
-[prob. = 0.68]{.lightbluetext}
+[probability = 0.68]{.lightbluetext}
 :::
 
 ::: {.column width="33%"}
@@ -681,7 +681,7 @@ stat_function(fun = funcShaded, args = list(lower_bound = 2),
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 outPlot
 ```
-[prob. = 0.95]{.lightgreentext}
+[probability = 0.95]{.lightgreentext}
 :::
 
 ::: {.column width="33%"}
@@ -698,7 +698,7 @@ stat_function(fun = funcShaded, args = list(lower_bound = 3),
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 outPlot
 ```
-[prob. = 0.997]{.lightredtext}
+[probability = 0.997]{.lightredtext}
 :::
 ::::::
 
