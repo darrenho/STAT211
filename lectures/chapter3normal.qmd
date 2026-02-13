@@ -664,7 +664,7 @@ outPlot = ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 outPlot
 ```
 
-[$P( |Z| \leq 1) = 0.68$]{.lightbluetext}
+[$P( |Z| \leq 1) = 0.68$,]{.lightbluetext}
 :::
 
 ::: {.column width="33%"}
@@ -681,7 +681,7 @@ stat_function(fun = funcShaded, args = list(lower_bound = 2),
     scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 outPlot
 ```
-[$P( |Z| \leq 2) = 0.95$]{.lightgreentext}
+[$P( |Z| \leq 2) = 0.95$,]{.lightgreentext}
 :::
 
 ::: {.column width="33%"}
@@ -761,6 +761,7 @@ axis(1,at=seq(round(mu-3*sigma,0),round(mu+3*sigma,0),by=.5),
 
 ```
 
+What is the approximate standard deviation using the empirical rule?
 . . .
 
 `r paste('x = c(',paste(x,collapse=','),')',sep='')`
