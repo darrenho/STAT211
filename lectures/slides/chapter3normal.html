@@ -235,13 +235,26 @@ Darren Homrighausen
 <li><span class="math inline">\(\mu_X\)</span> is the expected value (<span class="math inline">\(E[X]\)</span>)</li>
 <li><span class="math inline">\(\sigma_X^2\)</span> is the variance of (<span class="math inline">\(Var[X]\)</span>)</li>
 </ul>
-<p>Its pdf:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>It is continuous and has pdf:</p>
 <p><span class="math display">\[
 f_X(x)=\frac1{(2\pi\sigma_X^2)^{1/2}}e^{-\frac{(x-\mu_X)^2}{2\sigma_X^2}}
 \]</span></p>
-<p><span class="subscript">(Just like the binomial, you don’t need to know this formula for this class)</span></p>
-
-<img data-src="chapter3normal_files/figure-revealjs/genericpdf-1.png" style="width:120.0%" class="r-stretch"></section>
+<p><span class="subscript">(Just like the binomial, you don’t need to memorize this formula for this class)</span></p>
+</div><div class="column" style="width:50%;">
+<p>For <span class="math inline">\(\mu_X = 5\)</span> and <span class="math inline">\(\sigma_X^2 = 9\)</span>:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="chapter3normal_files/figure-revealjs/pdfPlot-1.png" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
 <section id="computing-probabilities-old-vs.-new" class="slide level2">
 <h2>Computing probabilities: old vs.&nbsp;new</h2>
 <p>Computing probabilities with the normal <strong>requires</strong> computers</p>

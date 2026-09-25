@@ -24,22 +24,33 @@ The [normal]{.definition} (also known as 'Gaussian') is $X\sim N(\mu_X,\sigma_X^
 -   $\mu_X$ is the expected value ($E[X]$)
 -   $\sigma_X^2$ is the variance of ($Var[X]$)
 
-Its pdf:
+:::::: columns
+::: {.column width="50%"}
+
+It is continuous and has pdf:
 
 $$ 
 f_X(x)=\frac1{(2\pi\sigma_X^2)^{1/2}}e^{-\frac{(x-\mu_X)^2}{2\sigma_X^2}} 
 $$
 
-[(Just like the binomial, you don't need to know this formula for this class)]{.subscript}
+[(Just like the binomial, you don't need to memorize this formula for this class)]{.subscript}
+
+:::
+
+::: {.column width="50%"}
+
+For $\mu_X = 5$ and $\sigma_X^2 = 9$:
 
 ```{r}
-#| label: genericpdf
+#| label: pdfPlot
 #| echo: false
+#| warning: false
 #| fig-asp: 1
-#| out-width: "120%" 
-x       = 600
-mu      = 520
-sigmaSq = 3600
+#| out-width: "60%" 
+x       = 4
+mu      = 5
+sigmaSq = 9
+lab     = 'x'
 
 funcShaded <- function(x, lower_bound) {
     y = dnorm(x, mean = mu, sd = sqrt(sigmaSq))
@@ -51,9 +62,12 @@ xMin = mu - sqrt(sigmaSq)*4
 xMax = mu + sqrt(sigmaSq)*4
 ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
     stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
-    scale_x_continuous(name = "x") + scale_y_continuous(name = "f(x)")
+    scale_x_continuous(name = lab) + scale_y_continuous(name = "f(x)")
 ```
 
+
+:::
+::::::
 ## Computing probabilities: old vs. new 
 
 Computing probabilities with the normal **requires** computers
