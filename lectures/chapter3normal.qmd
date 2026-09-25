@@ -17,7 +17,7 @@ require(ggplot2)
 
 # The Normal Distribution
 
-## Defining the normal distribution
+## Defining the normal distribution{.scrollable}
 
 The [normal]{.definition} (also known as 'Gaussian') is $X\sim N(\mu_X,\sigma_X^2)$:
 
@@ -31,6 +31,28 @@ f_X(x)=\frac1{(2\pi\sigma_X^2)^{1/2}}e^{-\frac{(x-\mu_X)^2}{2\sigma_X^2}}
 $$
 
 [(Just like the binomial, you don't need to know this formula for this class)]{.subscript}
+
+```{r}
+#| label: genericpdf
+#| echo: false
+#| fig-asp: 1
+#| out-width: "120%" 
+x       = 600
+mu      = 520
+sigmaSq = 3600
+
+funcShaded <- function(x, lower_bound) {
+    y = dnorm(x, mean = mu, sd = sqrt(sigmaSq))
+    y[x >= lower_bound] <- NA
+    return(y)
+}
+
+xMin = mu - sqrt(sigmaSq)*4
+xMax = mu + sqrt(sigmaSq)*4
+ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) + 
+    stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(sigmaSq))) + 
+    scale_x_continuous(name = "x") + scale_y_continuous(name = "f(x)")
+```
 
 ## Computing probabilities: old vs. new 
 
@@ -201,7 +223,7 @@ print(ggplot(data.frame(x = c(xMin, xMax)), aes(x = x)) +
 ```{r}
 #| echo: true
 #| eval: false
-qnorm( pnorm(3,5,3), 5, 3)
+qnorm( pnorm(3,0,1), 0, 1)
 ```
 
 . . .
@@ -209,7 +231,7 @@ qnorm( pnorm(3,5,3), 5, 3)
 ```{r}
 #| echo: false
 #| eval: true
-qnorm( pnorm(3,5,3), 5, 3)
+qnorm( pnorm(3,0,1), 0, 1)
 ```
 
 . . .
@@ -217,7 +239,7 @@ qnorm( pnorm(3,5,3), 5, 3)
 ```{r}
 #| echo: true
 #| eval: false
-pnorm( qnorm(.2,5,3), 5, 3)
+pnorm( qnorm(.2,0,1), 0, 1)
 ```
 
 . . .
@@ -225,7 +247,7 @@ pnorm( qnorm(.2,5,3), 5, 3)
 ```{r}
 #| echo: false
 #| eval: true
-pnorm( qnorm(.2,5,3), 5, 3)
+pnorm( qnorm(.2,0,1), 0, 1)
 ```
 
 ## Computing probabilities and values 

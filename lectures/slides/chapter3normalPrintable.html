@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>STAT 211: Normal Distribution</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -61,18 +67,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="chapter3normal_files/libs/clipboard/clipboard.min.js"></script>
 <script src="chapter3normal_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="chapter3normal_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="chapter3normal_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="chapter3normal_files/libs/quarto-html/popper.min.js"></script>
 <script src="chapter3normal_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="chapter3normal_files/libs/quarto-html/anchor.min.js"></script>
 <link href="chapter3normal_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="chapter3normal_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="chapter3normal_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="chapter3normal_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="chapter3normal_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="chapter3normal_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="chapter3normal_files/libs/bootstrap/bootstrap-917079515d91bccb85b543faf8aa8bb6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -132,8 +137,8 @@ window.Quarto = {
 
 <section id="the-normal-distribution" class="level1">
 <h1>The Normal Distribution</h1>
-<section id="defining-the-normal-distribution" class="level2">
-<h2 class="anchored" data-anchor-id="defining-the-normal-distribution">Defining the normal distribution</h2>
+<section id="defining-the-normal-distribution" class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="defining-the-normal-distribution">Defining the normal distribution</h2>
 <p>The <span class="definition">normal</span> (also known as ‘Gaussian’) is <span class="math inline">\(X\sim N(\mu_X,\sigma_X^2)\)</span>:</p>
 <ul>
 <li><span class="math inline">\(\mu_X\)</span> is the expected value (<span class="math inline">\(E[X]\)</span>)</li>
@@ -144,6 +149,15 @@ window.Quarto = {
 f_X(x)=\frac1{(2\pi\sigma_X^2)^{1/2}}e^{-\frac{(x-\mu_X)^2}{2\sigma_X^2}}
 \]</span></p>
 <p><span class="subscript">(Just like the binomial, you don’t need to know this formula for this class)</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter3normal_files/figure-html/genericpdf-1.png" class="img-fluid figure-img" style="width:120.0%"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="computing-probabilities-old-vs.-new" class="level2">
 <h2 class="anchored" data-anchor-id="computing-probabilities-old-vs.-new">Computing probabilities: old vs.&nbsp;new</h2>
@@ -176,10 +190,10 @@ f_X(x)=\frac1{(2\pi\sigma_X^2)^{1/2}}e^{-\frac{(x-\mu_X)^2}{2\sigma_X^2}}
 <p>R syntax will be specified with <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\sigma_X = \sqrt{\sigma_X^2}\)</span> instead</p>
 <p><span class="example">Example</span></p>
 <p>If <span class="math inline">\(X \sim N(5,9)\)</span>, then the probability <span class="math inline">\(X\)</span> is less than 4 is:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>x       <span class="ot">=</span> <span class="dv">4</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>mu      <span class="ot">=</span> <span class="dv">5</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>sigmaSq <span class="ot">=</span> <span class="dv">9</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-label="1"></a>x       <span class="ot">=</span> <span class="dv">4</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-label="2"></a>mu      <span class="ot">=</span> <span class="dv">5</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-label="3"></a>sigmaSq <span class="ot">=</span> <span class="dv">9</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-label="4"></a><span class="fu">pnorm</span>(x, mu, <span class="fu">sqrt</span>(sigmaSq))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3694413</code></pre>
@@ -244,7 +258,7 @@ f_X(x)=\frac1{(2\pi\sigma_X^2)^{1/2}}e^{-\frac{(x-\mu_X)^2}{2\sigma_X^2}}
 <h2 class="anchored" data-anchor-id="using-pnorm-and-qnorm">Using pnorm and qnorm</h2>
 <p><span class="example">Concept Check:</span> What would each of the following codes produce?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>( <span class="fu">pnorm</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>( <span class="fu">pnorm</span>(<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="dv">0</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>. . .</p>
 <div class="cell">
@@ -254,7 +268,7 @@ f_X(x)=\frac1{(2\pi\sigma_X^2)^{1/2}}e^{-\frac{(x-\mu_X)^2}{2\sigma_X^2}}
 </div>
 <p>. . .</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>( <span class="fu">qnorm</span>(.<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>), <span class="dv">5</span>, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>( <span class="fu">qnorm</span>(.<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="dv">0</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>. . .</p>
 <div class="cell">
